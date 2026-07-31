@@ -32,14 +32,13 @@
         </ul>
       ]]></description>
       <enclosure url="https://slatedictation.com/Slate-1.1.0.dmg"
-                 length="7879440"
+                 length="7951581"
                  type="application/octet-stream"
-                 sparkle:edSignature="kz+5sq9A+P7Xej6OIQkS9ukU10LHfOgmA3USQWxUwNyLUw4sUa0RercWKRY/auVj0DjJ1asdmDzJjZtsYbIGCw==" />
-      <!-- This signature is of the DMG as it stands right now. Notarizing
-           rewrites the file, so the moment scripts/notarize.sh produces the
-           stapled build, this signature stops matching. Run sign_update again
-           on the notarized DMG and paste the new value here, or Sparkle will
-           refuse the update. -->
+                 sparkle:edSignature="oHNeaxaa0uG8WKgFAJvg8Dj+UCubkFA6tvWZv6MJTEt36HDjgoSeELFPl9cWfZ9ohCGiE201OGNB0WRR8CYJDQ==" />
+      <!-- Signed against the notarized, stapled DMG (31 Jul 2026), which is
+           the file committed beside this one. Both the signature and the byte
+           length change every time the DMG is rebuilt, so re-run sign_update
+           and update both fields together on every release. -->
     </item>
 
   </channel>

@@ -4,12 +4,12 @@
 slate-update-key.txt
 *.private
 
-# The download itself is deliberately NOT committed yet. The DMG on disk is
-# signed with an Apple Development certificate and has not been notarized, so
-# Gatekeeper blocks it on every Mac but this one. Publishing it would put a
-# broken download on slatedictation.com and keep it in git history forever.
+# The DMG is committed on purpose: GitHub Pages serves whatever is in the repo,
+# so the download button needs the file to be here. Only ever commit a build
+# that came out of `scripts/notarize.sh` and passes:
 #
-# Once `cd ~/Desktop/Blue/Slate && scripts/notarize.sh` has produced a stapled
-# Developer ID build and you have copied it here, DELETE THE LINE BELOW and
-# commit the DMG. The download button will 404 until you do.
-Slate-*.dmg
+#   xcrun stapler validate Slate-<version>.dmg
+#   spctl -a -t open --context context:primary-signature -vv Slate-<version>.dmg
+#
+# A development-signed build would be blocked by Gatekeeper on every Mac but
+# the one that made it, and git history keeps it forever.

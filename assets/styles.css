@@ -502,12 +502,16 @@ section { padding: 86px 0; }
   border-top: 1px solid var(--hair); background: var(--surface);
   padding: 48px 0 44px;
 }
-.foot-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
-.foot-tag { margin: 11px 0 0; font-size: 14.5px; color: var(--ink-2); max-width: 34ch; }
-.foot-meta { margin: 20px 0 0; font-size: 13px; line-height: 1.75; color: var(--muted); }
+/* Centred, like every other section on the page. As two 1fr columns this sat
+   in the left 60% of a 1060px wrap, because neither column's content came
+   close to filling its half. */
+.foot-inner { display: flex; flex-direction: column; align-items: center; text-align: center; }
+.foot-tag { margin: 11px 0 0; font-size: 14.5px; color: var(--ink-2); }
+.foot-meta { margin: 18px 0 0; font-size: 13px; line-height: 1.75; color: var(--muted); max-width: 56ch; }
 .foot-meta a { color: inherit; text-decoration-color: var(--line-2); }
 .foot-meta a:hover { color: var(--emerald-text); }
-.foot-links { display: flex; gap: 24px; flex-wrap: wrap; }
+.foot-credit { margin-top: 8px; }
+.foot-links { display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; margin-top: 26px; }
 .foot-links a { font-size: 15px; color: var(--ink-2); text-decoration: none; }
 .foot-links a:hover { color: var(--emerald-text); }
 
@@ -550,7 +554,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 
 /* ================= RESPONSIVE ================= */
 @media (max-width: 900px) {
-  .steps, .features, .firstrun, .foot-grid { grid-template-columns: 1fr; }
+  .steps, .features, .firstrun { grid-template-columns: 1fr; }
   .features { gap: 16px; }
   section { padding: 64px 0; }
   .privacy-panel { padding: 40px 26px; }
