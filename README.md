@@ -28,36 +28,24 @@ assets/
 
 ---
 
-## Before you publish: the DMG is not notarized yet
+## The DMG here is notarized — keep it that way
 
-**This is the one thing standing between the site and real users.** The DMG in
-this folder is signed with an *Apple Development* certificate, not a *Developer
-ID* one, and it has not been through Apple's notary service. On anyone else's
-Mac, macOS will refuse to open it and say Apple could not check it for
-malicious software. They will not be able to click past that easily.
+The `Slate-1.1.0.dmg` in this folder came out of
+`~/Desktop/Blue/Slate/scripts/notarize.sh` on 31 July 2026: Developer ID
+signed, notarized by Apple, ticket stapled. It is committed on purpose —
+GitHub Pages serves whatever is in the repo, so the download button needs the
+file here. Only ever replace it with a build that passes both checks:
 
-Fixing it takes about an hour once, then ten minutes per release. The steps are
-in `~/Desktop/Blue/Slate/docs/DEPLOYMENT.md`, and short:
+```bash
+xcrun stapler validate Slate-1.1.0.dmg
+spctl -a -t open --context context:primary-signature -vv Slate-1.1.0.dmg
+```
 
-1. Join the Apple Developer Program, using the Apple ID on team `WX2PT9X785`.
-2. Xcode &rsaquo; Settings &rsaquo; Accounts &rsaquo; Manage Certificates &rsaquo; **+** &rsaquo;
-   **Developer ID Application**.
-3. Make an app-specific password at appleid.apple.com, then store it once:
-   ```bash
-   xcrun notarytool store-credentials slate-notary --apple-id YOUR_APPLE_ID --team-id WX2PT9X785 --password APP_SPECIFIC_PASSWORD
-   ```
-4. Build the real thing:
-   ```bash
-   cd ~/Desktop/Blue/Slate && scripts/notarize.sh
-   ```
-5. Copy the stapled DMG over the one here.
-6. Open `.gitignore` and delete the `Slate-*.dmg` line, then
-   `git add Slate-1.1.0.dmg` and commit.
-
-**The DMG is not in this repo yet, on purpose.** `.gitignore` holds it back so
-an un-notarized build cannot go live by accident, or sit in git history forever.
-That also means the download button 404s until step 6 is done, so finish
-notarizing before you turn GitHub Pages on.
+A development-signed build would be refused by Gatekeeper on every Mac but
+this one, and git history keeps whatever is committed forever. The notary
+one-time setup (Developer ID certificate, `slate-notary` keychain profile)
+is already done on this Mac; per release, `scripts/notarize.sh` does the
+whole job and prints the appcast enclosure values at the end.
 
 ---
 
