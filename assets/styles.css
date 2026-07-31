@@ -456,10 +456,12 @@ section { padding: 86px 0; }
 }
 .get .price .pip { width: 8px; height: 8px; border-radius: 50%; background: var(--emerald); }
 .get .meta { margin-top: 16px; }
-.get .tip { margin-top: 14px; font-size: 14.5px; color: var(--ink-2); }
+/* the one line that frames the three cards below it, so it sits with them
+   rather than with the version line above */
+.get .firstrun-lead { margin-top: 30px; }
 .firstrun {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
-  margin-top: 40px; text-align: left;
+  margin-top: 14px; text-align: left;
 }
 .firstrun .item {
   background: var(--card); border: 1px solid var(--line);
