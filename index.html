@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Slate: Dictation that never leaves your Mac</title>
+<link rel="canonical" href="https://slatedictation.com/">
+<meta name="description" content="Hold a key, speak, and watch your words appear in any app. The ums and false starts get cleaned up on the way. Speech becomes text on your own Mac, so nothing is uploaded. No account, no tracking, no subscription.">
+<link rel="icon" type="image/png" href="assets/img/favicon-64.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<meta name="theme-color" content="#FAFDF5">
+<meta property="og:title" content="Slate: Smart dictation that never leaves your Mac">
+<meta property="og:description" content="Hold a key, speak, and watch your words appear in any app. The ums and false starts get cleaned up on the way. No internet needed.">
+<meta property="og:image" content="https://slatedictation.com/assets/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://slatedictation.com/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Slate: Smart dictation that never leaves your Mac">
+<meta name="twitter:description" content="Hold a key, speak, and watch your words appear in any app. The ums and false starts get cleaned up on the way. No internet needed.">
+<meta name="twitter:image" content="https://slatedictation.com/assets/img/og.png">
+<link rel="stylesheet" href="assets/styles.css?v=20260730f">
+</head>
+<body>
+
+<!--
+  RELEASE-PIN: the version appears in exactly three places on this page.
+  Search for "RELEASE-PIN" to find all three when you ship a new build.
+-->
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="wordmark" href="/">
+      <svg class="mark" viewBox="0 0 28 24" aria-hidden="true"><g fill="currentColor">
+        <rect x="0" y="8.5" width="2.6" height="7" rx="1.3"/>
+        <rect x="4.2" y="6.5" width="2.6" height="11" rx="1.3"/>
+        <rect x="8.4" y="4" width="2.6" height="16" rx="1.3"/>
+        <rect x="12.6" y="1" width="2.6" height="22" rx="1.3"/>
+        <rect x="16.8" y="4.5" width="2.6" height="15" rx="1.3"/>
+        <rect x="21" y="6.5" width="2.6" height="11" rx="1.3"/>
+        <rect x="25.2" y="8.5" width="2.6" height="7" rx="1.3"/>
+      </g></svg>
+      Slate
+    </a>
+    <nav class="nav">
+      <a href="#how" class="hide-sm">How it works</a>
+      <a href="#privacy" class="hide-sm">Privacy</a>
+      <a href="support.html" class="hide-sm">Support</a>
+      <a class="btn btn-ink btn-sm" href="#download">Download</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">For Mac</p>
+      <h1>Smart dictation that <span class="hl">never leaves your Mac</span>.</h1>
+      <p class="lead">Hold a key, speak, and watch your words appear in any app.
+      And the ums, stutters, and second thoughts? Cleaned up on the way in.
+      No internet needed.</p>
+      <div class="cta">
+        <!-- RELEASE-PIN 1 of 3 -->
+        <a class="btn btn-primary btn-big dictate" href="Slate-1.1.0.dmg" download>
+          <svg class="mark" viewBox="0 0 28 24" aria-hidden="true"><g fill="currentColor">
+            <rect x="0" y="8.5" width="2.6" height="7" rx="1.3"/>
+            <rect x="4.2" y="6.5" width="2.6" height="11" rx="1.3"/>
+            <rect x="8.4" y="4" width="2.6" height="16" rx="1.3"/>
+            <rect x="12.6" y="1" width="2.6" height="22" rx="1.3"/>
+            <rect x="16.8" y="4.5" width="2.6" height="15" rx="1.3"/>
+            <rect x="21" y="6.5" width="2.6" height="11" rx="1.3"/>
+            <rect x="25.2" y="8.5" width="2.6" height="7" rx="1.3"/>
+          </g></svg>
+          <span class="say">Download for Mac</span>
+        </a>
+      </div>
+      <p class="fine req">Free to use. Apple silicon Mac, macOS 14.4 or later.</p>
+    </div>
+
+    <!-- the Mac screen, the island, and the text landing at the cursor -->
+    <div class="wrap stage">
+      <p class="sr-only">A demonstration. While the talk key is held, a card hangs from the top of
+      the screen showing the words as they form, including one the engine corrects and marks. The
+      person says a filler, changes their mind about a time, asks for a new paragraph, and speaks an
+      email address. When the key is let go, the cleaned text appears in the document at the cursor:
+      "Meet me at ten." then a new paragraph, "Email team@example.com."</p>
+
+      <div class="screen" aria-hidden="true">
+        <div class="notch"></div>
+        <div class="island" id="island" data-shown="no" data-live="no">
+          <div class="wave"><i></i><i></i><i></i><i></i><i></i></div>
+          <p class="live waiting" id="live">Listening...</p>
+        </div>
+        <div class="doc">
+          <div class="doc-bar"><i></i><i></i><i></i><span>Note</span></div>
+          <div class="doc-body">
+            <p class="ln"><span class="out" id="out1">Meet me at ten.</span></p>
+            <p class="ln"><span class="out" id="out2">Email team@example.com.</span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="holder">
+        <button class="keycap" id="keycap" type="button" aria-label="Option key: play the dictation demo, or stop it" aria-pressed="false">
+          &#8997; option
+        </button>
+        <span class="hint">Press it to play again, or to stop</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HOW IT WORKS ============ -->
+  <section id="how">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">How it works</p>
+        <h2>Hold a key. Talk. Let go.</h2>
+        <p>That is the whole thing. It works the same in Mail, Slack, Notes, a browser, or a code editor.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <span class="n">1</span>
+          <h3>Hold the talk key</h3>
+          <p>Right Option, out of the box. Pick another key if you want, or set it to tap once to start and tap again to stop.</p>
+        </div>
+        <div class="step">
+          <span class="n">2</span>
+          <h3>Your Mac turns it into text</h3>
+          <p>The speech model runs on the Neural Engine. A short sentence comes back in well under a second.</p>
+        </div>
+        <div class="step">
+          <span class="n">3</span>
+          <h3>The text is typed at your cursor</h3>
+          <p>Cleaned up, and fitted to the sentence you were writing. Your clipboard is put back the way you left it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CLEANUP RECEIPTS ============ -->
+  <section style="padding-top:0;">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">The cleanup</p>
+        <h2>What Slate fixes before it types.</h2>
+        <p>Each one is a fixed rule. Your wording is never rewritten by an AI.</p>
+      </div>
+
+      <div class="receipts">
+        <div class="receipt">
+          <div class="said">
+            <span class="lbl">You say</span>
+            <p>&ldquo;<s>Um,</s> so the deadline, <s>the deadline</s> moved to Friday.&rdquo;</p>
+          </div>
+          <div class="to">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"/><path d="M13 6l6 6-6 6"/></svg>
+          </div>
+          <div class="got">
+            <span class="lbl">Slate types</span>
+            <p>So the deadline moved to Friday.</p>
+          </div>
+        </div>
+
+        <div class="receipt">
+          <div class="said">
+            <span class="lbl">You say</span>
+            <p>&ldquo;<s>I&rsquo;ll see you at 10:30. Actually,</s> I&rsquo;ll see you at 11.&rdquo;</p>
+          </div>
+          <div class="to">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"/><path d="M13 6l6 6-6 6"/></svg>
+          </div>
+          <div class="got">
+            <span class="lbl">Slate types</span>
+            <p>I&rsquo;ll see you at 11.</p>
+          </div>
+        </div>
+
+        <div class="receipt">
+          <div class="said">
+            <span class="lbl">You say</span>
+            <p>&ldquo;<s>Ship it Tuesday. Scratch that.</s> Ship it Wednesday.&rdquo;</p>
+          </div>
+          <div class="to">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"/><path d="M13 6l6 6-6 6"/></svg>
+          </div>
+          <div class="got">
+            <span class="lbl">Slate types</span>
+            <p>Ship it Wednesday.</p>
+          </div>
+        </div>
+
+        <div class="receipt">
+          <div class="said">
+            <span class="lbl">You say</span>
+            <p>&ldquo;Email sam at example dot com.&rdquo;</p>
+          </div>
+          <div class="to">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"/><path d="M13 6l6 6-6 6"/></svg>
+          </div>
+          <div class="got">
+            <span class="lbl">Slate types</span>
+            <p>Email sam@example.com.</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="fine rules-note">Settings has a switch for the filler sounds, one for the stutters, and one for the spoken commands. All of it can be turned off.</p>
+    </div>
+  </section>
+
+  <!-- ============ FEATURES ============ -->
+  <section style="padding-top:0;">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Inside the app</p>
+        <h2>What else it does.</h2>
+      </div>
+      <div class="features">
+
+        <div class="feature">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4 4L19 7"/></svg></div>
+          <h3>Removes ums, uhs, and repeats</h3>
+          <p>Filler sounds go. &ldquo;The the&rdquo; becomes &ldquo;the&rdquo;. A phrase you started twice is written once.</p>
+        </div>
+
+        <div class="feature">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/></svg></div>
+          <h3>Keeps your correction, not your first try</h3>
+          <p>Change your mind mid-sentence and only the second version is written. Say &ldquo;scratch that&rdquo; and the sentence before it goes.</p>
+        </div>
+
+        <div class="feature">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h13"/></svg></div>
+          <h3>Say &ldquo;new paragraph&rdquo; and get one</h3>
+          <p>&ldquo;New line&rdquo; starts a line. &ldquo;Open bracket&rdquo; and &ldquo;open quote&rdquo; wrap what comes next. &ldquo;Scratch that&rdquo; takes back the sentence before it.</p>
+        </div>
+
+        <div class="feature">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h7v14H4z"/><path d="M13 5h7v14h-7z"/><path d="M6.5 9h2M15.5 9h2"/></svg></div>
+          <h3>A dictionary for names and jargon</h3>
+          <p>Add what you say on one side and what should be written on the other. Islamic phrases are spelled the same way every time.</p>
+        </div>
+
+        <div class="feature">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18z"/></svg></div>
+          <h3>25 languages, all on this Mac</h3>
+          <p>The English model is the most accurate. The multilingual model covers 25 European languages and works out which one you are speaking.</p>
+        </div>
+
+        <div class="feature">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/><rect x="9" y="9" width="6" height="6" rx="1"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/></svg></div>
+          <h3>Leaves your clipboard and music alone</h3>
+          <p>Whatever you copied comes back, images included. Music pauses while you talk and starts again after. Sitting idle, Slate uses 0% CPU.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRIVACY ============ -->
+  <section id="privacy" style="padding-top:0;">
+    <div class="wrap">
+      <div class="privacy-panel">
+        <p class="eyebrow">The promise</p>
+        <h2>Nothing is sent anywhere.</h2>
+        <p class="lead">Cloud dictation apps send a recording of your voice to a server, charge every month, and stop working on a plane. Slate does the whole job here.</p>
+
+        <ul class="facts">
+          <li><b>Speech becomes text on this Mac</b>, on the Neural Engine, using the Parakeet model. There is no server to send it to.</li>
+          <li><b>No account, no sign-in, no tracking.</b> Slate does not collect anything.</li>
+          <li><b>Zero network connections while dictating.</b> Measured with lsof during a live transcription: none. Slate holds back its own update check while the mic is open, so this stays true.</li>
+          <li><b>Works with no internet</b> after the speech model downloads, about 600&nbsp;MB. Switching to the multilingual model fetches that one too.</li>
+          <li class="one"><b>The rest of the list, in full.</b> Activating a license key makes one request to the store. And if you switch update checks on, Slate asks this site for one small file, then downloads the new version itself if you choose to install it. Nothing about you goes with any of it.</li>
+        </ul>
+
+        <div class="proof">
+          <span class="p">$</span> <span class="c">lsof -i -a -p $(pgrep -x Slate)</span><br>
+          <span class="o"># nothing. keep talking, run it again, still nothing.</span><br>
+          <span class="p">$</span> <span class="caret" style="background:#C1FF72;"></span>
+        </div>
+        <p class="proof-note">Do not take our word for it. Run <a href="https://obdev.at/products/littlesnitch/">Little Snitch</a>, LuLu, or Wireshark and watch while you dictate. Or turn off Wi-Fi and keep working.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMPARISON ============ -->
+  <section style="padding-top:0;">
+    <div class="wrap narrow">
+      <div class="section-head">
+        <p class="eyebrow">The difference</p>
+        <h2>Slate and cloud dictation.</h2>
+      </div>
+      <div class="table-scroll">
+        <table class="compare">
+          <thead>
+            <tr><th scope="col">&nbsp;</th><th scope="col">Slate</th><th scope="col">Cloud dictation apps</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Where speech becomes text</th><td class="yes">On your Mac</td><td class="no">On their servers</td></tr>
+            <tr><th scope="row">How long it takes</th><td class="yes">Under a second</td><td class="no">A round trip to their server</td></tr>
+            <tr><th scope="row">On a plane</th><td class="yes">Works</td><td class="no">Does not work</td></tr>
+            <tr><th scope="row">Your voice</th><td class="yes">Never leaves the Mac</td><td class="no">Uploaded</td></tr>
+            <tr><th scope="row">Account</th><td class="yes">None</td><td class="no">Required</td></tr>
+            <tr><th scope="row">Price</th><td class="yes">Free</td><td class="no">$144 a year and up</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ DOWNLOAD ============ -->
+  <section id="download" style="padding-top:0;">
+    <div class="wrap">
+      <div class="get">
+        <span class="price"><span class="pip"></span> Free to use</span>
+        <h2>Get Slate.</h2>
+        <p class="lead">No account to make, and nothing to sign up for.</p>
+
+        <!-- RELEASE-PIN 2 of 3 -->
+        <a class="btn btn-primary btn-big insert" href="Slate-1.1.0.dmg" download>
+          <span class="say">Download Slate for Mac</span>
+        </a>
+
+        <!-- RELEASE-PIN 3 of 3: version and size -->
+        <p class="fine meta">Version 1.1.0 &middot; 7.9&nbsp;MB &middot; Apple silicon Mac (M1 or later) &middot; macOS 14.4 or later</p>
+        <p class="fine">Slate is a Mac app. There is no Windows, iPhone, or web version.</p>
+        <!-- TIP-LINK: when there is a tip page, wrap "leave a tip" below in
+             <a href="THE-URL">leave a tip</a> and delete this comment. -->
+        <p class="tip">Slate is free to use, and nothing in it is held back. If it
+        saves you time and you want to say thanks, a tip jar is on the way.</p>
+        <p class="fine firstrun-lead">First launch asks for two permissions, and downloads the speech model.</p>
+
+        <div class="firstrun">
+          <div class="item">
+            <h3>Microphone</h3>
+            <p>Used while you hold the talk key, and at no other time.</p>
+          </div>
+          <div class="item">
+            <h3>Accessibility</h3>
+            <p>Two jobs: it notices the talk key, and it puts text at your cursor. Every other keystroke passes through untouched.</p>
+          </div>
+          <div class="item">
+            <h3>The speech model</h3>
+            <p>Downloads once, about 600&nbsp;MB. After that, dictation needs no internet.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section style="padding-top:0;">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">FAQ</p>
+        <h2>Questions people ask.</h2>
+      </div>
+      <div class="faq">
+
+        <details>
+          <summary>Is there a Windows or iPhone version?</summary>
+          <div class="body"><div class="bodyin"><p>No. Slate needs an Apple silicon Mac, M1 or later, and macOS 14.4 or later. Speech runs on the Neural Engine, which Intel Macs do not have.</p></div></div>
+        </details>
+
+        <details>
+          <summary>Why does Slate need Accessibility access?</summary>
+          <div class="body"><div class="bodyin">
+            <p>Two jobs. One is noticing the talk key, so you can start dictating in any app. The other is putting the text where your cursor is.</p>
+            <p>macOS puts both behind the same permission. Every other keystroke passes through untouched, and nothing about what you type is read, stored, or sent.</p>
+          </div></div>
+        </details>
+
+        <details>
+          <summary>What does it cost?</summary>
+          <div class="body"><div class="bodyin">
+            <p>Nothing. Slate is free to use, with no subscription and no account to make.</p>
+            <p>Nothing in the app is held back. If it saves you time and you want to say thanks, a tip jar is on the way.</p>
+          </div></div>
+        </details>
+
+        <details>
+          <summary>What does Slate keep?</summary>
+          <div class="body"><div class="bodyin">
+            <p>A history of what you dictated, as text, on this Mac. You pick: keep it, keep it for a day, or keep nothing. Your dictionary and settings stay here too.</p>
+            <p>Audio is never written to disk. It is held in memory while you talk and dropped as soon as the text is ready.</p>
+          </div></div>
+        </details>
+
+        <details>
+          <summary>How can I check the privacy claims myself?</summary>
+          <div class="body"><div class="bodyin">
+            <p>Three ways. Turn off Wi-Fi after the model has downloaded, and keep dictating. Run Little Snitch, LuLu, or Wireshark and watch while you talk. Or open Terminal and run <code>lsof -i -a -p $(pgrep -x Slate)</code> mid-sentence.</p>
+            <p>Slate reaches the network for four things and nothing else: downloading a speech model, checking a license key if you activate one, asking this site whether there is a new version if you switch that on, and downloading that version if you choose to install it. None of it happens while you dictate.</p>
+          </div></div>
+        </details>
+
+
+        <details>
+          <summary>How do updates work?</summary>
+          <div class="body"><div class="bodyin">
+            <p>Slate can update itself in place. A check asks this site for one small file, and nothing about you goes with it. A new version is only installed if it is signed with Slate's key, so a tampered file cannot get in.</p>
+            <p>It is off until you say yes. Slate asks once, and you can change the answer any time in Settings &rsaquo; About, where there is also a Check now button.</p>
+          </div></div>
+        </details>
+
+        <details>
+          <summary>Something is not working.</summary>
+          <div class="body"><div class="bodyin"><p>Email <a href="mailto:contact@farhanhossain.com">contact@farhanhossain.com</a> and say what happened. There is more on the <a href="support.html">support page</a>.</p></div></div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap foot-grid">
+    <div class="foot-col">
+      <a class="wordmark" href="/"><svg class="mark" viewBox="0 0 28 24" aria-hidden="true"><g fill="currentColor"><rect x="0" y="8.5" width="2.6" height="7" rx="1.3"/><rect x="4.2" y="6.5" width="2.6" height="11" rx="1.3"/><rect x="8.4" y="4" width="2.6" height="16" rx="1.3"/><rect x="12.6" y="1" width="2.6" height="22" rx="1.3"/><rect x="16.8" y="4.5" width="2.6" height="15" rx="1.3"/><rect x="21" y="6.5" width="2.6" height="11" rx="1.3"/><rect x="25.2" y="8.5" width="2.6" height="7" rx="1.3"/></g></svg> Slate</a>
+      <p class="foot-tag">Smart dictation that never leaves your Mac.</p>
+      <p class="foot-meta">&copy; 2026 Slate. Made by Farhan Hossain.<br>
+        <a href="mailto:contact@farhanhossain.com">contact@farhanhossain.com</a></p>
+    </div>
+    <div class="foot-col">
+      <nav class="foot-links" aria-label="Footer">
+        <a href="#download">Download</a>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </nav>
+      <p class="foot-meta">Speech by the Parakeet model, through
+        <a href="https://github.com/FluidInference/FluidAudio">FluidAudio</a>.<br>
+        This site sets no cookies and runs no analytics.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ---------------------------------------------------------------------------
+   1. The hero demo. One sentence, dictated: the island shows the words as the
+   engine hears them, corrects one, then the cleaned sentence lands at the
+   cursor. Nothing here talks to the network, and it stops when off screen.
+--------------------------------------------------------------------------- */
+(function () {
+  var island = document.getElementById('island');
+  var live   = document.getElementById('live');
+  var out1   = document.getElementById('out1');
+  var out2   = document.getElementById('out2');
+  var keycap = document.getElementById('keycap');
+  if (!island || !live || !out1 || !out2 || !keycap) return;
+
+  /* One take, said the way people really talk. Run it through the app itself
+     with `Slate --refine "<the words below>"` and you get exactly the two
+     paragraphs in the document: a filler dropped, the second version of the
+     time kept, the spoken paragraph break made, and the address joined up. */
+  var WORDS = [
+    'Um,', 'meet', 'me', 'at', 'nine.',
+    'Actually,', 'meet', 'me', 'at', 'ten.',
+    'New', 'paragraph.',
+    'Email', 'team', 'at', 'example', 'dot', 'com.'
+  ];
+  /* The engine hears one word wrong and fixes it a beat later. That, and only
+     that, is what the island marks in lime. */
+  var FIX_AT = 9, HEARD = 'tan', FIXED = 'ten.';
+
+  var STEPS = [];
+  for (var i = 0; i < WORDS.length; i++) {
+    STEPS.push({ upto: i, fixed: i > FIX_AT, mark: i > FIX_AT && i <= FIX_AT + 3 });
+    if (i === FIX_AT) STEPS.push({ upto: i, fixed: true, mark: true });
+  }
+
+  var timers = [];
+  function at(ms, fn) { timers.push(setTimeout(fn, ms)); }
+  function clearAll() { timers.forEach(clearTimeout); timers = []; }
+
+  function render(step) {
+    var words = WORDS.slice(0, step.upto + 1);
+    if (step.upto >= FIX_AT) words[FIX_AT] = step.fixed ? FIXED : HEARD;
+    live.textContent = '';
+    for (var i = 0; i < words.length; i++) {
+      if (i > 0) live.appendChild(document.createTextNode(' '));
+      if (step.mark && i === FIX_AT) {
+        var hit = document.createElement('span');
+        hit.className = 'rev';
+        hit.textContent = words[i];
+        live.appendChild(hit);
+      } else {
+        live.appendChild(document.createTextNode(words[i]));
+      }
+    }
+  }
+
+  function reset() {
+    clearAll();
+    island.setAttribute('data-shown', 'no');
+    island.setAttribute('data-live', 'no');
+    live.className = 'live waiting';
+    live.textContent = 'Listening...';
+    out1.className = 'out';
+    out2.className = 'out';
+    keycap.setAttribute('data-down', 'no');
+  }
+
+  function still() {           /* the end state, for anyone who asked for less motion */
+    clearAll();
+    island.setAttribute('data-shown', 'yes');
+    island.setAttribute('data-live', 'no');
+    live.className = 'live';
+    render(STEPS[STEPS.length - 1]);
+    out1.className = 'out in';
+    out2.className = 'out in';
+    keycap.setAttribute('data-down', 'no');
+  }
+
+  var STEP = 300;      /* one word at a time, slow enough to read */
+
+  function play() {
+    reset();
+    at(280, function () {
+      keycap.setAttribute('data-down', 'yes');
+      island.setAttribute('data-shown', 'yes');
+      island.setAttribute('data-live', 'yes');
+    });
+    at(820, function () { live.className = 'live'; });
+    STEPS.forEach(function (step, i) {
+      at(820 + i * STEP, function () { render(step); });
+    });
+    var end = 820 + STEPS.length * STEP;
+    at(end + 700, function () {
+      keycap.setAttribute('data-down', 'no');
+      island.setAttribute('data-shown', 'no');
+      island.setAttribute('data-live', 'no');
+    });
+    at(end + 1040, function () { out1.className = 'out in'; });
+    at(end + 1440, function () { out2.className = 'out in'; });
+    return end + 1440;
+  }
+
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var running = false;
+
+  function cycle() {
+    if (reduce.matches) { still(); return; }
+    var done = play();
+    timers.push(setTimeout(cycle, done + 2800));
+  }
+
+  function start() { if (running) return; running = true; cycle(); }
+  function stop()  { running = false; clearAll(); }
+
+  /* only while it is on screen, and only while the tab is in front. Both have
+     to be able to turn it back on, or coming back to the tab leaves it dead. */
+  var inView = false;
+  function resume() { if (inView && !document.hidden) start(); }
+
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        inView = e.isIntersecting;
+        if (inView) { resume(); } else { stop(); reset(); }
+      });
+    }, { threshold: 0.25 }).observe(island.parentNode);
+  } else {
+    inView = true;
+    start();
+  }
+  document.addEventListener('visibilitychange', function () {
+    if (document.hidden) { stop(); } else { resume(); }
+  });
+
+  /* Press the key to play it again, press it again to leave it stopped. An
+     animation that loops forever with no way to stop it is a problem for
+     anyone who finds movement distracting. */
+  function again(e) {
+    if (e) e.preventDefault();
+    if (running) {           /* it was playing: stop, and hold the finished frame */
+      stop();
+      still();
+      keycap.setAttribute('aria-pressed', 'true');
+      return;
+    }
+    stop();
+    keycap.setAttribute('aria-pressed', 'false');
+    if (reduce.matches) { still(); return; }
+    running = true;
+    cycle();
+    keycap.setAttribute('data-down', 'yes');   /* after cycle, which resets it */
+  }
+  keycap.addEventListener('mousedown', again);
+  keycap.addEventListener('touchstart', again, { passive: false });
+  keycap.addEventListener('click', function (e) { e.preventDefault(); });
+  keycap.addEventListener('keydown', function (e) {
+    if (e.repeat) return;                /* holding the key must not re-fire */
+    if (e.key === 'Enter' || e.key === ' ') again(e);
+  });
+
+  if (reduce.matches) still();
+  reduce.addEventListener('change', function () {
+    stop();
+    if (reduce.matches) { still(); } else { resume(); }
+  });
+})();
+
+
+/* ---------------------------------------------------------------------------
+   2. The two download buttons, for anyone who hovers.
+
+   The one in the hero is the listening half: its label arrives a word at a
+   time at the speed someone talks, while the waveform moves.
+   The one at the bottom is the typing half: the label is put in at the cursor,
+   character by character, the way Slate puts text into an app.
+
+   Both reserve the finished label's space from the start, so neither button
+   ever changes size, and the link's name never changes either.
+--------------------------------------------------------------------------- */
+(function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  function split(label, pieces) {
+    var made = [];
+    label.textContent = '';
+    pieces.forEach(function (piece) {
+      var s = document.createElement('span');
+      s.className = 'p';
+      s.textContent = piece;
+      label.appendChild(s);
+      made.push(s);
+    });
+    return made;
+  }
+
+  /* pieces land one at a time; hooks fire at the start, on each piece, and at
+     the end, which is all the two eggs need to differ from each other */
+  function setup(btn, pieces, tick, lead, hooks) {
+    var label = btn.querySelector('.say');
+    if (!label) return;
+    btn.setAttribute('aria-label', label.textContent.trim());
+    var parts = split(label, pieces);
+    var timers = [], playing = false;
+    hooks = hooks || {};
+
+    function showAll(on) {
+      parts.forEach(function (s) { s.classList.toggle('on', on); });
+    }
+    function finish() {
+      timers.forEach(clearTimeout);
+      timers = [];
+      playing = false;
+      if (hooks.end) hooks.end(btn, parts);
+    }
+    function run() {
+      if (playing || reduce.matches) return;
+      playing = true;
+      showAll(false);
+      if (hooks.start) hooks.start(btn, parts);
+      parts.forEach(function (s, i) {
+        timers.push(setTimeout(function () {
+          s.classList.add('on');
+          if (hooks.piece) hooks.piece(s, i, parts);
+        }, lead + i * tick));
+      });
+      timers.push(setTimeout(finish, lead + parts.length * tick + 120));
+    }
+
+    showAll(true);                      /* it just reads normally until you hover */
+    btn.addEventListener('mouseenter', run);
+    btn.addEventListener('mouseleave', function () { finish(); showAll(true); });
+  }
+
+  /* the hero button: word by word, about 158 words a minute */
+  var talker = document.querySelector('.btn.dictate');
+  if (talker) {
+    var spaced = talker.querySelector('.say').textContent.trim().split(' ')
+      .map(function (w, i) { return i ? ' ' + w : w; });
+    setup(talker, spaced, 380, 130, {
+      start: function (b) { b.classList.add('talking'); },
+      end:   function (b) { b.classList.remove('talking'); }
+    });
+  }
+
+  /* the download button: character by character, with a cursor running along */
+  var typer = document.querySelector('.btn.insert');
+  if (typer) {
+    var bar = document.createElement('span');
+    bar.className = 'tcaret';
+    bar.setAttribute('aria-hidden', 'true');
+    var chars = typer.querySelector('.say').textContent.trim().split('');
+
+    setup(typer, chars, 26, 90, {
+      start: function (b, parts) {
+        parts[0].parentNode.insertBefore(bar, parts[0]);
+        bar.classList.add('on');
+      },
+      piece: function (s) {
+        s.parentNode.insertBefore(bar, s.nextSibling);
+      },
+      end: function () { bar.classList.remove('on'); }
+    });
+  }
+})();
+
+
+/* ---------------------------------------------------------------------------
+   3. The questions open and close instead of snapping.
+--------------------------------------------------------------------------- */
+(function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var OPEN = 280, SHUT = 220;
+
+  Array.prototype.forEach.call(document.querySelectorAll('.faq details'), function (d) {
+    var body = d.querySelector('.body');
+    var summary = d.querySelector('summary');
+    if (!body || !summary) return;
+    var busy = false;
+
+    summary.addEventListener('click', function (e) {
+      if (reduce.matches) return;      /* let the browser do its plain thing */
+      e.preventDefault();
+      if (busy) return;
+      busy = true;
+
+      if (d.open) {
+        body.style.height = body.scrollHeight + 'px';
+        void body.offsetHeight;              /* let the browser take the start value */
+        body.style.transition = 'height ' + SHUT + 'ms ease, opacity ' + (SHUT - 60) + 'ms ease';
+        body.style.height = '0px';
+        body.style.opacity = '0';
+        setTimeout(function () {
+          d.open = false;
+          body.removeAttribute('style');
+          busy = false;
+        }, SHUT + 20);
+      } else {
+        d.open = true;
+        var target = body.scrollHeight;
+        body.style.height = '0px';
+        body.style.opacity = '0';
+        void body.offsetHeight;              /* same, or both values land in one recalc */
+        body.style.transition = 'height ' + OPEN + 'ms ease, opacity ' + (OPEN - 60) + 'ms ease 40ms';
+        body.style.height = target + 'px';
+        body.style.opacity = '1';
+        setTimeout(function () {
+          body.removeAttribute('style');
+          busy = false;
+        }, OPEN + 40);
+      }
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

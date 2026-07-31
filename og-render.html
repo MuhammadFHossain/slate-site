@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>og render</title>
+<meta name="robots" content="noindex">
+<!--
+  Source for assets/img/og.png. Kept in the repo so the card can be re-rendered.
+  Nothing links to it. Re-render after changing the headline:
+
+    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
+      --headless --disable-gpu --hide-scrollbars --window-size=1200,630 \
+      --screenshot=assets/img/og.png --default-background-color=0 \
+      file://$PWD/og-render.html
+-->
+<style>
+  @font-face {
+    font-family: "Newsreader";
+    src: url("assets/fonts/Newsreader-VF.ttf") format("truetype-variations");
+    font-weight: 200 700; font-style: normal;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1200px; height: 630px; overflow: hidden;
+    background: #FAFDF5; color: #083620;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 0 78px; position: relative;
+  }
+  .mark-row { display: flex; align-items: center; gap: 13px; margin-bottom: 30px; }
+  .mark-row svg { width: 34px; height: 30px; color: #00BF63; }
+  .mark-row b { font-family: "Newsreader", Georgia, serif; font-size: 34px; font-weight: 620; letter-spacing: -0.02em; }
+  h1 {
+    font-family: "Newsreader", Georgia, serif;
+    font-size: 60px; font-weight: 600; line-height: 1.12;
+    letter-spacing: -0.015em; max-width: 640px;
+  }
+  h1 .hl { background: #C1FF72; border-radius: 6px; padding: 0 8px; }
+  p.sub { margin-top: 26px; font-size: 26px; color: #3A6250; max-width: 30ch; line-height: 1.45; }
+  .chips { margin-top: 34px; display: flex; gap: 10px; }
+  .chip {
+    font-size: 18px; color: #083620; background: #fff;
+    border: 1px solid rgba(0,191,99,.38); border-radius: 999px; padding: 9px 18px;
+  }
+  /* the island, hanging off the right edge the way it hangs off a screen */
+  .island {
+    position: absolute; right: 78px; top: 0; width: 372px;
+    background: #F4FDEC; border: 1px solid rgba(0,191,99,.42); border-top: 0;
+    border-radius: 0 0 22px 22px; padding: 34px 22px 18px;
+    box-shadow: 0 18px 40px rgba(8,54,32,.10);
+  }
+  .island .wave { display: flex; gap: 6px; margin-bottom: 11px; }
+  .island .wave i { width: 7px; height: 7px; border-radius: 50%; background: #00BF63; }
+  .island p { font-family: "Newsreader", Georgia, serif; font-size: 23px; line-height: 1.35; }
+  .island .rev { background: #C1FF72; border-radius: 4px; padding: 0 3px; }
+  .notch {
+    position: absolute; right: 78px; top: 0; width: 372px; height: 0;
+  }
+  .notch i {
+    position: absolute; left: 50%; transform: translateX(-50%); top: 0;
+    width: 138px; height: 24px; background: #0A1F14; border-radius: 0 0 12px 12px;
+  }
+</style>
+</head>
+<body>
+
+  <div class="island">
+    <div class="wave"><i></i><i></i><i></i><i></i><i></i></div>
+    <p>Meet me at <span class="rev">ten</span>.</p>
+  </div>
+  <div class="notch"><i></i></div>
+
+  <div class="mark-row">
+    <svg viewBox="0 0 28 24" aria-hidden="true"><g fill="currentColor">
+      <rect x="0" y="8.5" width="2.6" height="7" rx="1.3"/>
+      <rect x="4.2" y="6.5" width="2.6" height="11" rx="1.3"/>
+      <rect x="8.4" y="4" width="2.6" height="16" rx="1.3"/>
+      <rect x="12.6" y="1" width="2.6" height="22" rx="1.3"/>
+      <rect x="16.8" y="4.5" width="2.6" height="15" rx="1.3"/>
+      <rect x="21" y="6.5" width="2.6" height="11" rx="1.3"/>
+      <rect x="25.2" y="8.5" width="2.6" height="7" rx="1.3"/>
+    </g></svg>
+    <b>Slate</b>
+  </div>
+
+  <h1>Smart dictation that <span class="hl">never leaves your Mac</span>.</h1>
+  <p class="sub">Hold a key, speak, and watch your words appear in any app.</p>
+  <div class="chips">
+    <span class="chip">Free to use</span>
+    <span class="chip">No account</span>
+    <span class="chip">Works offline</span>
+  </div>
+
+</body>
+</html>

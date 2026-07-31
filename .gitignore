@@ -1,0 +1,15 @@
+.DS_Store
+
+# The Sparkle private key, if it is ever exported here. It must never be public.
+slate-update-key.txt
+*.private
+
+# The download itself is deliberately NOT committed yet. The DMG on disk is
+# signed with an Apple Development certificate and has not been notarized, so
+# Gatekeeper blocks it on every Mac but this one. Publishing it would put a
+# broken download on slatedictation.com and keep it in git history forever.
+#
+# Once `cd ~/Desktop/Blue/Slate && scripts/notarize.sh` has produced a stapled
+# Developer ID build and you have copied it here, DELETE THE LINE BELOW and
+# commit the DMG. The download button will 404 until you do.
+Slate-*.dmg

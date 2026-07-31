@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy &middot; Slate</title>
+<link rel="canonical" href="https://slatedictation.com/privacy.html">
+<meta name="description" content="Slate's privacy policy. Your voice becomes text on your own Mac and is never uploaded. No account, no analytics, no tracking, and no server of ours.">
+<link rel="icon" type="image/png" href="assets/img/favicon-64.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<meta name="theme-color" content="#FAFDF5">
+<link rel="stylesheet" href="assets/styles.css?v=20260730f">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="wordmark" href="/">
+      <svg class="mark" viewBox="0 0 28 24" aria-hidden="true"><g fill="currentColor">
+        <rect x="0" y="8.5" width="2.6" height="7" rx="1.3"/><rect x="4.2" y="6.5" width="2.6" height="11" rx="1.3"/>
+        <rect x="8.4" y="4" width="2.6" height="16" rx="1.3"/><rect x="12.6" y="1" width="2.6" height="22" rx="1.3"/>
+        <rect x="16.8" y="4.5" width="2.6" height="15" rx="1.3"/><rect x="21" y="6.5" width="2.6" height="11" rx="1.3"/>
+        <rect x="25.2" y="8.5" width="2.6" height="7" rx="1.3"/>
+      </g></svg>
+      Slate
+    </a>
+    <nav class="nav">
+      <a href="support.html" class="hide-sm">Support</a>
+      <a class="btn btn-ink btn-sm" href="/#download">Download</a>
+    </nav>
+  </div>
+</header>
+
+<main class="doc-page">
+  <a class="back" href="/">
+    <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="M11 6l-6 6 6 6"/></svg>
+    Back to Slate
+  </a>
+
+  <h1>Privacy</h1>
+  <p class="updated">Last updated 30 July 2026</p>
+
+  <div class="callout">
+    <p><strong>The short version.</strong> Slate does not collect anything. Your
+    voice becomes text on your own Mac and is never uploaded. There is no
+    account, no tracking, no analytics, and no server of ours for anything to be
+    sent to.</p>
+  </div>
+
+  <h2>Your voice</h2>
+  <p>While you hold the talk key, the sound from your microphone is held in
+  memory. It is turned into text on this Mac, on the Neural Engine, using the
+  Parakeet speech model. Then it is dropped.</p>
+  <p>Audio is never written to disk. It is never uploaded. No recording of you
+  exists after you let go of the key.</p>
+
+  <h2>What Slate stores</h2>
+  <p>All of it sits in <code>~/Library/Application&nbsp;Support/Slate</code> on your
+  own Mac. None of it is sent anywhere.</p>
+  <ul>
+    <li><strong>History.</strong> The text of what you dictated, so you can copy something again. You choose what happens to it in Settings &rsaquo; History: keep it, keep it for a day, or keep nothing. There is a button to clear it now.</li>
+    <li><strong>Dictionary.</strong> The words and spellings you added yourself.</li>
+    <li><strong>License record.</strong> The date you first ran Slate, and your license key if you have one.</li>
+    <li><strong>Log.</strong> A plain text log that helps with support questions. It stays on your Mac unless you choose to send it to us.</li>
+  </ul>
+  <p>The speech models are in
+  <code>~/Library/Application&nbsp;Support/FluidAudio/Models</code>. Deleting either
+  folder is safe, and the <a href="support.html">support page</a> explains how.</p>
+
+  <h2>When Slate uses the network</h2>
+  <p>For four things and nothing else, every one of them because you asked for it:</p>
+  <ul>
+    <li><strong>The speech model download.</strong> The first time you use Slate it fetches the speech model, about 600&nbsp;MB, from the model host. This happens once. Switching to the multilingual model fetches that one as well.</li>
+    <li><strong>Activating a license key.</strong> If you buy Slate, activating your key makes one request to the store to check it.</li>
+    <li><strong>Looking for a new version.</strong> Only if you switch it on. Slate asks slatedictation.com for one small file that lists the newest version. Nothing about you, your Mac, or anything you dictated is sent with it. Slate asks you once whether to do this at all, and you can change the answer any time in Settings &rsaquo; About.</li>
+    <li><strong>Downloading a new version.</strong> Only if you choose to install one. Slate fetches the new build from this site and installs it only if it is signed with Slate's key, so a tampered file cannot get in.</li>
+  </ul>
+  <p>None of the four happen while you are dictating. Slate holds its own update
+  check back while the microphone is open, so a check can never land in the
+  middle of a sentence.</p>
+  <p>Dictation itself makes none. No telemetry, no crash reporting, no analytics,
+  and nothing that runs in the background without you choosing it. You can confirm
+  this yourself: turn off Wi-Fi after the model has downloaded and keep dictating,
+  or watch with Little Snitch, LuLu, or Wireshark while you talk.</p>
+
+  <h2>Permissions, and what they are for</h2>
+  <ul>
+    <li><strong>Microphone.</strong> Used while you hold the talk key, and at no other time.</li>
+    <li><strong>Accessibility.</strong> Used for two things: noticing the talk key so dictation works in any app, and putting the text where your cursor is. macOS puts both behind this one permission. Slate does not read, store, or send what you type. Every keystroke that is not the talk key passes straight through.</li>
+  </ul>
+
+  <h2>Payments</h2>
+  <p>Slate is free during early access, so there is nothing to pay and nothing to
+  collect. When purchasing opens, the checkout is handled by the store, which is
+  Lemon Squeezy. Your card details go to them, not to us, and their privacy
+  policy covers that transaction. Slate itself only ever sends a license key to be
+  checked.</p>
+
+  <h2>This website</h2>
+  <p>This site sets no cookies, runs no analytics, and loads nothing from another
+  company's servers. The one font file and every image are served from this site.
+  There are no trackers and no embedded scripts from anywhere else.</p>
+  <p>The site is hosted on GitHub Pages. Like any web server, it records requests
+  for pages and files, which includes your IP address and browser. That log
+  belongs to GitHub and is covered by their privacy policy. We do not read it and
+  cannot connect it to a person.</p>
+
+  <h2>Children</h2>
+  <p>Slate is not aimed at children, and it collects nothing from anyone of any
+  age.</p>
+
+  <h2>Your rights</h2>
+  <p>There is no personal data of yours to request, correct, or delete, because
+  none of it reaches us. Everything Slate keeps is in a folder on your Mac that
+  you can open, read, and delete yourself.</p>
+
+  <h2>Changes</h2>
+  <p>If this policy ever changes, the date at the top of this page changes with
+  it. The promise that your voice stays on your Mac is not going to change.</p>
+
+  <h2>Contact</h2>
+  <p>Questions about any of this go to
+  <a href="mailto:contact@farhanhossain.com">contact@farhanhossain.com</a>.</p>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap foot-grid">
+    <div class="foot-col">
+      <a class="wordmark" href="/"><svg class="mark" viewBox="0 0 28 24" aria-hidden="true"><g fill="currentColor"><rect x="0" y="8.5" width="2.6" height="7" rx="1.3"/><rect x="4.2" y="6.5" width="2.6" height="11" rx="1.3"/><rect x="8.4" y="4" width="2.6" height="16" rx="1.3"/><rect x="12.6" y="1" width="2.6" height="22" rx="1.3"/><rect x="16.8" y="4.5" width="2.6" height="15" rx="1.3"/><rect x="21" y="6.5" width="2.6" height="11" rx="1.3"/><rect x="25.2" y="8.5" width="2.6" height="7" rx="1.3"/></g></svg> Slate</a>
+      <p class="foot-tag">Smart dictation that never leaves your Mac.</p>
+      <p class="foot-meta">&copy; 2026 Slate. Made by Farhan Hossain.<br>
+        <a href="mailto:contact@farhanhossain.com">contact@farhanhossain.com</a></p>
+    </div>
+    <div class="foot-col">
+      <nav class="foot-links" aria-label="Footer">
+        <a href="/#download">Download</a>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </nav>
+      <p class="foot-meta">Speech by the Parakeet model, through
+        <a href="https://github.com/FluidInference/FluidAudio">FluidAudio</a>.<br>
+        This site sets no cookies and runs no analytics.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

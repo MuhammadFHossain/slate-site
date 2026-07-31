@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support &middot; Slate</title>
+<link rel="canonical" href="https://slatedictation.com/support.html">
+<meta name="description" content="Help with Slate: first launch, the talk key, permissions, the dictionary, what is stored on your Mac, and how to uninstall.">
+<link rel="icon" type="image/png" href="assets/img/favicon-64.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<meta name="theme-color" content="#FAFDF5">
+<link rel="stylesheet" href="assets/styles.css?v=20260730f">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="wordmark" href="/">
+      <svg class="mark" viewBox="0 0 28 24" aria-hidden="true"><g fill="currentColor">
+        <rect x="0" y="8.5" width="2.6" height="7" rx="1.3"/><rect x="4.2" y="6.5" width="2.6" height="11" rx="1.3"/>
+        <rect x="8.4" y="4" width="2.6" height="16" rx="1.3"/><rect x="12.6" y="1" width="2.6" height="22" rx="1.3"/>
+        <rect x="16.8" y="4.5" width="2.6" height="15" rx="1.3"/><rect x="21" y="6.5" width="2.6" height="11" rx="1.3"/>
+        <rect x="25.2" y="8.5" width="2.6" height="7" rx="1.3"/>
+      </g></svg>
+      Slate
+    </a>
+    <nav class="nav">
+      <a href="privacy.html" class="hide-sm">Privacy</a>
+      <a class="btn btn-ink btn-sm" href="/#download">Download</a>
+    </nav>
+  </div>
+</header>
+
+<main class="doc-page">
+  <a class="back" href="/">
+    <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="M11 6l-6 6 6 6"/></svg>
+    Back to Slate
+  </a>
+
+  <h1>Support</h1>
+  <p class="updated">Last updated 30 July 2026</p>
+
+  <div class="callout">
+    <p><strong>Email <a href="mailto:contact@farhanhossain.com">contact@farhanhossain.com</a>.</strong>
+    Say what happened, which Mac you are on, and which version of Slate is in
+    Settings &rsaquo; About. A real person reads it.</p>
+  </div>
+
+  <h2>Setting Slate up</h2>
+  <ul>
+    <li>Open the downloaded file and drag <strong>Slate</strong> into your Applications folder.</li>
+    <li>Open Slate from Applications. It has no window. Look for the waveform in the menu bar at the top of the screen.</li>
+    <li>Slate asks for the <strong>microphone</strong>, then for <strong>accessibility</strong>. It needs both. There is a short setup guide on the first run that walks you through them.</li>
+    <li>The speech model downloads once, about 600&nbsp;MB. Settings &rsaquo; General shows the progress.</li>
+    <li>Click into any text box, hold <strong>Right Option</strong>, and talk. Let go when you are done.</li>
+  </ul>
+  <p>You can bring the setup guide back at any time from the menu bar: <strong>Show setup guide</strong>.</p>
+
+  <h2>The talk key does nothing</h2>
+  <ul>
+    <li>Open <strong>System Settings &rsaquo; Privacy &amp; Security &rsaquo; Accessibility</strong> and check that Slate is switched on. If it already was, switch it off and back on. macOS sometimes holds on to a stale entry after an app has been replaced.</li>
+    <li>Check the menu bar. If the waveform is not there, Slate is not running.</li>
+    <li>Try a different key in <strong>Settings &rsaquo; General &rsaquo; Talk key</strong>. Some keyboard tools take Right Option for themselves.</li>
+    <li>If you prefer not to hold anything, set <strong>When pressed</strong> to tap once to start and tap again to stop.</li>
+  </ul>
+
+  <h2>The menu bar icon is missing</h2>
+  <p>On a MacBook with a notch, a crowded menu bar can push the icon under the
+  cutout, where you cannot see or click it. Quit Slate, run this in Terminal,
+  then open Slate again:</p>
+  <p><code>defaults write com.slate.dictation "NSStatusItem Preferred Position Item-0" -float 250</code></p>
+  <p>That pins the icon to the right of the notch. Hiding a few other menu bar
+  items helps too.</p>
+
+  <h2>The text goes to the wrong place</h2>
+  <p>Slate puts the text into the app you were in when you started talking, so
+  switching apps mid-sentence does not send your words somewhere unexpected.</p>
+  <p>Some apps do not tell macOS where the cursor is. In those, Slate uses the
+  gap since you last spoke to decide whether to carry on the sentence or start a
+  new one. A short gap continues, a long gap starts fresh, and a very long gap
+  starts a new paragraph. Click where you want the words before you talk and it
+  is right every time.</p>
+
+  <h2>A word keeps coming out wrong</h2>
+  <p>Open <strong>Settings &rsaquo; Dictionary</strong> and add it: what you say on
+  one side, what should be written on the other. Names, jargon, and shorthand all
+  work. Your entries win over everything else, including the built-in spellings.</p>
+
+  <h2>Turning the cleanup off</h2>
+  <p><strong>Settings &rsaquo; General &rsaquo; Cleanup before inserting.</strong>
+  Each rule has its own switch: filler sounds, stutters, and spoken commands.
+  Every rule is a fixed text edit that runs on this Mac. Nothing is sent to an
+  AI and no other words are changed.</p>
+
+  <h2>Speaking another language</h2>
+  <p><strong>Settings &rsaquo; General &rsaquo; Speech model.</strong> English is the
+  fastest and the most accurate. The multilingual model covers 25 European
+  languages and works out which one you are speaking, or you can pin it to one.
+  Switching to it downloads that model once, about 460&nbsp;MB. The cleanup rules
+  are written for English, so most of them stand down in multilingual mode.</p>
+
+  <h2>What is kept, and where</h2>
+  <p>Everything Slate keeps is on your Mac:</p>
+  <ul>
+    <li><code>~/Library/Application&nbsp;Support/Slate/</code> holds your history (text only), your dictionary, your license record, and a plain text log for support.</li>
+    <li><code>~/Library/Application&nbsp;Support/FluidAudio/Models/</code> holds the speech models.</li>
+  </ul>
+  <p><strong>Settings &rsaquo; History</strong> lets you keep the history, keep it for
+  a day, or keep nothing at all, and there is a button to clear it now. Audio is
+  never written to disk. More detail is on the <a href="privacy.html">privacy page</a>.</p>
+
+  <h2>Uninstalling</h2>
+  <ul>
+    <li>Quit Slate from the menu bar.</li>
+    <li>Drag Slate from Applications to the Trash.</li>
+    <li>Delete <code>~/Library/Application&nbsp;Support/Slate</code>.</li>
+    <li>Delete <code>~/Library/Application&nbsp;Support/FluidAudio</code> to get the speech models back. That is about 1&nbsp;GB if you used both.</li>
+    <li>Remove Slate from <strong>System Settings &rsaquo; Privacy &amp; Security</strong>, under both Accessibility and Microphone.</li>
+  </ul>
+
+  <h2>What you need</h2>
+  <p>An Apple silicon Mac, which means M1 or later, and macOS 14.4 or later.
+  Speech runs on the Neural Engine, which Intel Macs do not have. Slate is a Mac
+  app. There is no Windows, iPhone, or web version.</p>
+
+  <h2>Updates</h2>
+  <p>Slate can update itself. <strong>Settings &rsaquo; About</strong> holds the
+  switch and a <strong>Check now</strong> button, and the menu bar has
+  <strong>Check for updates</strong> as well.</p>
+  <p>It is off until you say yes. Slate asks once, in its own dialog, and keeps
+  whatever you answer. A check asks this site for one small file listing the
+  newest version. Nothing about you or your Mac goes with it.</p>
+  <p>Slate installs a new version only if it is signed with Slate's key, so a
+  tampered file cannot get in. It also holds the check back while you are
+  dictating, so nothing reaches the network mid-sentence.</p>
+  <p>You can also just download the new version from this site and drop it into
+  Applications yourself. Either way your settings, dictionary, and history stay
+  where they are.</p>
+
+  <h2>What it costs</h2>
+  <p>Nothing. Slate is free to use, with no subscription and no account to make.
+  Nothing in the app is held back. If it saves you time and you want to say
+  thanks, a tip jar is on the way.</p>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap foot-grid">
+    <div class="foot-col">
+      <a class="wordmark" href="/"><svg class="mark" viewBox="0 0 28 24" aria-hidden="true"><g fill="currentColor"><rect x="0" y="8.5" width="2.6" height="7" rx="1.3"/><rect x="4.2" y="6.5" width="2.6" height="11" rx="1.3"/><rect x="8.4" y="4" width="2.6" height="16" rx="1.3"/><rect x="12.6" y="1" width="2.6" height="22" rx="1.3"/><rect x="16.8" y="4.5" width="2.6" height="15" rx="1.3"/><rect x="21" y="6.5" width="2.6" height="11" rx="1.3"/><rect x="25.2" y="8.5" width="2.6" height="7" rx="1.3"/></g></svg> Slate</a>
+      <p class="foot-tag">Smart dictation that never leaves your Mac.</p>
+      <p class="foot-meta">&copy; 2026 Slate. Made by Farhan Hossain.<br>
+        <a href="mailto:contact@farhanhossain.com">contact@farhanhossain.com</a></p>
+    </div>
+    <div class="foot-col">
+      <nav class="foot-links" aria-label="Footer">
+        <a href="/#download">Download</a>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </nav>
+      <p class="foot-meta">Speech by the Parakeet model, through
+        <a href="https://github.com/FluidInference/FluidAudio">FluidAudio</a>.<br>
+        This site sets no cookies and runs no analytics.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

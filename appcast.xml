@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  The update feed Slate reads.
+
+  The app asks for this one file and nothing else. Nothing about the person or
+  their Mac is sent with the request. A build is only installed if the
+  sparkle:edSignature below was made with the private key that matches
+  SUPublicEDKey in Slate's Info.plist, so a swapped file cannot get in.
+
+  To publish a release, see README.md, "Shipping a new version of the app".
+  The signature comes from:
+
+    "$SPARKLE_BIN/sign_update" dist/Slate-<version>.dmg
+-->
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle">
+  <channel>
+    <title>Slate</title>
+    <link>https://slatedictation.com/appcast.xml</link>
+    <description>New versions of Slate.</description>
+    <language>en</language>
+
+    <item>
+      <title>Version 1.1.0</title>
+      <pubDate>Thu, 30 Jul 2026 12:00:00 +0000</pubDate>
+      <sparkle:version>3</sparkle:version>
+      <sparkle:shortVersionString>1.1.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.4</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+        <ul>
+          <li>Slate can now update itself. The switch is in Settings &rsaquo; About, and it stays off until you turn it on.</li>
+          <li>A tip jar in Settings &rsaquo; About. Slate is free and stays free.</li>
+        </ul>
+      ]]></description>
+      <enclosure url="https://slatedictation.com/Slate-1.1.0.dmg"
+                 length="7879440"
+                 type="application/octet-stream"
+                 sparkle:edSignature="PASTE_SIGNATURE_HERE" />
+      <!-- NOT SIGNED YET. Until the line above holds a real signature, Sparkle
+           will refuse this update. Run the sign_update command in README.md,
+           step 2 of "Shipping a new version of the app", and paste the
+           sparkle:edSignature value it prints. -->
+    </item>
+
+  </channel>
+</rss>
