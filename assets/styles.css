@@ -367,8 +367,6 @@ section { padding: 86px 0; }
   background: var(--lime); color: var(--ink);
   border-radius: 3px; padding: 0 3px; margin: 0 -1px;
 }
-.legend { margin-top: 14px; }
-.legend s { color: var(--muted); text-decoration-color: var(--muted); }
 .receipt .to {
   padding: 0; display: flex; align-items: center; justify-content: center;
   color: var(--emerald); font-size: 18px;

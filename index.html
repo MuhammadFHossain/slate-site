@@ -20,7 +20,7 @@
 <meta name="twitter:title" content="Slate: Smart dictation that never leaves your Mac">
 <meta name="twitter:description" content="Hold a key, speak, and watch your words appear in any app. The ums and false starts get cleaned up on the way. No internet needed.">
 <meta name="twitter:image" content="https://slatedictation.com/assets/img/og.png">
-<link rel="stylesheet" href="assets/styles.css?v=20260730i">
+<link rel="stylesheet" href="assets/styles.css?v=20260730j">
 </head>
 <body>
 
@@ -147,7 +147,6 @@
         <p class="eyebrow">The cleanup</p>
         <h2>What Slate fixes before it types.</h2>
         <p>Each one is a fixed rule. Your wording is never rewritten by an AI.</p>
-        <p class="fine legend"><s>Struck through</s> is what Slate drops. <mark class="fix">Lime</mark> is the wording that ends up in its place, the same mark the island uses when a word changes while you talk.</p>
       </div>
 
       <div class="receipts">
@@ -208,7 +207,7 @@
         </div>
       </div>
 
-      <p class="fine rules-note">Settings has a switch for the filler sounds, one for the stutters, and one for the spoken commands. All of it can be turned off.</p>
+      <p class="fine rules-note">All of it can be switched off in Settings.</p>
     </div>
   </section>
 
@@ -272,9 +271,9 @@
         <ul class="facts">
           <li><b>Speech becomes text on this Mac</b>, on the Neural Engine, using the Parakeet model. There is no server to send it to.</li>
           <li><b>No account, no sign-in, no tracking.</b> Slate does not collect anything.</li>
-          <li><b>Zero network connections while dictating.</b> Measured with lsof during a live transcription: none. Slate holds back its own update check while the mic is open, so this stays true.</li>
+          <li><b>Zero network connections while dictating.</b> Measured with lsof during a live transcription: none.</li>
           <li><b>Works with no internet</b> after the speech model downloads, about 600&nbsp;MB. Switching to the multilingual model fetches that one too.</li>
-          <li class="one"><b>The rest of the list, in full.</b> Activating a license key makes one request to the store. And if you switch update checks on, Slate asks this site for one small file, then downloads the new version itself if you choose to install it. Nothing about you goes with any of it.</li>
+          <li class="one"><b>The rest of the list, in full.</b> A license key is checked with the store once. Update checks, if you switch them on, ask this site for one small file and download the new version if you install it. Nothing about you goes with any of it.</li>
         </ul>
 
         <div class="proof">
@@ -369,8 +368,8 @@
         <details>
           <summary>Why does Slate need Accessibility access?</summary>
           <div class="body"><div class="bodyin">
-            <p>Two jobs. One is noticing the talk key, so you can start dictating in any app. The other is putting the text where your cursor is.</p>
-            <p>macOS puts both behind the same permission. Every other keystroke passes through untouched, and nothing about what you type is read, stored, or sent.</p>
+            <p>Two jobs: noticing the talk key, and putting the text where your cursor is. macOS puts both behind the same permission.</p>
+            <p>Every other keystroke passes through untouched. Nothing about what you type is read, stored, or sent.</p>
           </div></div>
         </details>
 
@@ -394,7 +393,7 @@
           <summary>How can I check the privacy claims myself?</summary>
           <div class="body"><div class="bodyin">
             <p>Three ways. Turn off Wi-Fi after the model has downloaded, and keep dictating. Run Little Snitch, LuLu, or Wireshark and watch while you talk. Or open Terminal and run <code>lsof -i -a -p $(pgrep -x Slate)</code> mid-sentence.</p>
-            <p>Slate reaches the network for four things and nothing else: downloading a speech model, checking a license key if you activate one, asking this site whether there is a new version if you switch that on, and downloading that version if you choose to install it. None of it happens while you dictate.</p>
+            <p>Four things, and never while you dictate: the speech model download, a license check if you activate a key, and update checks and downloads if you switch them on.</p>
           </div></div>
         </details>
 
@@ -402,8 +401,8 @@
         <details>
           <summary>How do updates work?</summary>
           <div class="body"><div class="bodyin">
-            <p>Slate can update itself in place. A check asks this site for one small file, and nothing about you goes with it. A new version is only installed if it is signed with Slate's key, so a tampered file cannot get in.</p>
-            <p>It is off until you say yes. Slate asks once, and you can change the answer any time in Settings &rsaquo; About, where there is also a Check now button.</p>
+            <p>Slate can update itself in place, but only once you say yes. A check asks this site for one small file, and nothing about you goes with it. A new version is installed only if it is signed with Slate's key.</p>
+            <p>The switch and a Check now button are in Settings &rsaquo; About.</p>
           </div></div>
         </details>
 
