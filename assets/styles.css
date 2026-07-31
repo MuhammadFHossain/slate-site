@@ -360,6 +360,15 @@ section { padding: 86px 0; }
 .receipt .said s { color: var(--muted); text-decoration-color: var(--muted); }
 .receipt .got { background: var(--surface); }
 .receipt .got p { color: var(--ink); }
+/* The same lime the island uses on a word it has just corrected, so the mark
+   means one thing whether you are reading the page or using the app. Static
+   here: four cards flashing at once would be noise. */
+.fix {
+  background: var(--lime); color: var(--ink);
+  border-radius: 3px; padding: 0 3px; margin: 0 -1px;
+}
+.legend { margin-top: 14px; }
+.legend s { color: var(--muted); text-decoration-color: var(--muted); }
 .receipt .to {
   padding: 0; display: flex; align-items: center; justify-content: center;
   color: var(--emerald); font-size: 18px;
