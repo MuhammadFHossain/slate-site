@@ -34,11 +34,12 @@
       <enclosure url="https://slatedictation.com/Slate-1.1.0.dmg"
                  length="7879440"
                  type="application/octet-stream"
-                 sparkle:edSignature="PASTE_SIGNATURE_HERE" />
-      <!-- NOT SIGNED YET. Until the line above holds a real signature, Sparkle
-           will refuse this update. Run the sign_update command in README.md,
-           step 2 of "Shipping a new version of the app", and paste the
-           sparkle:edSignature value it prints. -->
+                 sparkle:edSignature="kz+5sq9A+P7Xej6OIQkS9ukU10LHfOgmA3USQWxUwNyLUw4sUa0RercWKRY/auVj0DjJ1asdmDzJjZtsYbIGCw==" />
+      <!-- This signature is of the DMG as it stands right now. Notarizing
+           rewrites the file, so the moment scripts/notarize.sh produces the
+           stapled build, this signature stops matching. Run sign_update again
+           on the notarized DMG and paste the new value here, or Sparkle will
+           refuse the update. -->
     </item>
 
   </channel>
