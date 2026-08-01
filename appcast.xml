@@ -20,6 +20,31 @@
     <language>en</language>
 
     <item>
+      <title>Version 1.1.1</title>
+      <pubDate>Sat, 01 Aug 2026 15:30:00 +0000</pubDate>
+      <sparkle:version>4</sparkle:version>
+      <sparkle:shortVersionString>1.1.1</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.4</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+        <ul>
+          <li>New spoken commands: full stop, semicolon, next paragraph, closed brackets, and curly braces.</li>
+          <li>Adding words to the dictionary is simpler: say it on the left, get it on the right, press Return.</li>
+          <li>The setup card stays clear of the camera cutout, can be closed, and opens System Settings only once.</li>
+          <li>Anything dictated into a password field stays out of history.</li>
+          <li>Steadier long dictations, quicker auto-stop, and dozens of small fixes.</li>
+        </ul>
+      ]]></description>
+      <enclosure url="https://slatedictation.com/Slate-1.1.1.dmg"
+                 length="7862061"
+                 type="application/octet-stream"
+                 sparkle:edSignature="acykc/R2z/cASeUhO0TrzkKgIjtr5fznI5G2QRl110Gw3FqAZZNtRCYejrklNnwBBjpORxysqslCiJWxNFfZDw==" />
+      <!-- Signed against the notarized, stapled DMG (1 Aug 2026), which is
+           the file committed beside this one. Both the signature and the byte
+           length change every time the DMG is rebuilt, so re-run sign_update
+           and update both fields together on every release. -->
+    </item>
+
+    <item>
       <title>Version 1.1.0</title>
       <pubDate>Thu, 30 Jul 2026 12:00:00 +0000</pubDate>
       <sparkle:version>3</sparkle:version>

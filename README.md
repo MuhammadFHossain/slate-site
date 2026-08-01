@@ -12,7 +12,7 @@ privacy.html        privacy policy for the app and this site
 terms.html          terms of use
 404.html            what GitHub Pages serves for a bad address; its links are
                     root-absolute, since it is served from any depth
-Slate-1.1.0.dmg     the app itself, what the download button points at.
+Slate-1.1.1.dmg     the app itself, what the download button points at.
                     Held back by .gitignore until it is notarized, see below
 appcast.xml         the update feed Sparkle in the app reads
 CNAME               slatedictation.com, used by GitHub Pages
@@ -30,15 +30,15 @@ assets/
 
 ## The DMG here is notarized — keep it that way
 
-The `Slate-1.1.0.dmg` in this folder came out of
+The `Slate-1.1.1.dmg` in this folder came out of
 `~/Desktop/Blue/Slate/scripts/notarize.sh` on 31 July 2026: Developer ID
 signed, notarized by Apple, ticket stapled. It is committed on purpose —
 GitHub Pages serves whatever is in the repo, so the download button needs the
 file here. Only ever replace it with a build that passes both checks:
 
 ```bash
-xcrun stapler validate Slate-1.1.0.dmg
-spctl -a -t open --context context:primary-signature -vv Slate-1.1.0.dmg
+xcrun stapler validate Slate-1.1.1.dmg
+spctl -a -t open --context context:primary-signature -vv Slate-1.1.1.dmg
 ```
 
 A development-signed build would be refused by Gatekeeper on every Mac but
@@ -138,10 +138,10 @@ git add -A && git commit -m "Slate <version>" && git push
 ```
 
 **7. Check the signature before you push.** The in-app test only works from
-one Sparkle release to the next, so for 1.1.0 check it directly:
+one Sparkle release to the next, so for 1.1.1 check it directly:
 
 ```bash
-"$SPARKLE_BIN/sign_update" --verify Slate-1.1.0.dmg "<the edSignature in appcast.xml>"
+"$SPARKLE_BIN/sign_update" --verify Slate-1.1.1.dmg "<the edSignature in appcast.xml>"
 ```
 
 From the next release on, the real test is a Mac running the previous version:
