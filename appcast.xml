@@ -20,6 +20,29 @@
     <language>en</language>
 
     <item>
+      <title>Version 1.1.2</title>
+      <pubDate>Sun, 02 Aug 2026 03:20:00 +0000</pubDate>
+      <sparkle:version>5</sparkle:version>
+      <sparkle:shortVersionString>1.1.2</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.4</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+        <ul>
+          <li>Changing headphones mid sentence no longer cuts your words short. Slate waits for the new microphone and keeps going.</li>
+          <li>If the microphone does go away for good, Slate types what it heard instead of leaving the pill on screen.</li>
+          <li>Quitting Slate while your music is paused now starts the music again.</li>
+        </ul>
+      ]]></description>
+      <enclosure url="https://slatedictation.com/Slate-1.1.2.dmg"
+                 length="7867862"
+                 type="application/octet-stream"
+                 sparkle:edSignature="A75YvgyqMznG2QsrNlMTYfD9mWiQgdI2GsZ8hGQ1KWKSkmy3BKMwEyqKiSuNPXbUK/MK3+4vrql7PV0W+AgXBw==" />
+      <!-- Signed against the notarized, stapled DMG (2 Aug 2026), which is
+           the file committed beside this one. Both the signature and the byte
+           length change every time the DMG is rebuilt, so re-run sign_update
+           and update both fields together on every release. -->
+    </item>
+
+    <item>
       <title>Version 1.1.1</title>
       <pubDate>Sat, 01 Aug 2026 15:30:00 +0000</pubDate>
       <sparkle:version>4</sparkle:version>
