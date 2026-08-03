@@ -20,6 +20,25 @@
     <language>en</language>
 
     <item>
+      <title>Version 1.1.4</title>
+      <pubDate>Mon, 03 Aug 2026 18:20:00 +0000</pubDate>
+      <sparkle:version>7</sparkle:version>
+      <sparkle:shortVersionString>1.1.4</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.4</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+        <ul>
+          <li>The talk key starts at once. Slate keeps the microphone ready for a minute after you speak, so talking again does not wait for it to warm up. There is a switch for this in Settings under Speed.</li>
+          <li>The green marks in the live text now only appear on a word Slate went back and changed its mind about. They used to appear on words that had simply moved along the line.</li>
+          <li>Time saved counts the time you actually spent speaking, measured, instead of assuming everyone speaks at the same pace.</li>
+        </ul>
+      ]]></description>
+      <enclosure url="https://slatedictation.com/Slate-1.1.4.dmg"
+                 length="7916569"
+                 type="application/octet-stream"
+                 sparkle:edSignature="mjWFwkqMInvia8fK8omJhgrmCo6mpFM8ba9wqtY1Gzn4GXldur0vkwl+0PeH5eaRxzZOb+jX2+Lk6+QZF5N/AQ==" />
+    </item>
+
+    <item>
       <title>Version 1.1.3</title>
       <pubDate>Mon, 03 Aug 2026 08:00:00 +0000</pubDate>
       <sparkle:version>6</sparkle:version>
