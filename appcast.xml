@@ -20,6 +20,31 @@
     <language>en</language>
 
     <item>
+      <title>Version 1.1.3</title>
+      <pubDate>Mon, 03 Aug 2026 08:00:00 +0000</pubDate>
+      <sparkle:version>6</sparkle:version>
+      <sparkle:shortVersionString>1.1.3</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.4</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+        <ul>
+          <li>When the talk key stops working, Slate now says so. The menu bar icon changes, and the menu tells you how to put it back.</li>
+          <li>Putting it back has a step that is easy to miss, so Slate spells it out: if Slate is already in the Accessibility list, take it out and add it again.</li>
+          <li>The welcome card no longer sits against the camera notch.</li>
+        </ul>
+      ]]></description>
+      <enclosure url="https://slatedictation.com/Slate-1.1.3.dmg"
+                 length="7880328"
+                 type="application/octet-stream"
+                 sparkle:edSignature="h75R+J/fXl4IgJkJGOPHldaKxj9c+6tVdpq2jdSWcvotYP/vrfj6UbpuG97696Kz0DA7vHi5nTu/Pl5rnaG0DQ==" />
+      <!-- Signed against the notarized, stapled DMG (3 Aug 2026), and checked
+           with sign_update in verify mode against this exact file before
+           pushing. Both the signature and the byte length change every time
+           the DMG is rebuilt, so re-run sign_update and update both together.
+           For whoever edits this next: an XML comment may not contain a
+           double hyphen, so spell command flags out as words in here. -->
+    </item>
+
+    <item>
       <title>Version 1.1.2</title>
       <pubDate>Sun, 02 Aug 2026 03:20:00 +0000</pubDate>
       <sparkle:version>5</sparkle:version>
