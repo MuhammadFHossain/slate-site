@@ -202,7 +202,9 @@ section { padding: 86px 0; }
 .hero .req { margin-top: 12px; }
 
 /* ---- the Mac screen, the island, and the document ---- */
-.stage { padding: clamp(14px, 2.6vh, 36px) 0 4px; }
+/* the side value has to be the gutter, not 0: this rule comes after .wrap and
+   would otherwise wipe its padding, which put the screen edge to edge on a phone */
+.stage { padding: clamp(14px, 2.6vh, 36px) var(--gutter) 4px; }
 .screen {
   position: relative;
   max-width: 820px; margin: 0 auto;
