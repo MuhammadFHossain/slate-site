@@ -10,8 +10,12 @@
 
     "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
       --headless --disable-gpu --hide-scrollbars --window-size=1200,630 \
-      --screenshot=assets/img/og.png --default-background-color=0 \
+      --screenshot=assets/img/og.png --virtual-time-budget=2000 \
       file://$PWD/og-render.html
+
+  Current Chrome rejects the old --default-background-color=0 and writes no
+  file at all, printing only "Expected a hex RGB or RGBA value" on stderr.
+  The flag was never needed: the body here is opaque.
 -->
 <style>
   @font-face {

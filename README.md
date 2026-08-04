@@ -81,6 +81,25 @@ host.
 
 ---
 
+## Store images (Lemon Squeezy)
+
+`store-render.html` is the source for the product images on the checkout, the
+same pattern as `og-render.html`. One template, two variants:
+
+```bash
+CHROME="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+for n in 1 3; do
+  "$CHROME" --headless --disable-gpu --hide-scrollbars \
+    --window-size=1024,1024 --virtual-time-budget=2000 \
+    --screenshot="assets/img/store-${n}mac.png" \
+    "file://$PWD/store-render.html?seats=$n"
+done
+```
+
+Upload the PNG to the matching product in Lemon Squeezy. Nothing on the site
+links to these; they live here so they can be re-rendered when the wording or
+the price tiers change.
+
 ## Shipping a new version of the app
 
 This is the whole release, start to finish.
