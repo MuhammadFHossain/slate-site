@@ -20,6 +20,27 @@
     <language>en</language>
 
     <item>
+      <title>Version 1.1.6</title>
+      <pubDate>Mon, 03 Aug 2026 23:15:00 +0000</pubDate>
+      <sparkle:version>9</sparkle:version>
+      <sparkle:shortVersionString>1.1.6</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.4</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+        <ul>
+          <li>Saying &ldquo;new paragraph&rdquo; or &ldquo;new line&rdquo; works again after an ordinary phrase. In 1.1.5 a sentence like &ldquo;Thanks for the update new paragraph&hellip;&rdquo; typed the words out instead of making the break.</li>
+          <li>Saying &ldquo;scratch that&rdquo; in the middle of a sentence works again, and spoken email addresses join again.</li>
+          <li>A hands-free session ends on silence again instead of staying open.</li>
+          <li>If the speech model fails to load, pressing the talk key now retries properly instead of showing the same message every time.</li>
+          <li>Dictating twice in a row no longer repeats the last few words of the first take.</li>
+        </ul>
+      ]]></description>
+      <enclosure url="https://slatedictation.com/Slate-1.1.6.dmg"
+                 length="7974961"
+                 type="application/octet-stream"
+                 sparkle:edSignature="UR9PgaF6D/aLxULHxg/Q8AjkznME1RGixpBNprVD0zxeJ+rXGvI66BE5ty3ZJ2lyAir4ZuBLjffK/ud/YDJXAQ==" />
+    </item>
+
+    <item>
       <title>Version 1.1.5</title>
       <pubDate>Mon, 03 Aug 2026 21:30:00 +0000</pubDate>
       <sparkle:version>8</sparkle:version>
@@ -141,7 +162,6 @@
       <description><![CDATA[
         <ul>
           <li>Slate can now update itself. The switch is in Settings &rsaquo; About, and it stays off until you turn it on.</li>
-          <li>A tip jar in Settings &rsaquo; About. Slate is free and stays free.</li>
         </ul>
       ]]></description>
       <enclosure url="https://slatedictation.com/Slate-1.1.0.dmg"
