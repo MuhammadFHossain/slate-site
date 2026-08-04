@@ -20,6 +20,27 @@
     <language>en</language>
 
     <item>
+      <title>Version 1.1.5</title>
+      <pubDate>Mon, 03 Aug 2026 21:30:00 +0000</pubDate>
+      <sparkle:version>8</sparkle:version>
+      <sparkle:shortVersionString>1.1.5</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.4</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+        <ul>
+          <li>Typing a character that needs the Right Option key, like the @ sign on a Spanish or German keyboard, no longer starts a recording. It also no longer throws away the sentence you had just finished.</li>
+          <li>Clipboard history apps like Maccy, Paste, and Alfred no longer keep a copy of everything you dictate. Slate now marks the text so those apps skip it.</li>
+          <li>Several cleanup rules were taking out words they should have left alone. "A brand new line of products" and "the very next line" stay as words. "Bora Bora" and "Duran Duran" keep both halves. Saying "scratch that" after a spoken paragraph break no longer reaches back too far.</li>
+          <li>Quiet speech is no longer cut off part way through a long sentence.</li>
+          <li>Cleanup runs faster, so your words land sooner after you let go of the key.</li>
+        </ul>
+      ]]></description>
+      <enclosure url="https://slatedictation.com/Slate-1.1.5.dmg"
+                 length="7967859"
+                 type="application/octet-stream"
+                 sparkle:edSignature="y1qUyOYBh8Cxnt2GRxXqAoPzxeOL085eBYBE7gGUTn4Y1mns5LhV07uxVoChC48MaHt9sZtznib394qjhkiMAQ==" />
+    </item>
+
+    <item>
       <title>Version 1.1.4</title>
       <pubDate>Mon, 03 Aug 2026 18:20:00 +0000</pubDate>
       <sparkle:version>7</sparkle:version>
