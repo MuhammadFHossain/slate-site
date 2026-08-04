@@ -20,6 +20,26 @@
     <language>en</language>
 
     <item>
+      <title>Version 1.1.7</title>
+      <pubDate>Tue, 04 Aug 2026 23:40:00 +0000</pubDate>
+      <sparkle:version>10</sparkle:version>
+      <sparkle:shortVersionString>1.1.7</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.4</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+        <ul>
+          <li>Setup is five short steps, and it waits for the microphone and Accessibility instead of letting you past them. Skipping those was how Slate ended up installed and silent, with the talk key doing nothing and no explanation on screen.</li>
+          <li>Setup also shows you the dictionary and the history, which people were only finding by accident.</li>
+          <li>Spoken single quotes. Say &ldquo;apostrophe&rdquo; and &ldquo;close apostrophe&rdquo; around something and you get the marks, and &ldquo;quote &hellip; unquote&rdquo; works too.</li>
+          <li>A new setting keeps the last dictation on the clipboard, so you can paste it again yourself. It is off unless you turn it on.</li>
+          <li>The speech model downloads in the background while you set Slate up, rather than making you wait on a screen of its own.</li>
+        </ul>      ]]></description>
+      <enclosure url="https://slatedictation.com/Slate-1.1.7.dmg"
+                 length="7996190"
+                 type="application/octet-stream"
+                 sparkle:edSignature="CEZ9oEN6eF7TzbRXqJYFkSvMQATmJGuRKL73eCQnV/rQohW+RMjlsrb4tK4vjwmcuzZbOqIq0EZ/ucA/GZGiCg==" />
+    </item>
+
+    <item>
       <title>Version 1.1.6</title>
       <pubDate>Mon, 03 Aug 2026 23:15:00 +0000</pubDate>
       <sparkle:version>9</sparkle:version>
