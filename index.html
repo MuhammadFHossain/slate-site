@@ -25,11 +25,8 @@
 <body>
 
 <!--
-  RELEASE-PIN: the version appears in exactly four places on this page.
-  Search for "RELEASE-PIN" to find all four when you ship a new build.
-  Number 4 is the SHA-256 line; get the value with:
-    shasum -a 256 Slate-<version>.dmg
-  A stale hash is worse than none: anyone who checks would see a mismatch.
+  RELEASE-PIN: the version appears in exactly three places on this page.
+  Search for "RELEASE-PIN" to find all three when you ship a new build.
 -->
 
 <header class="site-header">
@@ -340,11 +337,8 @@
           <span class="say">Download Slate for Mac</span>
         </a>
 
-        <!-- RELEASE-PIN 3 of 4: version and size -->
+        <!-- RELEASE-PIN 3 of 3: version and size -->
         <p class="fine meta">Version 1.2.0 &middot; 8.3&nbsp;MB &middot; Apple silicon Mac (M1 or later) &middot; macOS 14.4 or later</p>
-        <p class="fine meta">Signed and notarized by Apple, under Developer ID Muhammad Hossain (team WX2PT9X785). macOS checks that signature before the app first opens.</p>
-        <!-- RELEASE-PIN 4 of 4: the SHA-256 of the DMG above -->
-        <p class="fine meta sha">SHA&#8209;256: <code>949f22ce3e2990020a491b72ff390114b02ef9da56cfd2df138fc0b46990e813</code><br>To check your download, run <code>shasum -a 256 Slate-1.2.0.dmg</code> in Terminal. The two lines should match.</p>
         <!-- The Mac-only line and the tip line used to sit here. Four stacked
              lines of fine print under one button is three too many, and the FAQ
              answers both. TIP-LINK: when there is a tip page, the FAQ answer

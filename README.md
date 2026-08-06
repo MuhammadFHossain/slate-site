@@ -137,14 +137,12 @@ rm Slate-<old>.dmg
 cp ~/Desktop/Blue/Slate/dist/Slate-<new>.dmg .
 ```
 
-**4. Update four lines in `index.html`.** Search for `RELEASE-PIN`; there are
-exactly four, all commented:
+**4. Update three lines in `index.html`.** Search for `RELEASE-PIN`; there are
+exactly three, all commented:
 
 - the hero download link
 - the download-section link
 - the version and size line
-- the SHA-256 line: `shasum -a 256 Slate-<version>.dmg`. A stale hash is
-  worse than none, so this one is part of every release.
 
 **5. Add an entry at the top of `appcast.xml`.** Copy the existing `<item>` and
 change: `<title>`, `<pubDate>`, `<sparkle:version>` (the build number),
