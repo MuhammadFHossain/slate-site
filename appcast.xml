@@ -20,6 +20,26 @@
     <language>en</language>
 
     <item>
+      <title>Version 1.2.0</title>
+      <pubDate>Wed, 05 Aug 2026 20:15:00 +0000</pubDate>
+      <sparkle:version>21</sparkle:version>
+      <sparkle:shortVersionString>1.2.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.4</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+        <ul>
+          <li>Say a thought without typing it. Hold Shift with the talk key and Slate keeps the words instead of putting them in the app you are in. A separate key opens a short list of your newest notes and your last few dictations, and the one you pick is typed at your cursor. Notes stay on this Mac until you delete them, and Settings has the full list.</li>
+          <li>Dictate a numbered list and get one. Say "one, milk, two, eggs, three, bread" and it comes out as a list. If the pauses are not landing where you want them, say the word "comma" between the parts instead and it works every time.</li>
+          <li>A list only happens when you meant one. Counting, quantities, prices, clock times, decimals and version numbers all stay as ordinary sentences.</li>
+        </ul>
+      ]]></description>
+      <enclosure url="https://slatedictation.com/Slate-1.2.0.dmg"
+                 sparkle:version="21"
+                 sparkle:shortVersionString="1.2.0"
+                 sparkle:edSignature="Hd8XFS8xgrvtOOjknhQb7Iy82OZ589ifQ7WOqC5bhYOsLSk+bimkH+L2V8SMb5pZq9efZlGFHqLLsLlVhOihCA==" length="8267097"
+                 type="application/octet-stream" />
+    </item>
+
+    <item>
       <title>Version 1.1.7</title>
       <pubDate>Tue, 04 Aug 2026 23:40:00 +0000</pubDate>
       <sparkle:version>10</sparkle:version>
