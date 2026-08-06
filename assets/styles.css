@@ -465,6 +465,8 @@ section { padding: 86px 0; }
 }
 .get .price .pip { width: 8px; height: 8px; border-radius: 50%; background: var(--emerald); }
 .get .meta { margin-top: 16px; }
+.get .meta.sha code { word-break: break-all; font-size: 12px; }
+.get .meta + .meta { margin-top: 8px; }
 /* the one line that frames the three cards below it, so it sits with them
    rather than with the version line above */
 .get .firstrun-lead { margin-top: 30px; }
