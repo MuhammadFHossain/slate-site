@@ -20,6 +20,29 @@
     <language>en</language>
 
     <item>
+      <title>Version 1.2.1</title>
+      <pubDate>Tue, 11 Aug 2026 00:45:00 +0000</pubDate>
+      <sparkle:version>22</sparkle:version>
+      <sparkle:shortVersionString>1.2.1</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.4</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+        <ul>
+          <li>A fix for Slate freezing solid. When the Mac's own audio system stops answering &mdash; it can happen after heavy use, a headphone switch, or a long call &mdash; Slate used to freeze with it: the icon stopped responding, and the talk key went dead, sometimes for minutes. Slate now asks for the microphone off to the side and gives the system five seconds. If the answer never comes, that one dictation shows a message and everything else keeps working; the moment the Mac's audio recovers, Slate does too.</li>
+          <li>A dictation that started slowly is never thrown away. A slow microphone start could make a long hold read as an accidental tap, and the words disappeared with nothing said about it. The hold is now measured from your press, and if the microphone truly never opened, Slate tells you nothing was heard instead of staying quiet.</li>
+        </ul>
+      ]]></description>
+      <enclosure url="https://slatedictation.com/Slate-1.2.1.dmg"
+                 sparkle:version="22"
+                 sparkle:shortVersionString="1.2.1"
+                 sparkle:edSignature="qmsO4BhmQa1yn+aqrYcgtY915DRZUP4PbJD8bWNkDv6ml6A9tW5+86t7uqXjdAgpBj9mjQuNQVO/0/fYbl9tCA==" length="8298701"
+                 type="application/octet-stream" />
+      <!-- Signed against the notarized, stapled DMG (11 Aug 2026), and the
+           staple plus Gatekeeper checked on the exact copy committed beside
+           this file. Both the signature and the byte length change every time
+           the DMG is rebuilt, so re-run sign_update and update both together. -->
+    </item>
+
+    <item>
       <title>Version 1.2.0</title>
       <pubDate>Wed, 05 Aug 2026 20:15:00 +0000</pubDate>
       <sparkle:version>21</sparkle:version>
