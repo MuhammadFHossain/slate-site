@@ -20,6 +20,31 @@
     <language>en</language>
 
     <item>
+      <title>Version 1.2.2</title>
+      <pubDate>Thu, 27 Aug 2026 01:35:00 +0000</pubDate>
+      <sparkle:version>23</sparkle:version>
+      <sparkle:shortVersionString>1.2.2</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.4</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+        <ul>
+          <li>The picker opens on the last thing you dictated. Press &#8984; with your talk key and what you just said is the first row, already selected &mdash; so putting it somewhere else is the shortcut and Return, nothing more. Saved notes sit underneath it, and older dictations below those.</li>
+          <li>A one-press fix when the talk key loses its permission. macOS ties Accessibility to how an app is signed, and an update can leave a row that still looks switched on but no longer counts &mdash; the talk key stops with nothing on screen to explain it. Slate now offers <strong>Repair</strong> in the menu, in Settings, on the setup page and on the launch card: it asks first, then removes its own entry and has macOS ask again. No more taking the row out and adding it back by hand.</li>
+          <li>Fewer false alarms about that permission. Just after you log in, macOS can report a perfectly good permission as missing while it is busy answering everyone at once. Slate used to believe that instantly &mdash; a card claiming the talk key was off, and a dictation cancelled mid-sentence if the blip landed while you were speaking. It now waits for the answer to settle before saying or doing anything about it.</li>
+          <li>A dictation can no longer hang on the speech engine. 1.2.1 gave the microphone a deadline; transcription had none, so a system service that stopped answering could leave your words stuck in the island with no way out. It now has thirty seconds, which is dozens of times the longest real transcription. Downloading a speech model is deliberately exempt, so switching language mid-sentence still finishes however long it takes.</li>
+        </ul>
+      ]]></description>
+      <enclosure url="https://slatedictation.com/Slate-1.2.2.dmg"
+                 sparkle:version="23"
+                 sparkle:shortVersionString="1.2.2"
+                 sparkle:edSignature="08DmWkGOYrWGJr+6CQmnrpgdr/inyme53KcK97rFXeoQkNKLawQH1WAEXQYzCbCfQXcT6dCzNMxjkz7EYzx8Dg==" length="8324935"
+                 type="application/octet-stream" />
+      <!-- Signed against the notarized, stapled DMG (27 Aug 2026), and the
+           staple plus Gatekeeper checked on the exact copy committed beside
+           this file. Both the signature and the byte length change every time
+           the DMG is rebuilt, so re-run sign_update and update both together. -->
+    </item>
+
+    <item>
       <title>Version 1.2.1</title>
       <pubDate>Tue, 11 Aug 2026 00:45:00 +0000</pubDate>
       <sparkle:version>22</sparkle:version>
