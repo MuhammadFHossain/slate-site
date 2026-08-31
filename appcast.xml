@@ -20,6 +20,29 @@
     <language>en</language>
 
     <item>
+      <title>Version 1.2.3</title>
+      <pubDate>Mon, 31 Aug 2026 21:35:00 +0000</pubDate>
+      <sparkle:version>24</sparkle:version>
+      <sparkle:shortVersionString>1.2.3</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.4</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+        <ul>
+          <li>The microphone comes back after you change headphones. Unplugging a headset and going back to the Mac's own microphone could leave Slate unable to find any input at all &mdash; not for a moment, but until you quit and reopened it. The talk key looked fine and simply did nothing. Slate now recovers from a microphone that stops answering, instead of giving up on it for the rest of the session.</li>
+          <li>A microphone that quietly went away is noticed. If the device Slate is holding disappears, it no longer trusts that the microphone is still there: it rebuilds on whatever input you have now, rather than opening the panel over a dead microphone and hearing nothing you say.</li>
+          <li>Pressing the talk key right after a device change works. Swapping audio devices leaves a moment where macOS reports no microphone at all. Slate used to take that as final and fail the dictation; it now waits the moment out, which is all it ever needed.</li>
+        </ul>
+      ]]></description>
+      <enclosure url="https://slatedictation.com/Slate-1.2.3.dmg"
+                 sparkle:version="24"
+                 sparkle:shortVersionString="1.2.3"
+                 sparkle:edSignature="XrZN9zGtPKRGx1aPnGjMXlfIlNzPjy3lVRQ4uRcLxB5RP82a4u5uwADdohYMQ6bv3QFCkY3w744RA6KAYdwzAg==" length="8336469"
+                 type="application/octet-stream" />
+      <!-- Signed against the notarized, stapled DMG (31 Aug 2026), and the
+           staple plus Gatekeeper checked on the exact copy committed beside
+           this file. -->
+    </item>
+
+    <item>
       <title>Version 1.2.2</title>
       <pubDate>Thu, 27 Aug 2026 01:35:00 +0000</pubDate>
       <sparkle:version>23</sparkle:version>
