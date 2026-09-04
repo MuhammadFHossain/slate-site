@@ -13,84 +13,75 @@
       --screenshot=assets/img/og.png --virtual-time-budget=2000 \
       file://$PWD/og-render.html
 
-  Current Chrome rejects the old --default-background-color=0 and writes no
-  file at all, printing only "Expected a hex RGB or RGBA value" on stderr.
-  The flag was never needed: the body here is opaque.
+  Render it on a Mac: the headline is SF Rounded, the system face, and the
+  fallback elsewhere is not the card people see from this site.
 -->
 <style>
-  @font-face {
-    font-family: "Newsreader";
-    src: url("assets/fonts/Newsreader-VF.ttf") format("truetype-variations");
-    font-weight: 200 700; font-style: normal;
-  }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
     width: 1200px; height: 630px; overflow: hidden;
-    background: #FAFDF5; color: #083620;
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #F3F6F4; color: #101815;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
     display: flex; flex-direction: column; justify-content: center;
     padding: 0 78px; position: relative;
+    background-image:
+      radial-gradient(700px 480px at 8% -10%, rgba(0,191,99,.12), transparent 62%),
+      radial-gradient(620px 420px at 96% 24%, rgba(52,211,153,.10), transparent 62%);
   }
+  .ui { font-family: ui-rounded, "SF Pro Rounded", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif; }
   .mark-row { display: flex; align-items: center; gap: 13px; margin-bottom: 30px; }
-  .mark-row svg { width: 34px; height: 30px; color: #00BF63; }
-  .mark-row b { font-family: "Newsreader", Georgia, serif; font-size: 34px; font-weight: 620; letter-spacing: -0.02em; }
-  h1 {
-    font-family: "Newsreader", Georgia, serif;
-    font-size: 60px; font-weight: 600; line-height: 1.12;
-    letter-spacing: -0.015em; max-width: 640px;
-  }
-  h1 .hl { background: #C1FF72; border-radius: 6px; padding: 0 8px; }
-  p.sub { margin-top: 26px; font-size: 26px; color: #3A6250; max-width: 30ch; line-height: 1.45; }
+  .mark-row svg { width: 40px; height: 40px; border-radius: 10px; }
+  .mark-row b { font-size: 30px; font-weight: 700; letter-spacing: -0.02em; }
+  h1 { font-size: 62px; font-weight: 700; line-height: 1.04; letter-spacing: -0.028em; max-width: 640px; }
+  p.sub { margin-top: 26px; font-size: 25px; color: #5B6A62; max-width: 30ch; line-height: 1.45; }
   .chips { margin-top: 34px; display: flex; gap: 10px; }
   .chip {
-    font-size: 18px; color: #083620; background: #fff;
-    border: 1px solid rgba(0,191,99,.38); border-radius: 999px; padding: 9px 18px;
+    font-size: 17px; font-weight: 600; color: #5B6A62;
+    background: rgba(16,24,21,.045); border: 1px solid rgba(16,24,21,.07);
+    border-radius: 999px; padding: 9px 17px;
   }
-  /* the island, hanging off the right edge the way it hangs off a screen */
+  .chip.on { background: rgba(0,191,99,.14); border-color: transparent; color: #00803A; }
+  /* the island, grown out of the notch at the top right, at actual size */
   .island {
-    position: absolute; right: 78px; top: 0; width: 372px;
-    background: #F4FDEC; border: 1px solid rgba(0,191,99,.42); border-top: 0;
-    border-radius: 0 0 22px 22px; padding: 34px 22px 18px;
-    box-shadow: 0 18px 40px rgba(8,54,32,.10);
+    position: absolute; right: 78px; top: 0; width: 436px;
+    background: #000; color: #fff;
+    border-radius: 0 0 22px 22px;
+    border: 1px solid rgba(255,255,255,.10); border-top: 0; border-bottom-color: rgba(0,191,99,.45);
+    box-shadow: 0 10px 18px rgba(0,0,0,.45), 0 4px 26px rgba(0,191,99,.28);
+    padding: 40px 18px 14px;
   }
-  .island .wave { display: flex; gap: 6px; margin-bottom: 11px; }
-  .island .wave i { width: 7px; height: 7px; border-radius: 50%; background: #00BF63; }
-  .island p { font-family: "Newsreader", Georgia, serif; font-size: 23px; line-height: 1.35; }
-  .island .rev { background: #C1FF72; border-radius: 4px; padding: 0 3px; }
-  .notch {
-    position: absolute; right: 78px; top: 0; width: 372px; height: 0;
-  }
-  .notch i {
-    position: absolute; left: 50%; transform: translateX(-50%); top: 0;
-    width: 138px; height: 24px; background: #0A1F14; border-radius: 0 0 12px 12px;
-  }
+  .island::before, .island::after { content: ""; position: absolute; top: 0; width: 10px; height: 10px; }
+  .island::before { left: -10px; background: radial-gradient(circle at 0 100%, transparent 10px, #000 10.4px); }
+  .island::after  { right: -10px; background: radial-gradient(circle at 100% 100%, transparent 10px, #000 10.4px); }
+  .head { display: flex; align-items: center; gap: 10px; height: 22px; }
+  .wave { display: flex; align-items: center; gap: 3px; width: 44px; height: 22px; }
+  .wave i { display: block; width: 3.5px; border-radius: 2px; background: linear-gradient(180deg, #00BF63, #34D399); filter: drop-shadow(0 0 3px rgba(0,191,99,.35)); }
+  .hint { display: flex; align-items: center; gap: 5px; font-size: 10px; font-weight: 500; color: rgba(255,255,255,.62); padding-left: 4px; }
+  .key { font-size: 10px; font-weight: 600; color: rgba(255,255,255,.78); padding: 2px 5px; border-radius: 5px; background: rgba(255,255,255,.10); box-shadow: inset 0 0 0 .5px rgba(0,191,99,.35); }
+  .live { padding-top: 9px; width: 400px; font-size: 15px; line-height: 1.35; }
+  .live .mint { color: #34D399; }
+  .live .dim { color: rgba(255,255,255,.45); }
 </style>
 </head>
 <body>
 
   <div class="island">
-    <div class="wave"><i></i><i></i><i></i><i></i><i></i></div>
-    <p>Meet me at <span class="rev">ten</span>.</p>
+    <div class="head">
+      <div class="wave"><i style="height:9px"></i><i style="height:15px"></i><i style="height:20px"></i><i style="height:22px"></i><i style="height:17px"></i><i style="height:12px"></i><i style="height:8px"></i></div>
+      <span class="hint ui">release to place <span class="key">esc</span></span>
+    </div>
+    <p class="live">Um, meet me at nine. Actually, meet me at <span class="mint">ten.</span> <span class="dim">New paragraph.</span></p>
   </div>
-  <div class="notch"><i></i></div>
 
-  <div class="mark-row">
-    <svg viewBox="0 0 28 24" aria-hidden="true"><g fill="currentColor">
-      <rect x="0" y="8.5" width="2.6" height="7" rx="1.3"/>
-      <rect x="4.2" y="6.5" width="2.6" height="11" rx="1.3"/>
-      <rect x="8.4" y="4" width="2.6" height="16" rx="1.3"/>
-      <rect x="12.6" y="1" width="2.6" height="22" rx="1.3"/>
-      <rect x="16.8" y="4.5" width="2.6" height="15" rx="1.3"/>
-      <rect x="21" y="6.5" width="2.6" height="11" rx="1.3"/>
-      <rect x="25.2" y="8.5" width="2.6" height="7" rx="1.3"/>
-    </g></svg>
+  <div class="mark-row ui">
+    <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="15" fill="#00BF63"/><g fill="#C1FF72"><rect x="16.7" y="27.3" width="2.8" height="9.4" rx="1.4"/><rect x="21.3" y="25.1" width="2.8" height="13.8" rx="1.4"/><rect x="26" y="21.5" width="2.8" height="21" rx="1.4"/><rect x="30.6" y="16" width="2.8" height="32" rx="1.4"/><rect x="35.2" y="21.7" width="2.8" height="20.6" rx="1.4"/><rect x="39.9" y="24.5" width="2.8" height="15" rx="1.4"/><rect x="44.5" y="27.3" width="2.8" height="9.4" rx="1.4"/></g></svg>
     <b>Slate</b>
   </div>
 
-  <h1>Smart dictation that <span class="hl">never leaves your Mac</span>.</h1>
+  <h1 class="ui">Smart dictation that never leaves your Mac.</h1>
   <p class="sub">Hold a key, speak, and watch your words appear in any app.</p>
-  <div class="chips">
-    <span class="chip">Free to use</span>
+  <div class="chips ui">
+    <span class="chip on">Free to use</span>
     <span class="chip">No account</span>
     <span class="chip">Works offline</span>
   </div>

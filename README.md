@@ -5,6 +5,12 @@ No build step, no framework, no tracking, and nothing loaded from another
 company's servers. The download sits next to `index.html`, so the button is a
 relative link.
 
+The look follows `DESIGN.md` on the app's UI branch (`claude/slate-ui-ux-modernize-aawjog`
+in the app repo): one emerald accent, glass cards, a black island grown out of
+the notch as the hero object, system rounded type, light or dark with the
+system. Where that file and the older `docs/WEBSITE-HANDOFF.md` disagree, the
+design spec wins on looks and the handoff still wins on voice.
+
 ```
 index.html          the landing page
 support.html        setup, troubleshooting, uninstall
@@ -21,8 +27,7 @@ robots.txt, sitemap.xml
 og-render.html      source for assets/img/og.png; kept in the repo so the
                     card can be re-rendered, not linked from anywhere
 assets/
-  styles.css        the whole design system
-  fonts/            Newsreader, bundled, SIL Open Font Licence
+  styles.css        the whole design system, tokens at the top, dark mode below them
   img/              favicon, apple touch icon, og.png
 ```
 
@@ -137,12 +142,14 @@ rm Slate-<old>.dmg
 cp ~/Desktop/Blue/Slate/dist/Slate-<new>.dmg .
 ```
 
-**4. Update three lines in `index.html`.** Search for `RELEASE-PIN`; there are
-exactly three, all commented:
+**4. Update five places in `index.html`.** Search for `RELEASE-PIN`; there are
+exactly five, all commented:
 
+- the version pill above the headline
 - the hero download link
 - the download-section link
 - the version and size line
+- the SHA-256 in the "Is the download safe?" answer (`shasum -a 256 Slate-<version>.dmg`)
 
 **5. Add an entry at the top of `appcast.xml`.** Copy the existing `<item>` and
 change: `<title>`, `<pubDate>`, `<sparkle:version>` (the build number),
@@ -205,6 +212,17 @@ table, and sections 4 and 5 of `terms.html`.
 when you change `assets/styles.css`, or people with the page cached keep the old
 one.
 
+**The hero island** is drawn at the app's actual sizes: a 185 by 32 notch, a
+436 wide body with 18 of padding, a 400 wide transcript column, concave 10 px
+flares at the top corners, a 22 px bottom radius, and the emerald hairline
+along the bottom. Its states are the app's own strings: Listening, Placing
+your words, Placed in Notes. If the island changes in the app, change it here.
+
+**Glass cards** are the `.glass` class. It carries the sheen, the light catch,
+the emerald cast, the edge that goes white to emerald, and the specular line,
+as one set of tokens at the top of the stylesheet with a dark-mode block under
+them. Do not paint a card any other way.
+
 **The two easter eggs.** Hovering the hero download button makes its label
 arrive a word at a time, at the speed someone talks, with the waveform moving.
 Hovering the one at the bottom types its label in at a cursor, the way Slate
@@ -246,8 +264,8 @@ brief.
 
 ## Notes
 
-- Newsreader is under the SIL Open Font Licence, so it ships with the site.
+- System faces only, like the app: SF Rounded for headlines and controls, SF
+  Pro for running text. Nothing is downloaded.
 - The site sets no cookies and runs no analytics. GitHub Pages keeps its own
   server logs, which `privacy.html` says plainly.
-- Light theme only, on purpose. The product is a light, papery design and there
-  is no dark mode to match.
+- Light and dark, following the system, because the app does the same.

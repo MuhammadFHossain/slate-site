@@ -8,25 +8,22 @@
 <meta name="description" content="Help with Slate: first launch, the talk key, permissions, the dictionary, what is stored on your Mac, and how to uninstall.">
 <link rel="icon" type="image/png" href="assets/img/favicon-64.png">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-<meta name="theme-color" content="#FAFDF5">
-<link rel="stylesheet" href="assets/styles.css?v=20260806a">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#F3F6F4">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0F1412">
+<link rel="stylesheet" href="assets/styles.css?v=20260904a">
 </head>
 <body>
 
 <header class="site-header">
   <div class="wrap bar">
     <a class="wordmark" href="/">
-      <svg class="mark" viewBox="0 0 28 24" aria-hidden="true"><g fill="currentColor">
-        <rect x="0" y="8.5" width="2.6" height="7" rx="1.3"/><rect x="4.2" y="6.5" width="2.6" height="11" rx="1.3"/>
-        <rect x="8.4" y="4" width="2.6" height="16" rx="1.3"/><rect x="12.6" y="1" width="2.6" height="22" rx="1.3"/>
-        <rect x="16.8" y="4.5" width="2.6" height="15" rx="1.3"/><rect x="21" y="6.5" width="2.6" height="11" rx="1.3"/>
-        <rect x="25.2" y="8.5" width="2.6" height="7" rx="1.3"/>
-      </g></svg>
+      <svg class="appicon" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="15" fill="#00BF63"/><g fill="#C1FF72"><rect x="16.7" y="27.3" width="2.8" height="9.4" rx="1.4"/><rect x="21.3" y="25.1" width="2.8" height="13.8" rx="1.4"/><rect x="26" y="21.5" width="2.8" height="21" rx="1.4"/><rect x="30.6" y="16" width="2.8" height="32" rx="1.4"/><rect x="35.2" y="21.7" width="2.8" height="20.6" rx="1.4"/><rect x="39.9" y="24.5" width="2.8" height="15" rx="1.4"/><rect x="44.5" y="27.3" width="2.8" height="9.4" rx="1.4"/></g></svg>
       Slate
     </a>
     <nav class="nav">
+      <a href="/#how" class="hide-sm">How it works</a>
       <a href="privacy.html" class="hide-sm">Privacy</a>
-      <a class="btn btn-ink btn-sm" href="/#download">Download</a>
+      <a class="btn btn-accent btn-sm" href="/#download">Download</a>
     </nav>
   </div>
 </header>
@@ -38,9 +35,9 @@
   </a>
 
   <h1>Support</h1>
-  <p class="updated">Last updated 30 July 2026</p>
+  <p class="updated">Last updated 4 September 2026</p>
 
-  <div class="callout">
+  <div class="callout glass">
     <p><strong>Email <a href="mailto:contact@bluetomatostudio.com">contact@bluetomatostudio.com</a>.</strong>
     Say what happened, which Mac you are on, and which version of Slate is in
     Settings &rsaquo; About. A real person reads it.</p>
@@ -58,7 +55,7 @@
 
   <h2>The talk key does nothing</h2>
   <ul>
-    <li>Open <strong>System Settings &rsaquo; Privacy &amp; Security &rsaquo; Accessibility</strong> and check that Slate is switched on. If it already was, switch it off and back on: macOS can hold on to a stale entry after an app is replaced.</li>
+    <li>Open <strong>System Settings &rsaquo; Privacy &amp; Security &rsaquo; Accessibility</strong> and check that Slate is switched on. If it already was, macOS may be holding a stale entry from before an update. Slate notices this and offers <strong>Repair</strong> in the menu bar and in Settings: it removes its own entry and asks macOS again.</li>
     <li>Check the menu bar. If the waveform is not there, Slate is not running.</li>
     <li>Try a different key in <strong>Settings &rsaquo; General &rsaquo; Talk key</strong>. Some keyboard tools take Right Option for themselves.</li>
     <li>If you prefer not to hold anything, set <strong>When pressed</strong> to tap once to start and tap again to stop.</li>
@@ -84,6 +81,12 @@
   <p>Open <strong>Settings &rsaquo; Dictionary</strong> and add it: what you say on
   one side, what should be written on the other. Names, jargon, and shorthand all
   work. Your entries win over everything else, including the built-in spellings.</p>
+
+  <h2>Dictating a list</h2>
+  <p>Say the number, pause, then the item: &ldquo;one, milk, two, eggs, three,
+  bread&rdquo;. If the pauses are not landing, say the word &ldquo;comma&rdquo;
+  between the parts instead. That works every time. Counting, prices, and
+  clock times stay as plain sentences.</p>
 
   <h2>Turning the cleanup off</h2>
   <p><strong>Settings &rsaquo; General &rsaquo; Cleanup before inserting.</strong>
@@ -140,7 +143,7 @@
 
 <footer class="site-footer">
   <div class="wrap foot-inner">
-    <a class="wordmark" href="/"><svg class="mark" viewBox="0 0 28 24" aria-hidden="true"><g fill="currentColor"><rect x="0" y="8.5" width="2.6" height="7" rx="1.3"/><rect x="4.2" y="6.5" width="2.6" height="11" rx="1.3"/><rect x="8.4" y="4" width="2.6" height="16" rx="1.3"/><rect x="12.6" y="1" width="2.6" height="22" rx="1.3"/><rect x="16.8" y="4.5" width="2.6" height="15" rx="1.3"/><rect x="21" y="6.5" width="2.6" height="11" rx="1.3"/><rect x="25.2" y="8.5" width="2.6" height="7" rx="1.3"/></g></svg> Slate</a>
+    <a class="wordmark" href="/"><svg class="appicon" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="15" fill="#00BF63"/><g fill="#C1FF72"><rect x="16.7" y="27.3" width="2.8" height="9.4" rx="1.4"/><rect x="21.3" y="25.1" width="2.8" height="13.8" rx="1.4"/><rect x="26" y="21.5" width="2.8" height="21" rx="1.4"/><rect x="30.6" y="16" width="2.8" height="32" rx="1.4"/><rect x="35.2" y="21.7" width="2.8" height="20.6" rx="1.4"/><rect x="39.9" y="24.5" width="2.8" height="15" rx="1.4"/><rect x="44.5" y="27.3" width="2.8" height="9.4" rx="1.4"/></g></svg> Slate</a>
     <p class="foot-tag">Smart dictation that never leaves your Mac.</p>
     <nav class="foot-links" aria-label="Footer">
       <a href="/#download">Download</a>

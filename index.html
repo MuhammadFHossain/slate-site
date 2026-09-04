@@ -8,7 +8,8 @@
 <meta name="description" content="Hold a key, speak, and watch your words appear in any app. The ums and false starts get cleaned up on the way. Speech becomes text on your own Mac, so nothing is uploaded. No account, no tracking, no subscription.">
 <link rel="icon" type="image/png" href="assets/img/favicon-64.png">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-<meta name="theme-color" content="#FAFDF5">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#F3F6F4">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0F1412">
 <meta property="og:title" content="Slate: Smart dictation that never leaves your Mac">
 <meta property="og:description" content="Hold a key, speak, and watch your words appear in any app. The ums and false starts get cleaned up on the way. No internet needed.">
 <meta property="og:image" content="https://slatedictation.com/assets/img/og.png">
@@ -20,34 +21,44 @@
 <meta name="twitter:title" content="Slate: Smart dictation that never leaves your Mac">
 <meta name="twitter:description" content="Hold a key, speak, and watch your words appear in any app. The ums and false starts get cleaned up on the way. No internet needed.">
 <meta name="twitter:image" content="https://slatedictation.com/assets/img/og.png">
-<link rel="stylesheet" href="assets/styles.css?v=20260806a">
+<link rel="stylesheet" href="assets/styles.css?v=20260904a">
 </head>
 <body>
 
 <!--
-  RELEASE-PIN: the version appears in exactly three places on this page.
-  Search for "RELEASE-PIN" to find all three when you ship a new build.
+  RELEASE-PIN: the version appears in exactly five places on this page.
+  Search for "RELEASE-PIN" to find all five when you ship a new build.
+    1  the version pill above the headline
+    2  the hero download link
+    3  the download-section link
+    4  the version and size line
+    5  the SHA-256 inside the "Is the download safe?" answer:
+         shasum -a 256 Slate-<version>.dmg
+       A stale hash is worse than none: anyone who checks sees a mismatch.
 -->
 
 <header class="site-header">
   <div class="wrap bar">
     <a class="wordmark" href="/">
-      <svg class="mark" viewBox="0 0 28 24" aria-hidden="true"><g fill="currentColor">
-        <rect x="0" y="8.5" width="2.6" height="7" rx="1.3"/>
-        <rect x="4.2" y="6.5" width="2.6" height="11" rx="1.3"/>
-        <rect x="8.4" y="4" width="2.6" height="16" rx="1.3"/>
-        <rect x="12.6" y="1" width="2.6" height="22" rx="1.3"/>
-        <rect x="16.8" y="4.5" width="2.6" height="15" rx="1.3"/>
-        <rect x="21" y="6.5" width="2.6" height="11" rx="1.3"/>
-        <rect x="25.2" y="8.5" width="2.6" height="7" rx="1.3"/>
-      </g></svg>
+      <svg class="appicon" viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="15" fill="#00BF63"/>
+        <g fill="#C1FF72">
+          <rect x="16.7" y="27.3" width="2.8" height="9.4" rx="1.4"/>
+          <rect x="21.3" y="25.1" width="2.8" height="13.8" rx="1.4"/>
+          <rect x="26" y="21.5" width="2.8" height="21" rx="1.4"/>
+          <rect x="30.6" y="16" width="2.8" height="32" rx="1.4"/>
+          <rect x="35.2" y="21.7" width="2.8" height="20.6" rx="1.4"/>
+          <rect x="39.9" y="24.5" width="2.8" height="15" rx="1.4"/>
+          <rect x="44.5" y="27.3" width="2.8" height="9.4" rx="1.4"/>
+        </g>
+      </svg>
       Slate
     </a>
     <nav class="nav">
       <a href="#how" class="hide-sm">How it works</a>
       <a href="#privacy" class="hide-sm">Privacy</a>
       <a href="support.html" class="hide-sm">Support</a>
-      <a class="btn btn-ink btn-sm" href="#download">Download</a>
+      <a class="btn btn-accent btn-sm" href="#download">Download</a>
     </nav>
   </div>
 </header>
@@ -57,14 +68,15 @@
   <!-- ============ HERO ============ -->
   <section class="hero">
     <div class="wrap">
-      <p class="eyebrow">For Mac</p>
-      <h1>Smart dictation that <span class="hl">never leaves your Mac</span>.</h1>
+      <!-- RELEASE-PIN 1 of 5: the version pill -->
+      <span class="pill"><span class="live" aria-hidden="true"></span> Version 1.2.3 &middot; Apple silicon &middot; macOS 14.4 or later</span>
+      <h1>Smart dictation that never leaves your Mac.</h1>
       <p class="lead">Hold a key, speak, and watch your words appear in any app.
-      And the ums, stutters, and second thoughts? Cleaned up on the way in.
+      The ums, stutters, and second thoughts are cleaned up on the way in.
       No internet needed.</p>
       <div class="cta">
-        <!-- RELEASE-PIN 1 of 3 -->
-        <a class="btn btn-primary btn-big dictate" href="Slate-1.2.3.dmg" download>
+        <!-- RELEASE-PIN 2 of 5: the hero download link -->
+        <a class="btn btn-accent btn-big dictate" href="Slate-1.2.3.dmg" download>
           <svg class="mark" viewBox="0 0 28 24" aria-hidden="true"><g fill="currentColor">
             <rect x="0" y="8.5" width="2.6" height="7" rx="1.3"/>
             <rect x="4.2" y="6.5" width="2.6" height="11" rx="1.3"/>
@@ -76,64 +88,101 @@
           </g></svg>
           <span class="say">Download for Mac</span>
         </a>
+        <a class="btn btn-quiet btn-big" href="#how">See how it works</a>
       </div>
-      <p class="fine req">Free to use. Apple silicon Mac, macOS 14.4 or later.</p>
+      <p class="fine req">Free to use. No account, no subscription. Signed and notarized by Apple.</p>
+      <p class="fine req" id="notmac" hidden>You are on a phone. Slate installs on a Mac. Open slatedictation.com there and the button will be waiting.</p>
     </div>
 
-    <!-- the Mac screen, the island, and the text landing at the cursor -->
-    <div class="wrap stage">
-      <p class="sr-only">A demonstration. While the talk key is held, a card hangs from the top of
-      the screen showing the words as they form, including one the engine corrects and marks. The
-      person says a filler, changes their mind about a time, asks for a new paragraph, and speaks an
-      email address. When the key is let go, the cleaned text appears in the document at the cursor:
-      "Meet me at ten." then a new paragraph, "Email team@example.com."</p>
+    <!-- the top of a Mac screen: the menu bar, the notch, the island growing
+         out of it, and the note the words land in -->
+    <div class="stage">
+      <p class="sr-only">A demonstration. While the talk key is held, a black island grows out of the
+      notch at the top of the screen and shows the words as they are heard. One word comes out wrong
+      and the fix is marked. The person says a filler, changes their mind about a time, asks for a
+      new paragraph, and speaks an email address. When the key is let go, the island says "Placed in
+      Notes" and the cleaned text appears in the note at the cursor: "Meet me at ten." then a new
+      paragraph, "Email team@example.com."</p>
 
-      <div class="screen" aria-hidden="true">
-        <div class="notch"></div>
-        <div class="island" id="island" data-shown="no" data-live="no">
-          <div class="wave"><i></i><i></i><i></i><i></i><i></i></div>
-          <p class="live waiting" id="live">Listening...</p>
+      <div class="screen" id="screen" aria-hidden="true">
+        <div class="menubar">
+          <div class="left"><b>Notes</b><span>File</span><span>Edit</span><span>Format</span><span>View</span><span>Window</span><span>Help</span></div>
+          <div class="right">
+            <svg class="bars" viewBox="0 0 15 13" fill="currentColor"><rect x="0.4" y="4" width="1.6" height="5" rx="0.8"/><rect x="3.5" y="2" width="1.6" height="9" rx="0.8"/><rect x="6.7" y="0" width="1.6" height="13" rx="0.8"/><rect x="9.9" y="2" width="1.6" height="9" rx="0.8"/><rect x="13" y="4" width="1.6" height="5" rx="0.8"/></svg>
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M1.5 6.2a9.5 9.5 0 0 1 13 0"/><path d="M4 8.8a6 6 0 0 1 8 0"/><path d="M6.4 11.3a2.6 2.6 0 0 1 3.2 0"/></svg>
+            <svg viewBox="0 0 22 16" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="1" y="3" width="17" height="10" rx="2.5"/><rect x="3" y="5" width="12" height="6" rx="1.2" fill="currentColor" stroke="none"/><path d="M20 6.5v3" stroke-linecap="round"/></svg>
+            <span>Thu 4 Sep&nbsp; 9:41</span>
+          </div>
         </div>
-        <div class="doc">
-          <div class="doc-bar"><i></i><i></i><i></i><span>Note</span></div>
-          <div class="doc-body">
-            <p class="ln"><span class="out" id="out1">Meet me at ten.</span></p>
-            <p class="ln"><span class="out" id="out2">Email team@example.com.</span></p>
+        <div class="notch"></div>
+
+        <div class="island" id="island" data-state="hidden">
+          <div class="clip">
+            <div class="cap"></div>
+            <div class="ibody">
+              <div class="head">
+                <div class="wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                <span class="dot"></span>
+                <span class="spin"></span>
+                <svg class="check" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="currentColor"/><path d="M4.6 8.3l2.2 2.2 4.6-4.8" stroke="#000" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span class="lbl lbl-listen">Listening</span>
+                <span class="lbl lbl-placing">Placing your words</span>
+                <span class="lbl lbl-placed">Placed in Notes</span>
+                <span class="hint">release to place <span class="ikey">esc</span></span>
+              </div>
+              <div class="live" id="live"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="win">
+          <div class="titlebar"><i></i><i></i><i></i><span>Notes</span></div>
+          <div class="note">
+            <p class="ntitle">Tomorrow</p>
+            <p class="ln"><span class="out" id="out1">Meet me at ten.</span><span class="caret on" id="c1"></span></p>
+            <p class="ln"><span class="out" id="out2">Email team@example.com.</span><span class="caret" id="c2"></span></p>
           </div>
         </div>
       </div>
 
       <div class="holder">
         <button class="keycap" id="keycap" type="button" aria-label="Option key: play the dictation demo, or stop it" aria-pressed="false">
-          &#8997; option
+          &#8997; right option
         </button>
         <span class="hint">Press it to play again, or to stop</span>
       </div>
+
+      <p class="apps">Works in <b>every app</b>.
+        <span class="list"><span>Mail</span><span>Slack</span><span>Notes</span><span>Safari</span><span>Chrome</span><span>VS Code</span><span>Terminal</span><span>and every other text box</span></span>
+      </p>
     </div>
   </section>
 
   <!-- ============ HOW IT WORKS ============ -->
   <section id="how">
     <div class="wrap">
-      <div class="section-head">
+      <div class="section-head reveal">
         <p class="eyebrow">How it works</p>
         <h2>Hold a key. Talk. Let go.</h2>
         <p>That is the whole thing. It works the same in Mail, Slack, Notes, a browser, or a code editor.</p>
       </div>
       <div class="steps">
-        <div class="step">
-          <span class="n">1</span>
+        <div class="step glass reveal">
+          <span class="n">01</span>
+          <div class="mock"><span class="bigkey">&#8997; right option</span></div>
           <h3>Hold the talk key</h3>
           <p>Right Option, out of the box. Pick another key if you want, or set it to tap once to start and tap again to stop.</p>
         </div>
-        <div class="step">
-          <span class="n">2</span>
+        <div class="step glass reveal d1">
+          <span class="n">02</span>
+          <div class="mock"><span class="wave-l"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="pill done">On the Neural Engine</span></div>
           <h3>Your Mac turns it into text</h3>
           <p>The speech model runs on the Neural Engine. A short sentence comes back in well under a second.</p>
         </div>
-        <div class="step">
-          <span class="n">3</span>
-          <h3>The text is typed at your cursor</h3>
+        <div class="step glass reveal d2">
+          <span class="n">03</span>
+          <div class="mock"><span class="badge"><svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="currentColor"/><path d="M4.6 8.3l2.2 2.2 4.6-4.8" stroke="#fff" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Placed in Notes</span></div>
+          <h3>The text lands at your cursor</h3>
           <p>Cleaned up, and fitted to the sentence you were writing. Your clipboard is put back the way you left it.</p>
         </div>
       </div>
@@ -143,13 +192,13 @@
   <!-- ============ CLEANUP RECEIPTS ============ -->
   <section style="padding-top:0;">
     <div class="wrap">
-      <div class="section-head">
+      <div class="section-head reveal">
         <p class="eyebrow">The cleanup</p>
         <h2>What Slate fixes before it types.</h2>
-        <p>Each one is a fixed rule. Your wording is never rewritten by an AI.</p>
+        <p>Each one is a fixed rule with its own switch. Your wording is never rewritten by an AI.</p>
       </div>
 
-      <div class="receipts">
+      <div class="receipts glass reveal">
         <div class="receipt">
           <div class="said">
             <span class="lbl">You say</span>
@@ -214,58 +263,82 @@
   <!-- ============ FEATURES ============ -->
   <section style="padding-top:0;">
     <div class="wrap">
-      <div class="section-head">
+      <div class="section-head reveal">
         <p class="eyebrow">Inside the app</p>
         <h2>What else it does.</h2>
       </div>
-      <div class="features">
+      <div class="bento">
 
-        <div class="feature">
-          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4 4L19 7"/></svg></div>
-          <h3>Removes ums, uhs, and repeats</h3>
-          <p>Filler sounds go. &ldquo;The the&rdquo; becomes &ldquo;the&rdquo;. A phrase you started twice is written once.</p>
-        </div>
-
-        <div class="feature">
-          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/></svg></div>
-          <h3>Keeps your correction, not your first try</h3>
-          <p>Change your mind mid-sentence and only the second version is written. Say &ldquo;scratch that&rdquo; and the sentence before it goes.</p>
-        </div>
-
-        <div class="feature">
-          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h13"/></svg></div>
+        <div class="card glass c7 reveal">
+          <div class="mock chips">
+            <span class="chip on">new paragraph</span><span class="chip">new line</span><span class="chip">open quote</span><span class="chip">close quote</span><span class="chip">open bracket</span><span class="chip">comma</span><span class="chip on">scratch that</span><span class="chip">bullet point</span>
+          </div>
           <h3>Say &ldquo;new paragraph&rdquo; and get one</h3>
-          <p>&ldquo;New line&rdquo; starts a line. &ldquo;Open bracket&rdquo; and &ldquo;open quote&rdquo; wrap what comes next. &ldquo;Scratch that&rdquo; takes back the sentence before it.</p>
+          <p>&ldquo;New line&rdquo; starts a line. &ldquo;Open quote&rdquo; and &ldquo;open bracket&rdquo; wrap what comes next. &ldquo;Scratch that&rdquo; takes back the sentence before it.</p>
         </div>
 
-        <div class="feature">
-          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h7v14H4z"/><path d="M13 5h7v14h-7z"/><path d="M6.5 9h2M15.5 9h2"/></svg></div>
+        <div class="card glass c5 reveal d1">
+          <div class="mock pairs">
+            <div class="pair"><span class="a">my email</span><span class="arr">&rarr;</span><span class="b">contact@example.com</span></div>
+            <div class="pair"><span class="a">sequel</span><span class="arr">&rarr;</span><span class="b">SQL</span></div>
+            <div class="pair"><span class="a">alhamdulillah</span><span class="arr">&rarr;</span><span class="b">Alhamdulillah</span></div>
+          </div>
           <h3>A dictionary for names and jargon</h3>
           <p>Add what you say on one side and what should be written on the other. Islamic phrases are spelled the same way every time.</p>
         </div>
 
-        <div class="feature">
-          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18z"/></svg></div>
+        <div class="card glass c4 reveal">
+          <div class="mock mini">
+            <div class="row sel"><span class="txt">Meet me at ten. Email team@example.com.</span><span class="tag">Last dictation</span></div>
+            <div class="row"><span class="txt">Call the dentist on Monday</span><span class="tag">Note</span></div>
+            <div class="row"><span class="txt">Ideas for the talk</span><span class="tag">Note</span></div>
+          </div>
+          <h3>Save a thought without typing it</h3>
+          <p>Hold Shift with the talk key and the words are kept instead of typed. Press &#8984; with the talk key to pick one out later, and it lands at your cursor.</p>
+        </div>
+
+        <div class="card glass c4 reveal d1">
+          <div class="mock">
+            <p class="fine" style="margin-bottom:10px;">&ldquo;one, milk, two, eggs, three, bread&rdquo;</p>
+            <ol class="ol"><li>milk</li><li>eggs</li><li>bread</li></ol>
+          </div>
+          <h3>Dictate a list and get a list</h3>
+          <p>Say the number, pause, then the item. Counting, prices, and clock times stay as ordinary sentences.</p>
+        </div>
+
+        <div class="card glass c4 last reveal d2">
+          <div class="mock chips">
+            <span class="chip on">English</span><span class="chip">Deutsch</span><span class="chip">Fran&ccedil;ais</span><span class="chip">Espa&ntilde;ol</span><span class="chip">Italiano</span><span class="chip">Portugu&ecirc;s</span><span class="chip">Nederlands</span><span class="chip">Polski</span><span class="chip">Svenska</span><span class="chip">+16 more</span>
+          </div>
           <h3>25 languages, all on this Mac</h3>
           <p>The English model is the most accurate. The multilingual model covers 25 European languages and works out which one you are speaking.</p>
         </div>
 
-        <div class="feature">
-          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h9l5 5v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M15 3v5h5"/><path d="M9 13h6M9 17h4"/></svg></div>
-          <h3>Save a thought without typing it</h3>
-          <p>Hold Shift with the talk key and the words are kept instead of typed. Pick one back out later with a key and it lands at your cursor. Notes stay on this Mac until you delete them.</p>
+        <div class="card glass c7 reveal">
+          <div class="mock mini hist">
+            <div class="row">
+              <span class="meta"><span class="badge"><svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="currentColor"/><path d="M4.6 8.3l2.2 2.2 4.6-4.8" stroke="#fff" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Placed in Notes</span> Just now &middot; 7 words</span>
+              <span class="copy">Copy</span>
+              <span class="txt">Meet me at ten. Email team@example.com.</span>
+            </div>
+            <div class="row">
+              <span class="meta"><span class="badge"><svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="currentColor"/><path d="M4.6 8.3l2.2 2.2 4.6-4.8" stroke="#fff" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Placed in Mail</span> 2 hours ago &middot; 41 words</span>
+              <span class="copy">Copy</span>
+              <span class="txt">Thanks for the notes. I read them on the train and have two questions about the second section.</span>
+            </div>
+          </div>
+          <h3>A history you can search, or switch off</h3>
+          <p>Every dictation is kept as text, on this Mac. Keep it, keep a day of it, or keep nothing. &#8984;&#8963;V puts the last one back anywhere.</p>
         </div>
 
-        <div class="feature">
-          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h1M4 12h1M4 18h1"/><path d="M9 6h11M9 12h11M9 18h11"/></svg></div>
-          <h3>Dictate a list and get a list</h3>
-          <p>Say &ldquo;one, milk, two, eggs, three, bread&rdquo; and that is what is written. Counting, prices, and clock times stay as ordinary sentences.</p>
-        </div>
-
-        <div class="feature">
-          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/><rect x="9" y="9" width="6" height="6" rx="1"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/></svg></div>
+        <div class="card glass c5 reveal d1">
+          <ul class="mock checks">
+            <li><svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="currentColor"/><path d="M4.6 8.3l2.2 2.2 4.6-4.8" stroke="#fff" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Your clipboard is put back, images included</li>
+            <li><svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="currentColor"/><path d="M4.6 8.3l2.2 2.2 4.6-4.8" stroke="#fff" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Music pauses while you talk, then resumes</li>
+            <li><svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="currentColor"/><path d="M4.6 8.3l2.2 2.2 4.6-4.8" stroke="#fff" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> 0% CPU while it sits idle</li>
+          </ul>
           <h3>Leaves your clipboard and music alone</h3>
-          <p>Whatever you copied comes back, images included. Music pauses while you talk and starts again after. Sitting idle, Slate uses 0% CPU.</p>
+          <p>Whatever you copied comes back. Music pauses while you talk and starts again after. Password fields are noticed and explained, never typed into.</p>
         </div>
 
       </div>
@@ -275,25 +348,30 @@
   <!-- ============ PRIVACY ============ -->
   <section id="privacy" style="padding-top:0;">
     <div class="wrap">
-      <div class="privacy-panel">
-        <p class="eyebrow">The promise</p>
-        <h2>Nothing is sent anywhere.</h2>
-        <p class="lead">Cloud dictation apps send a recording of your voice to a server, charge every month, and stop working on a plane. Slate does the whole job here.</p>
+      <div class="privacy-panel reveal">
+        <div class="privacy-top">
+          <div>
+            <p class="eyebrow">The promise</p>
+            <h2>Nothing is sent anywhere.</h2>
+            <p class="lead" style="margin-top:14px;">Cloud dictation apps send a recording of your voice to a server, charge every month, and stop working on a plane. Slate does the whole job here.</p>
+          </div>
+          <div>
+            <div class="proof" id="proof">
+              <span class="p">$</span> <span class="c" id="proofcmd">lsof -i -a -p $(pgrep -x Slate)</span><br>
+              <span class="o" id="proofout"># nothing. keep talking, run it again, still nothing.</span><br>
+              <span class="p" id="proofend">$</span> <span class="tc" id="proofcaret"></span>
+            </div>
+            <p class="proof-note">Do not take our word for it. Run <a href="https://obdev.at/products/littlesnitch/">Little Snitch</a>, LuLu, or Wireshark and watch while you dictate. Or turn off Wi-Fi and keep working.</p>
+          </div>
+        </div>
 
         <ul class="facts">
           <li><b>Speech becomes text on this Mac</b>, on the Neural Engine, using the Parakeet model. There is no server to send it to.</li>
           <li><b>No account, no sign-in, no tracking.</b> Slate does not collect anything.</li>
           <li><b>Zero network connections while dictating.</b> Measured with lsof during a live transcription: none.</li>
           <li><b>Works with no internet</b> after the speech model downloads, about 600&nbsp;MB. Switching to the multilingual model fetches that one too.</li>
-          <li class="one"><b>The rest of the list, in full.</b> A license key is checked with the store once. Update checks, if you switch them on, ask this site for one small file and download the new version if you install it. Nothing about you goes with any of it.</li>
+          <li class="wide"><b>The rest of the list, in full.</b> A license key is checked with the store once, if you ever activate one. Update checks, if you switch them on, ask this site for one small file and download the new version if you install it. Nothing about you goes with any of it.</li>
         </ul>
-
-        <div class="proof">
-          <span class="p">$</span> <span class="c">lsof -i -a -p $(pgrep -x Slate)</span><br>
-          <span class="o"># nothing. keep talking, run it again, still nothing.</span><br>
-          <span class="p">$</span> <span class="caret" style="background:#C1FF72;"></span>
-        </div>
-        <p class="proof-note">Do not take our word for it. Run <a href="https://obdev.at/products/littlesnitch/">Little Snitch</a>, LuLu, or Wireshark and watch while you dictate. Or turn off Wi-Fi and keep working.</p>
       </div>
     </div>
   </section>
@@ -301,48 +379,46 @@
   <!-- ============ COMPARISON ============ -->
   <section style="padding-top:0;">
     <div class="wrap narrow">
-      <div class="section-head">
+      <div class="section-head reveal">
         <p class="eyebrow">The difference</p>
         <h2>Slate and cloud dictation.</h2>
       </div>
-      <div class="table-scroll">
-        <table class="compare">
-          <thead>
-            <tr><th scope="col">&nbsp;</th><th scope="col">Slate</th><th scope="col">Cloud dictation apps</th></tr>
-          </thead>
-          <tbody>
-            <tr><th scope="row">Where speech becomes text</th><td class="yes">On your Mac</td><td class="no">On their servers</td></tr>
-            <tr><th scope="row">How long it takes</th><td class="yes">Under a second</td><td class="no">A round trip to their server</td></tr>
-            <tr><th scope="row">On a plane</th><td class="yes">Works</td><td class="no">Does not work</td></tr>
-            <tr><th scope="row">Your voice</th><td class="yes">Never leaves the Mac</td><td class="no">Uploaded</td></tr>
-            <tr><th scope="row">Account</th><td class="yes">None</td><td class="no">Required</td></tr>
-            <tr><th scope="row">Price</th><td class="yes">Free</td><td class="no">$144 a year and up</td></tr>
-          </tbody>
-        </table>
+      <div class="compare-wrap glass reveal">
+        <div class="table-scroll">
+          <table class="compare">
+            <thead>
+              <tr><th scope="col">&nbsp;</th><th scope="col">Slate</th><th scope="col">Cloud dictation apps</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Where speech becomes text</th><td class="yes">On your Mac</td><td class="no">On their servers</td></tr>
+              <tr><th scope="row">How long it takes</th><td class="yes">Under a second</td><td class="no">A round trip to their server</td></tr>
+              <tr><th scope="row">On a plane</th><td class="yes">Works</td><td class="no">Does not work</td></tr>
+              <tr><th scope="row">Your voice</th><td class="yes">Never leaves the Mac</td><td class="no">Uploaded</td></tr>
+              <tr><th scope="row">Account</th><td class="yes">None</td><td class="no">Required</td></tr>
+              <tr><th scope="row">Price</th><td class="yes">Free</td><td class="no">$144 a year and up</td></tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </section>
 
-
   <!-- ============ DOWNLOAD ============ -->
   <section id="download" style="padding-top:0;">
     <div class="wrap">
-      <div class="get">
-        <span class="price"><span class="pip"></span> Free to use</span>
+      <div class="get glass reveal">
+        <span class="pill done">Free to use</span>
         <h2>Get Slate.</h2>
         <p class="lead">No account to make, and nothing to sign up for.</p>
 
-        <!-- RELEASE-PIN 2 of 3 -->
-        <a class="btn btn-primary btn-big insert" href="Slate-1.2.3.dmg" download>
+        <!-- RELEASE-PIN 3 of 5: the download-section link -->
+        <a class="btn btn-accent btn-big insert" href="Slate-1.2.3.dmg" download>
           <span class="say">Download Slate for Mac</span>
         </a>
 
-        <!-- RELEASE-PIN 3 of 3: version and size -->
+        <!-- RELEASE-PIN 4 of 5: version and size -->
         <p class="fine meta">Version 1.2.3 &middot; 8.3&nbsp;MB &middot; Apple silicon Mac (M1 or later) &middot; macOS 14.4 or later</p>
-        <!-- The Mac-only line and the tip line used to sit here. Four stacked
-             lines of fine print under one button is three too many, and the FAQ
-             answers both. TIP-LINK: when there is a tip page, the FAQ answer
-             "What does it cost?" is the place to link it. -->
+        <p class="fine meta">Signed and notarized by Apple. macOS checks the signature the first time the app opens.</p>
         <p class="fine firstrun-lead">First launch asks for two permissions, and downloads the speech model.</p>
 
         <div class="firstrun">
@@ -366,15 +442,18 @@
   <!-- ============ FAQ ============ -->
   <section style="padding-top:0;">
     <div class="wrap">
-      <div class="section-head">
+      <div class="section-head reveal">
         <p class="eyebrow">FAQ</p>
         <h2>Questions people ask.</h2>
       </div>
-      <div class="faq">
+      <div class="faq reveal">
 
         <details>
           <summary>Is there a Windows or iPhone version?</summary>
-          <div class="body"><div class="bodyin"><p>No. Slate needs an Apple silicon Mac, M1 or later, and macOS 14.4 or later. Speech runs on the Neural Engine, which Intel Macs do not have.</p></div></div>
+          <div class="body"><div class="bodyin">
+            <p>No. Slate needs an Apple silicon Mac, M1 or later, and macOS 14.4 or later. Speech runs on the Neural Engine, which Intel Macs do not have.</p>
+            <p>Not sure what your Mac has? Click the Apple menu at the top left, then About This Mac. If the Chip line says M1, M2, M3, or M4, Slate runs on it.</p>
+          </div></div>
         </details>
 
         <details>
@@ -388,8 +467,16 @@
         <details>
           <summary>What does it cost?</summary>
           <div class="body"><div class="bodyin">
-            <p>Nothing. Slate is free to use, with no subscription and no account to make.</p>
-            <p>Nothing in the app is held back. If it saves you time and you want to say thanks, a tip jar is on the way.</p>
+            <p>Nothing. Slate is free to use, with no subscription and no account to make. Nothing in the app is held back.</p>
+          </div></div>
+        </details>
+
+        <details>
+          <summary>Is the download safe to install?</summary>
+          <div class="body"><div class="bodyin">
+            <p>Yes. Slate is signed and notarized by Apple. Notarized means Apple scanned this exact app before it could open on any Mac, and macOS checks the signature when it first opens. This site is the only place Slate is offered.</p>
+            <!-- RELEASE-PIN 5 of 5: the SHA-256 of the current DMG -->
+            <p>Want to check byte for byte? Run <code>shasum -a 256 Slate-1.2.3.dmg</code> in Terminal. It should print <code>cadb4390bf61ab238eeec7669a86bf2cb78b3a1887112a21a18de832c133e70b</code>.</p>
           </div></div>
         </details>
 
@@ -405,7 +492,7 @@
           <summary>Can I save something to paste later?</summary>
           <div class="body"><div class="bodyin">
             <p>Yes. Hold Shift with the talk key and nothing is typed. The words are kept as a note.</p>
-            <p>A separate key opens a short list of your newest notes and your last few dictations, and the one you pick is typed at your cursor. Notes are kept until you delete them. Settings has the full list.</p>
+            <p>Press &#8984; with the talk key and a short list opens: your last dictation first, then your notes. The one you pick is typed at your cursor. Notes are kept until you delete them. Settings has the full list.</p>
           </div></div>
         </details>
 
@@ -425,7 +512,6 @@
             <p>Four things, and never while you dictate: the speech model download, a license check if you activate a key, and update checks and downloads if you switch them on.</p>
           </div></div>
         </details>
-
 
         <details>
           <summary>How do updates work?</summary>
@@ -448,7 +534,7 @@
 
 <footer class="site-footer">
   <div class="wrap foot-inner">
-    <a class="wordmark" href="/"><svg class="mark" viewBox="0 0 28 24" aria-hidden="true"><g fill="currentColor"><rect x="0" y="8.5" width="2.6" height="7" rx="1.3"/><rect x="4.2" y="6.5" width="2.6" height="11" rx="1.3"/><rect x="8.4" y="4" width="2.6" height="16" rx="1.3"/><rect x="12.6" y="1" width="2.6" height="22" rx="1.3"/><rect x="16.8" y="4.5" width="2.6" height="15" rx="1.3"/><rect x="21" y="6.5" width="2.6" height="11" rx="1.3"/><rect x="25.2" y="8.5" width="2.6" height="7" rx="1.3"/></g></svg> Slate</a>
+    <a class="wordmark" href="/"><svg class="appicon" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="15" fill="#00BF63"/><g fill="#C1FF72"><rect x="16.7" y="27.3" width="2.8" height="9.4" rx="1.4"/><rect x="21.3" y="25.1" width="2.8" height="13.8" rx="1.4"/><rect x="26" y="21.5" width="2.8" height="21" rx="1.4"/><rect x="30.6" y="16" width="2.8" height="32" rx="1.4"/><rect x="35.2" y="21.7" width="2.8" height="20.6" rx="1.4"/><rect x="39.9" y="24.5" width="2.8" height="15" rx="1.4"/><rect x="44.5" y="27.3" width="2.8" height="9.4" rx="1.4"/></g></svg> Slate</a>
     <p class="foot-tag">Smart dictation that never leaves your Mac.</p>
     <nav class="foot-links" aria-label="Footer">
       <a href="#download">Download</a>
@@ -466,22 +552,38 @@
 
 <script>
 /* ---------------------------------------------------------------------------
-   1. The hero demo. One sentence, dictated: the island shows the words as the
-   engine hears them, corrects one, then the cleaned sentence lands at the
-   cursor. Nothing here talks to the network, and it stops when off screen.
+   0. Not on a Mac? Say so under the hero button instead of letting the DMG
+   download into a phone. Local check only; nothing is sent anywhere.
 --------------------------------------------------------------------------- */
 (function () {
+  var note = document.getElementById('notmac');
+  if (!note) return;
+  var p = (navigator.platform || '') + ' ' + (navigator.userAgent || '');
+  if (!/Mac/i.test(p) || navigator.maxTouchPoints > 2) note.hidden = false;
+})();
+
+/* ---------------------------------------------------------------------------
+   1. The hero demo. One sentence, dictated: the island grows out of the
+   notch, shows the words as the engine hears them, corrects one, says where
+   the text went, and the cleaned sentence lands at the cursor. Nothing here
+   talks to the network, and it stops when off screen.
+--------------------------------------------------------------------------- */
+(function () {
+  var screen = document.getElementById('screen');
   var island = document.getElementById('island');
   var live   = document.getElementById('live');
   var out1   = document.getElementById('out1');
   var out2   = document.getElementById('out2');
+  var c1     = document.getElementById('c1');
+  var c2     = document.getElementById('c2');
   var keycap = document.getElementById('keycap');
-  if (!island || !live || !out1 || !out2 || !keycap) return;
+  if (!screen || !island || !live || !out1 || !out2 || !keycap) return;
+  var ibody = island.querySelector('.ibody');
 
   /* One take, said the way people really talk. Run it through the app itself
      with `Slate --refine "<the words below>"` and you get exactly the two
-     paragraphs in the document: a filler dropped, the second version of the
-     time kept, the spoken paragraph break made, and the address joined up. */
+     paragraphs in the note: a filler dropped, the second version of the time
+     kept, the spoken paragraph break made, and the address joined up. */
   var WORDS = [
     'Um,', 'meet', 'me', 'at', 'nine.',
     'Actually,', 'meet', 'me', 'at', 'ten.',
@@ -489,8 +591,10 @@
     'Email', 'team', 'at', 'example', 'dot', 'com.'
   ];
   /* The engine hears one word wrong and fixes it a beat later. That, and only
-     that, is what the island marks in lime. */
+     that, is what the island marks in mint. The spoken "New paragraph." is a
+     command: the island shows the break it makes, not the words. */
   var FIX_AT = 9, HEARD = 'tan', FIXED = 'ten.';
+  var BREAK_FROM = 10, BREAK_TO = 11;
 
   var STEPS = [];
   for (var i = 0; i < WORDS.length; i++) {
@@ -502,42 +606,76 @@
   function at(ms, fn) { timers.push(setTimeout(fn, ms)); }
   function clearAll() { timers.forEach(clearTimeout); timers = []; }
 
-  function render(step) {
+  /* the island's frame: the notch's own size when hidden, and otherwise as
+     wide as the transcript column and as tall as what is in it */
+  function notch() {
+    var cs = getComputedStyle(screen);
+    return { w: parseFloat(cs.getPropertyValue('--notch-w')) || 185,
+             h: parseFloat(cs.getPropertyValue('--notch-h')) || 32 };
+  }
+  function fit() {
+    var n = notch();
+    var full = Math.min(436, screen.clientWidth - 32);
+    /* the content is always laid out at the island's full width, so its
+       height can be read while the frame is still animating out of the notch */
+    ibody.style.width = full + 'px';
+    if (island.getAttribute('data-state') === 'hidden') {
+      island.style.width = n.w + 'px';
+      island.style.height = n.h + 'px';
+      return;
+    }
+    island.style.width = full + 'px';
+    island.style.height = (n.h + ibody.offsetHeight) + 'px';
+  }
+  function state(s) { island.setAttribute('data-state', s); fit(); }
+
+  function paragraph(words, from, to, mark, dimFrom) {
+    var p = document.createElement('p');
+    for (var i = from; i < to; i++) {
+      if (i > from) p.appendChild(document.createTextNode(' '));
+      var s = document.createElement('span');
+      s.textContent = words[i];
+      if (mark && i === FIX_AT) s.className = 'mint';
+      else if (i >= dimFrom) s.className = 'dim';
+      p.appendChild(s);
+    }
+    return p;
+  }
+
+  function render(step, settled) {
     var words = WORDS.slice(0, step.upto + 1);
     if (step.upto >= FIX_AT) words[FIX_AT] = step.fixed ? FIXED : HEARD;
+    var dimFrom = settled ? words.length : step.upto;   /* the newest word arrives dim */
     live.textContent = '';
-    for (var i = 0; i < words.length; i++) {
-      if (i > 0) live.appendChild(document.createTextNode(' '));
-      if (step.mark && i === FIX_AT) {
-        var hit = document.createElement('span');
-        hit.className = 'rev';
-        hit.textContent = words[i];
-        live.appendChild(hit);
-      } else {
-        live.appendChild(document.createTextNode(words[i]));
-      }
+    live.appendChild(paragraph(words, 0, Math.min(words.length, BREAK_FROM), step.mark, dimFrom));
+    if (words.length > BREAK_TO + 1) {
+      live.appendChild(paragraph(words, BREAK_TO + 1, words.length, false, dimFrom));
     }
+    fit();
+  }
+
+  function caret(which) {
+    c1.classList.toggle('on', which === 1);
+    c2.classList.toggle('on', which === 2);
   }
 
   function reset() {
     clearAll();
-    island.setAttribute('data-shown', 'no');
-    island.setAttribute('data-live', 'no');
-    live.className = 'live waiting';
-    live.textContent = 'Listening...';
+    live.textContent = '';
+    state('hidden');
     out1.className = 'out';
     out2.className = 'out';
+    caret(1);
     keycap.setAttribute('data-down', 'no');
   }
 
   function still() {           /* the end state, for anyone who asked for less motion */
     clearAll();
-    island.setAttribute('data-shown', 'yes');
-    island.setAttribute('data-live', 'no');
-    live.className = 'live';
-    render(STEPS[STEPS.length - 1]);
+    state('text');
+    render(STEPS[STEPS.length - 1], true);
     out1.className = 'out in';
     out2.className = 'out in';
+    caret(2);
     keycap.setAttribute('data-down', 'no');
   }
 
@@ -547,22 +685,27 @@
     reset();
     at(280, function () {
       keycap.setAttribute('data-down', 'yes');
-      island.setAttribute('data-shown', 'yes');
-      island.setAttribute('data-live', 'yes');
+      state('listening');
     });
-    at(820, function () { live.className = 'live'; });
+    var first = 1000;
     STEPS.forEach(function (step, i) {
-      at(820 + i * STEP, function () { render(step); });
+      at(first + i * STEP, function () {
+        if (island.getAttribute('data-state') !== 'text') state('text');
+        render(step, false);
+      });
     });
-    var end = 820 + STEPS.length * STEP;
-    at(end + 700, function () {
+    var end = first + STEPS.length * STEP;
+    at(end + 200, function () { render(STEPS[STEPS.length - 1], true); });
+    at(end + 600, function () {
       keycap.setAttribute('data-down', 'no');
-      island.setAttribute('data-shown', 'no');
-      island.setAttribute('data-live', 'no');
+      live.textContent = '';
+      state('placing');
     });
-    at(end + 1040, function () { out1.className = 'out in'; });
-    at(end + 1440, function () { out2.className = 'out in'; });
-    return end + 1440;
+    at(end + 1200, function () { state('placed'); });
+    at(end + 1450, function () { out1.className = 'out in'; caret(1); });
+    at(end + 1800, function () { out2.className = 'out in'; caret(2); });
+    at(end + 2500, function () { state('hidden'); });
+    return end + 2500;
   }
 
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -571,7 +714,7 @@
   function cycle() {
     if (reduce.matches) { still(); return; }
     var done = play();
-    timers.push(setTimeout(cycle, done + 2800));
+    timers.push(setTimeout(cycle, done + 2600));
   }
 
   function start() { if (running) return; running = true; cycle(); }
@@ -582,13 +725,14 @@
   var inView = false;
   function resume() { if (inView && !document.hidden) start(); }
 
+  fit();
   if ('IntersectionObserver' in window) {
     new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
         inView = e.isIntersecting;
         if (inView) { resume(); } else { stop(); reset(); }
       });
-    }, { threshold: 0.25 }).observe(island.parentNode);
+    }, { threshold: 0.25 }).observe(screen);
   } else {
     inView = true;
     start();
@@ -596,6 +740,7 @@
   document.addEventListener('visibilitychange', function () {
     if (document.hidden) { stop(); } else { resume(); }
   });
+  window.addEventListener('resize', fit);
 
   /* Press the key to play it again, press it again to leave it stopped. An
      animation that loops forever with no way to stop it is a problem for
@@ -658,8 +803,6 @@
     return made;
   }
 
-  /* pieces land one at a time; hooks fire at the start, on each piece, and at
-     the end, which is all the two eggs need to differ from each other */
   function setup(btn, pieces, tick, lead, hooks) {
     var label = btn.querySelector('.say');
     if (!label) return;
@@ -668,9 +811,7 @@
     var timers = [], playing = false;
     hooks = hooks || {};
 
-    function showAll(on) {
-      parts.forEach(function (s) { s.classList.toggle('on', on); });
-    }
+    function showAll(on) { parts.forEach(function (s) { s.classList.toggle('on', on); }); }
     function finish() {
       timers.forEach(clearTimeout);
       timers = [];
@@ -691,12 +832,11 @@
       timers.push(setTimeout(finish, lead + parts.length * tick + 120));
     }
 
-    showAll(true);                      /* it just reads normally until you hover */
+    showAll(true);
     btn.addEventListener('mouseenter', run);
     btn.addEventListener('mouseleave', function () { finish(); showAll(true); });
   }
 
-  /* the hero button: word by word, about 158 words a minute */
   var talker = document.querySelector('.btn.dictate');
   if (talker) {
     var spaced = talker.querySelector('.say').textContent.trim().split(' ')
@@ -707,30 +847,76 @@
     });
   }
 
-  /* the download button: character by character, with a cursor running along */
   var typer = document.querySelector('.btn.insert');
   if (typer) {
     var bar = document.createElement('span');
     bar.className = 'tcaret';
     bar.setAttribute('aria-hidden', 'true');
     var chars = typer.querySelector('.say').textContent.trim().split('');
-
     setup(typer, chars, 26, 90, {
-      start: function (b, parts) {
-        parts[0].parentNode.insertBefore(bar, parts[0]);
-        bar.classList.add('on');
-      },
-      piece: function (s) {
-        s.parentNode.insertBefore(bar, s.nextSibling);
-      },
-      end: function () { bar.classList.remove('on'); }
+      start: function (b, parts) { parts[0].parentNode.insertBefore(bar, parts[0]); bar.classList.add('on'); },
+      piece: function (s) { s.parentNode.insertBefore(bar, s.nextSibling); },
+      end:   function () { bar.classList.remove('on'); }
     });
   }
 })();
 
 
 /* ---------------------------------------------------------------------------
-   3. The questions open and close instead of snapping.
+   3. Sections arrive as you reach them, and the terminal in the privacy
+   panel types its command once it is on screen. Both stand down under
+   prefers-reduced-motion.
+--------------------------------------------------------------------------- */
+(function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var items = document.querySelectorAll('.reveal');
+  var cmd = document.getElementById('proofcmd');
+  var out = document.getElementById('proofout');
+  var end = document.getElementById('proofend');
+  var car = document.getElementById('proofcaret');
+  var typed = false;
+
+  function typeProof() {
+    if (typed || !cmd || !out || !end) return;
+    typed = true;
+    if (reduce.matches) return;
+    var text = cmd.textContent;
+    cmd.textContent = '';
+    out.style.visibility = 'hidden';
+    end.style.visibility = 'hidden';
+    if (car) car.style.visibility = 'hidden';
+    var i = 0;
+    (function tick() {
+      if (i <= text.length) {
+        cmd.textContent = text.slice(0, i++);
+        setTimeout(tick, 34);
+      } else {
+        setTimeout(function () {
+          out.style.visibility = '';
+          setTimeout(function () { end.style.visibility = ''; if (car) car.style.visibility = ''; }, 500);
+        }, 420);
+      }
+    })();
+  }
+
+  if (!('IntersectionObserver' in window) || reduce.matches) {
+    Array.prototype.forEach.call(items, function (el) { el.classList.add('in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      e.target.classList.add('in');
+      if (e.target.querySelector('#proof')) typeProof();
+      io.unobserve(e.target);
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+  Array.prototype.forEach.call(items, function (el) { io.observe(el); });
+})();
+
+
+/* ---------------------------------------------------------------------------
+   4. The questions open and close instead of snapping.
 --------------------------------------------------------------------------- */
 (function () {
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -743,35 +929,28 @@
     var busy = false;
 
     summary.addEventListener('click', function (e) {
-      if (reduce.matches) return;      /* let the browser do its plain thing */
+      if (reduce.matches) return;
       e.preventDefault();
       if (busy) return;
       busy = true;
 
       if (d.open) {
         body.style.height = body.scrollHeight + 'px';
-        void body.offsetHeight;              /* let the browser take the start value */
+        void body.offsetHeight;
         body.style.transition = 'height ' + SHUT + 'ms ease, opacity ' + (SHUT - 60) + 'ms ease';
         body.style.height = '0px';
         body.style.opacity = '0';
-        setTimeout(function () {
-          d.open = false;
-          body.removeAttribute('style');
-          busy = false;
-        }, SHUT + 20);
+        setTimeout(function () { d.open = false; body.removeAttribute('style'); busy = false; }, SHUT + 20);
       } else {
         d.open = true;
         var target = body.scrollHeight;
         body.style.height = '0px';
         body.style.opacity = '0';
-        void body.offsetHeight;              /* same, or both values land in one recalc */
+        void body.offsetHeight;
         body.style.transition = 'height ' + OPEN + 'ms ease, opacity ' + (OPEN - 60) + 'ms ease 40ms';
         body.style.height = target + 'px';
         body.style.opacity = '1';
-        setTimeout(function () {
-          body.removeAttribute('style');
-          busy = false;
-        }, OPEN + 40);
+        setTimeout(function () { body.removeAttribute('style'); busy = false; }, OPEN + 40);
       }
     });
   });
