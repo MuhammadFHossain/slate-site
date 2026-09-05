@@ -20,6 +20,28 @@
     <language>en</language>
 
     <item>
+      <title>Version 2.0.1</title>
+      <pubDate>Sat, 05 Sep 2026 13:28:12 +0000</pubDate>
+      <sparkle:version>26</sparkle:version>
+      <sparkle:shortVersionString>2.0.1</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.4</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+        <ul>
+          <li>The glass, everywhere. Settings, the History window, the picker and the setup guide now share the same glass surfaces as the island&rsquo;s welcome card, with rounded type and inks that adapt to light and dark. 2.0 shipped with the old paper look on those windows.</li>
+          <li>A History window of its own. Everything you have said, newest first, with search, one-click copy, delete, and Clear all. Open it from the menu bar (&#8984;H). Retention stays in Settings &rsaquo; History.</li>
+        </ul>
+      ]]></description>
+      <enclosure url="https://slatedictation.com/Slate-2.0.1.dmg"
+                 sparkle:version="26"
+                 sparkle:shortVersionString="2.0.1"
+                 sparkle:edSignature="V7rfAkIqOgq4OnqyBW9bLYpxIRl6Gb59cwliktsaUfyiwW/mtw7q8rYmZJigFxzJhlStxAexsZNK3gZigIhvBg==" length="8593977"
+                 type="application/octet-stream" />
+      <!-- Signed against the notarized, stapled DMG (5 Sep 2026), and the
+           staple plus Gatekeeper checked on the exact copy committed beside
+           this file. -->
+    </item>
+
+    <item>
       <title>Version 2.0</title>
       <pubDate>Sat, 05 Sep 2026 05:04:31 +0000</pubDate>
       <sparkle:version>25</sparkle:version>
