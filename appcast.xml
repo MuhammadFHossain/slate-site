@@ -20,6 +20,32 @@
     <language>en</language>
 
     <item>
+      <title>Version 2.0</title>
+      <pubDate>Sat, 05 Sep 2026 05:04:31 +0000</pubDate>
+      <sparkle:version>25</sparkle:version>
+      <sparkle:shortVersionString>2.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.4</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+        <ul>
+          <li>The island is the notch, grown. While you talk, a deep black shape comes out of the notch itself, with the waveform, a live dot, and your words settling in below it: white once they have held steady, mint for a word the engine went back and changed, dim for what it only just heard. On a Mac without a notch it hangs from the menu bar.</li>
+          <li>Dictation starts in about a twentieth of a second. Slate now opens the Mac&rsquo;s own microphone directly instead of asking the system for whatever input is selected. With AirPods on, that used to mean waiting up to a second and a half for the Bluetooth call profile, and your music dropping to call quality; now the AirPods are never touched. There is a switch in Settings if you would rather use the headset&rsquo;s microphone.</li>
+          <li>Real paragraphs. Pause for a beat and the next thing you say starts a new paragraph. And when your cursor already sits after text on a line, the words begin on a fresh paragraph instead of running into it.</li>
+          <li>Glass. The welcome card and the picker sit on Liquid Glass on macOS 26.</li>
+          <li>Sounds you can choose. Classic (the soft Pop and Tink as before), Soft, Marimba, Click, or Off, in Settings.</li>
+          <li>Tap-to-stop lands its words. A Cmd-V is never sent while a modifier key is still held down.</li>
+        </ul>
+      ]]></description>
+      <enclosure url="https://slatedictation.com/Slate-2.0.dmg"
+                 sparkle:version="25"
+                 sparkle:shortVersionString="2.0"
+                 sparkle:edSignature="OcZJHGW296GKxOShYM/6fhGOvZ2+N+v9BAMgYXsUjIgx6ykaL4qRjH/sMcBbogC4dHu9EBc+9pSuiTGWT8ylDQ==" length="8481036"
+                 type="application/octet-stream" />
+      <!-- Signed against the notarized, stapled DMG (5 Sep 2026), and the
+           staple plus Gatekeeper checked on the exact copy committed beside
+           this file. -->
+    </item>
+
+    <item>
       <title>Version 1.2.3</title>
       <pubDate>Mon, 31 Aug 2026 21:35:00 +0000</pubDate>
       <sparkle:version>24</sparkle:version>
