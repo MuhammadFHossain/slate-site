@@ -20,6 +20,29 @@
     <language>en</language>
 
     <item>
+      <title>Version 2.1.0</title>
+      <pubDate>Mon, 07 Sep 2026 02:11:21 +0000</pubDate>
+      <sparkle:version>30</sparkle:version>
+      <sparkle:shortVersionString>2.1.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.4</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+        <ul>
+          <li>Real glass. Settings, History and the setup guide were painting a stand-in that could never refract anything, so every window read as flat frost. They now use the system's own Liquid Glass, and the faint green tint is gone from the cards &mdash; a tint sits across the whole pane and washes out the very refraction that makes glass look like glass.</li>
+          <li>Bulleted lists you can say. &ldquo;Bullet point check the island, new bullet check the glass&rdquo; comes out as a real list. Like the numbered list, it only converts when the result is actually a list, so a sentence that just mentions a bullet point keeps every word.</li>
+          <li>A tapped session is yours until you tap again. Four seconds of quiet used to end it and place whatever it had, so pausing to think pasted half a thought. Settings &rsaquo; General &rsaquo; Talk key has a switch if you liked it the old way.</li>
+          <li>The island holds still. The green bars no longer slide in from outside the black when it grows.</li>
+        </ul>
+      ]]></description>
+      <enclosure url="https://slatedictation.com/Slate-2.1.0.dmg"
+                 sparkle:version="30"
+                 sparkle:shortVersionString="2.1.0"
+                 sparkle:edSignature="8xBF6JYBpAxhiALgODz9fS8Lutgu5Jwf0cPcn6Kgi//rZ4+XqiG2R5msXUneD1RiKZ5Gn3V6A3EE0hxMWnF5BQ==" length="8623158"
+                 type="application/octet-stream" />
+      <!-- Signed against the notarized, stapled DMG (7 Sep 2026), and the
+           staple plus Gatekeeper checked on the exact copy committed beside
+           this file. -->
+    </item>
+    <item>
       <title>Version 2.0.1</title>
       <pubDate>Sat, 05 Sep 2026 13:28:12 +0000</pubDate>
       <sparkle:version>26</sparkle:version>
