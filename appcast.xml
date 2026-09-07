@@ -20,6 +20,26 @@
     <language>en</language>
 
     <item>
+      <title>Version 2.1.1</title>
+      <pubDate>Mon, 07 Sep 2026 03:29:02 +0000</pubDate>
+      <sparkle:version>31</sparkle:version>
+      <sparkle:shortVersionString>2.1.1</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.4</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+        <ul>
+          <li>The stray &ldquo;Yeah.&rdquo; is gone. A dictation is cut into paragraphs where you paused, and each piece is transcribed on its own &mdash; but the piece after your last word was often just an open microphone, and a speech model asked what was said in a stretch of silence answers with its most likely short utterance instead of with nothing. Parakeet&rsquo;s is &ldquo;Yeah.&rdquo; Silence is no longer handed over on its own, so words nobody said stop appearing at the end.</li>
+        </ul>
+      ]]></description>
+      <enclosure url="https://slatedictation.com/Slate-2.1.1.dmg"
+                 sparkle:version="31"
+                 sparkle:shortVersionString="2.1.1"
+                 sparkle:edSignature="iNiv2rof1CLzh2QZ1V0bZ/wdynsfFlLPm9455Ry88YfqUiNGzXY4K04tf4xaX/NQRHC4Q8w5aHtVspccAtpQBg==" length="8631334"
+                 type="application/octet-stream" />
+      <!-- Signed against the notarized, stapled DMG (7 Sep 2026), and the
+           staple plus Gatekeeper checked on the exact copy committed beside
+           this file. -->
+    </item>
+    <item>
       <title>Version 2.1.0</title>
       <pubDate>Mon, 07 Sep 2026 02:11:21 +0000</pubDate>
       <sparkle:version>30</sparkle:version>
