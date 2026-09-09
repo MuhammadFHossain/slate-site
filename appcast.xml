@@ -20,6 +20,32 @@
     <language>en</language>
 
     <item>
+      <title>Version 2.1.2</title>
+      <pubDate>Wed, 09 Sep 2026 22:56:28 +0000</pubDate>
+      <sparkle:version>37</sparkle:version>
+      <sparkle:shortVersionString>2.1.2</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.4</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+        <ul>
+          <li>Words could go missing. When a stretch of a recording came back from the speech model with no words at all, Slate dropped it without a sound &mdash; so half a sentence could vanish with nothing on screen to say anything had gone wrong. A stretch that holds a voice and returns nothing is a failure, not an empty stretch, and the recording is now redone in one pass when it happens. Whichever attempt finds more words wins.</li>
+          <li>Two copies of Slate could run at once &mdash; a new download, and the one already in your menu bar. Both listened for the talk key, so one press started two recordings and pasted two results. Everything you said landed twice, in two different wordings. The copy you just opened now closes the older one.</li>
+          <li>&ldquo;Yeah.&rdquo; no longer appears in the island before you have said anything. The live preview starts as soon as there is half a second of sound, and at the start of a turn that half second is a room nobody has spoken into yet &mdash; which a speech model answers with its most likely short word rather than with nothing.</li>
+          <li>Pick your microphone. Settings &rsaquo; General now has a menu of every microphone on your Mac, instead of one switch. It says which one is listening. Unplug the one you chose and Slate falls back to your Mac&rsquo;s own; plug it back in and it returns to yours, with nothing to switch. If Slate hears nothing at all while your headphones are connected, it now says which microphone it was using instead of failing in silence.</li>
+          <li>Cards are readable again on the glass. Over a bright desktop picture they had almost no background of their own, and the small grey text under them disappeared. In dark mode the History and Notes rows were worse: white text on a white card, so every row you were not pointing at looked blank.</li>
+          <li>Hear the sounds before you pick one, with a play button beside the menu. The multilingual model is labelled beta, because it is.</li>
+          <li>Plainer words throughout. Every settings note, every message when something goes wrong, and the whole setup guide were rewritten to say what they mean. The setup guide also teaches something it never mentioned: that speech can shape the text, not just type it. It asks you to say a list out loud, and shows the list appear.</li>
+        </ul>
+      ]]></description>
+      <enclosure url="https://slatedictation.com/Slate-2.1.2.dmg"
+                 sparkle:version="37"
+                 sparkle:shortVersionString="2.1.2"
+                 sparkle:edSignature="Tf0sAoU9TbTlzi4D+nOkcT7axAZAqd3aR9wWOu5OlI2bwgDPOELI+x4xijd7DgYgWoUKrvu0UGWEK80lnHLDCg==" length="8754936"
+                 type="application/octet-stream" />
+      <!-- Signed against the notarized, stapled DMG, with the staple and the
+           Gatekeeper verdict checked on the exact copy committed beside this
+           file. -->
+    </item>
+    <item>
       <title>Version 2.1.1</title>
       <pubDate>Mon, 07 Sep 2026 03:29:02 +0000</pubDate>
       <sparkle:version>31</sparkle:version>
