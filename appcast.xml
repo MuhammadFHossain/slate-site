@@ -20,6 +20,35 @@
     <language>en</language>
 
     <item>
+      <title>Version 2.2.0</title>
+      <pubDate>Sun, 04 Oct 2026 22:53:56 +0000</pubDate>
+      <sparkle:version>38</sparkle:version>
+      <sparkle:shortVersionString>2.2.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.4</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+        <ul>
+          <li>The island steps aside. It hangs over the top of whatever you are working in, and the tab or toolbar underneath it was out of reach until you finished speaking. Now a click there goes straight through, and when the pointer touches the island it squeezes up into the menu bar beside the notch, keeping the waveform and your newest words in view, so you can see what you are about to click. It drops back down once the pointer moves away. A message about something that went wrong stays where it is, so it can be read.</li>
+          <li>Your words fit the text they land in. A new paragraph used to start whenever anything was already on the line, which split a sentence you dictated into and turned &ldquo;flights to&rdquo; and &ldquo;Boston&rdquo; into &ldquo;flights toBoston&rdquo; in a search box; now one starts only at the end of a line, after a finished sentence, and a pause in the middle of a sentence no longer breaks it in two. Words that land inside a sentence drop the full stop the speech model ended them with, so replacing a word no longer types &ldquo;Send it Monday..&rdquo;, and Slate now asks apps built on Electron to show it the text before the cursor, so two takes in a row no longer run together in those apps as &ldquo;quarter.Meat&rdquo;.</li>
+          <li>The microphone no longer seems to switch itself off. In the default talk mode, a press longer than a third of a second counted as a hold and closed the microphone the moment you let go, and reaching for the key to start talking often takes that long; a short press in which Slate has heard nothing now keeps listening instead. That second of silence is also where a stray &ldquo;Yeah.&rdquo; still came from, and Slate now drops one that was never loud enough to have been said.</li>
+          <li>Cleanup no longer deletes words from ordinary sentences. &ldquo;There&rsquo;s no new line at the end of the file&rdquo; and &ldquo;We need new line managers&rdquo; were cut at a line break nobody asked for, &ldquo;Can someone delete that?&rdquo; and &ldquo;I&rsquo;ll delete that&rdquo; erased themselves, and &ldquo;uh oh&rdquo;, &ldquo;mm hmm&rdquo;, &ldquo;knock knock&rdquo;, &ldquo;Bora Bora&rdquo;, the verb &ldquo;err&rdquo; and phone numbers read out digit by digit each lost a word. A filler between two commas no longer leaves one of them behind, as in &ldquo;We could, push it a week&rdquo;, and &ldquo;Sales at Amazon.com rose&rdquo; is no longer turned into an email address.</li>
+          <li>Corrections work in more of the ways people say them. &ldquo;Meet at five, no, wait, six&rdquo;, &ldquo;Send it Tuesday. Make that Friday.&rdquo;, &ldquo;Buy thirteen, no, fourteen&rdquo; and &ldquo;It&rsquo;s 9 to 5, no, 9 to 6&rdquo; now come out corrected; a pause before &ldquo;scratch that&rdquo; no longer keeps the very sentence it was meant to erase; and a correction no longer runs your paragraphs together. Bulleted lists said with a pause after each marker come out as lists, &ldquo;question mark&rdquo; said after a pause becomes the mark, and your dictionary entries now win over the built-in spellings that contain them.</li>
+          <li>Slate now says when it cannot hear you. If the microphone was switched off for Slate in System Settings, the talk key still opened the island and recorded silence, and nothing on screen said why. Now the menu bar icon is struck through, the menu names the problem and has a Turn On Microphone button, Settings &rsaquo; General &rsaquo; Permissions shows the microphone&rsquo;s status, and pressing the talk key explains the problem instead of listening to nothing.</li>
+          <li>Long hands-free sessions are no longer thrown away. Every take had thirty seconds to be transcribed, and on a slower Mac a half-hour session can take longer than that, so the allowance now grows with the length of the take. And with a USB microphone or a headset chosen, a device connecting or disconnecting, such as AirPods, no longer restarts the microphone in the middle of a sentence and loses the words in between.</li>
+          <li>An interrupted first download of the speech files no longer leaves Slate stuck. If it stopped partway, through a quit, sleep or lost Wi-Fi, every later attempt failed on the files that never arrived, and trying again repeated the failure forever; Slate now checks the files, fetches only what is missing and picks up where it stopped. If a download does fail, the menu and Settings &rsaquo; General have a Try Again button, and the talk key says to check the connection and free space instead of asking you to press again in a moment.</li>
+          <li>Slate offers once to move itself into Applications when it is opened from its disk image, from Downloads or from anywhere else. A copy left on the disk image or in Downloads cannot update itself, and its login item stops working once the image is ejected. After setup, Slate also asks once whether to check for updates automatically &mdash; every earlier version had that answer set to no, so unless you switched checks on in Settings &rsaquo; About, it never looked on its own &mdash; and when a scheduled check finds a new version, the menu says &ldquo;Update available&rdquo;, because the update window can open behind other apps.</li>
+          <li>Smaller fixes. Escape did nothing in any app while a message from Slate was on screen, deleting a dictionary entry while typing in it could quit Slate, long messages in the island lost their second line, usually the one that says where the fix is, and turning History off could leave its file on disk. Cmd-Ctrl-V can now be switched off in Settings &rsaquo; General &rsaquo; Clipboard, for apps that use the shortcut themselves, such as Paste Special in Microsoft Word.</li>
+        </ul>
+      ]]></description>
+      <enclosure url="https://slatedictation.com/Slate-2.2.0.dmg"
+                 sparkle:version="38"
+                 sparkle:shortVersionString="2.2.0"
+                 sparkle:edSignature="5kxlDdGBytcE95c5fNxR4dPtP2QFQKANg1YYKsEHFxqJ2544MyzYw8EkeqcbiNlf77b3flFgJLjN5PlU1h8/Bw==" length="9270589"
+                 type="application/octet-stream" />
+      <!-- Signed against the notarized, stapled DMG, with the staple and the
+           Gatekeeper verdict checked on the exact copy committed beside this
+           file. -->
+    </item>
+    <item>
       <title>Version 2.1.2</title>
       <pubDate>Wed, 09 Sep 2026 22:56:28 +0000</pubDate>
       <sparkle:version>37</sparkle:version>
