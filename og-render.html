@@ -14,7 +14,11 @@
       file://$PWD/og-render.html
 
   Render it on a Mac: the headline is SF Rounded, the system face, and the
-  fallback elsewhere is not the card people see from this site.
+  fallback elsewhere is not the card people see from this site. Then open the
+  PNG and look at it, and check it is still 1200 by 630, the size the page's
+  og:image tags promise:
+
+    sips -g pixelWidth -g pixelHeight assets/img/og.png
 -->
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -80,8 +84,12 @@
 
   <h1 class="ui">Smart dictation that never leaves your Mac.</h1>
   <p class="sub">Hold a key, speak, and watch your words appear in any app.</p>
+  <!-- The offer as the site states it: the trial first, then the price.
+       If either changes, change it here and re-render, or every shared link
+       keeps showing the old one. -->
   <div class="chips ui">
-    <span class="chip on">Free to use</span>
+    <span class="chip on">Free for 14 days</span>
+    <span class="chip">$27 once</span>
     <span class="chip">No account</span>
     <span class="chip">Works offline</span>
   </div>

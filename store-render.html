@@ -3,102 +3,114 @@
 <head>
 <meta charset="utf-8">
 <title>store render</title>
+<meta name="robots" content="noindex">
+<!--
+  Source for assets/img/store-1mac.png, the product image on the Lemon
+  Squeezy checkout. Kept in the repo so it can be re-rendered, the same way
+  og-render.html is. Nothing links to it. Re-render after changing the words,
+  then upload the PNG to the product in Lemon Squeezy:
+
+    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
+      --headless --disable-gpu --hide-scrollbars --window-size=1024,1024 \
+      --screenshot=assets/img/store-1mac.png --virtual-time-budget=2000 \
+      file://$PWD/store-render.html
+
+  Slate is sold one way, one license for one Mac, so there is one image. The
+  3-Mac variant is gone, and with it the ?seats= switch this page used to take.
+
+  Render it on a Mac: the type is the system's own, SF Rounded and SF Pro, the
+  same faces as the site, and nothing is downloaded. The fallback elsewhere is
+  not the image people see at checkout.
+
+  The take is a real one. This prints exactly the line under "Slate types":
+
+    Slate --refine "Meet me at 5pm, no, 5:15pm."
+
+  If you change the words, run it again and make the image match.
+-->
 <style>
-  @font-face {
-    font-family: "Newsreader";
-    src: url("assets/fonts/Newsreader-VF.ttf") format("truetype-variations");
-    font-weight: 200 700; font-style: normal;
-  }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
     width: 1024px; height: 1024px; overflow: hidden;
-    background: #FAFDF5; color: #083620;
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #F3F6F4; color: #101815;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
     display: flex; flex-direction: column;
     align-items: center; justify-content: center;
-    padding: 0 76px;
+    padding: 0 88px;
+    background-image:
+      radial-gradient(640px 480px at 10% -8%, rgba(0,191,99,.12), transparent 62%),
+      radial-gradient(560px 440px at 96% 104%, rgba(52,211,153,.10), transparent 62%);
   }
+  .ui { font-family: ui-rounded, "SF Pro Rounded", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif; }
 
-  .mark-row { display: flex; align-items: center; gap: 20px; }
-  .mark-row svg { width: 74px; height: 64px; color: #00BF63; }
-  .mark-row b {
-    font-family: "Newsreader", Georgia, serif;
-    font-size: 92px; font-weight: 620; letter-spacing: -0.02em; line-height: 1;
-  }
+  .mark-row { display: flex; align-items: center; gap: 18px; }
+  .mark-row svg { width: 76px; height: 76px; border-radius: 18px; }
+  .mark-row b { font-size: 64px; font-weight: 700; letter-spacing: -0.02em; line-height: 1; }
 
   h1 {
-    font-family: "Newsreader", Georgia, serif;
-    font-size: 44px; font-weight: 560; line-height: 1.25;
-    letter-spacing: -0.01em; text-align: center; margin-top: 22px;
+    font-size: 58px; font-weight: 700; line-height: 1.08;
+    letter-spacing: -0.028em; text-align: center;
+    margin-top: 36px; max-width: 760px;
   }
-  h1 .hl { background: #C1FF72; border-radius: 7px; padding: 0 9px; }
 
-  /* Slate's own live-text surface: what the app looks like in use. */
-  .island {
-    margin-top: 62px; width: 100%;
-    background: #F4FDEC; border: 2px solid rgba(0,191,99,.42);
-    border-radius: 28px; padding: 34px 38px 38px;
-    box-shadow: 0 20px 46px rgba(8,54,32,.09);
+  /* One of the site's receipts, drawn larger: what you say, and what Slate
+     types. The struck words are the ones the cleanup drops. */
+  .receipt {
+    margin-top: 60px; width: 100%;
+    border-radius: 28px;
+    background: linear-gradient(180deg, rgba(255,255,255,.78), rgba(255,255,255,.58));
+    border: 1.5px solid rgba(0,191,99,.26);
+    box-shadow: 0 14px 26px -4px rgba(0,0,0,.10), 0 6px 34px rgba(0,191,99,.14);
   }
-  .island .wave { display: flex; gap: 10px; margin-bottom: 22px; }
-  .island .wave i { width: 12px; height: 12px; border-radius: 50%; background: #00BF63; }
-  .island .said {
-    font-size: 25px; color: #3A6250; margin-bottom: 14px; letter-spacing: -0.01em;
+  .receipt > div { padding: 30px 40px; }
+  .receipt .said { border-bottom: 1.5px solid rgba(16,24,21,.09); }
+  .receipt .lbl {
+    display: block; font-size: 17px; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: #8E9B94; margin-bottom: 10px;
   }
-  .island p {
-    font-family: "Newsreader", Georgia, serif;
-    font-size: 46px; line-height: 1.25; letter-spacing: -0.01em;
-  }
-  .island .rev { background: #C1FF72; border-radius: 6px; padding: 0 7px; }
+  .receipt .said p { font-size: 34px; line-height: 1.35; color: #5B6A62; }
+  .receipt .said s { color: #8E9B94; text-decoration-color: #8E9B94; }
+  .receipt .got p { font-size: 46px; line-height: 1.25; letter-spacing: -0.01em; }
+  .fix { background: rgba(0,191,99,.14); color: #00803A; border-radius: 8px; padding: 0 8px; margin: 0 -2px; }
 
   .seats {
-    margin-top: 58px;
-    display: flex; align-items: center; gap: 16px;
-    background: #fff; border: 2px solid rgba(0,191,99,.38);
-    border-radius: 999px; padding: 18px 40px;
-    font-size: 34px; letter-spacing: -0.01em;
+    margin-top: 56px;
+    display: flex; align-items: center; gap: 14px;
+    background: rgba(0,191,99,.14); color: #00803A;
+    border-radius: 999px; padding: 16px 34px;
+    font-size: 30px; font-weight: 600; letter-spacing: -0.01em;
   }
-  .seats .dots { display: flex; gap: 9px; }
-  .seats .dots i { width: 17px; height: 17px; border-radius: 5px; background: #00BF63; }
-  .seats .dots i.off { background: rgba(0,191,99,.20); }
+  .seats svg { width: 36px; height: 36px; }
 
-  .foot { margin-top: 34px; font-size: 27px; color: #3A6250; }
+  .foot { margin-top: 26px; font-size: 26px; color: #5B6A62; }
 </style>
 </head>
 <body>
 
-  <div class="mark-row">
-    <svg viewBox="0 0 28 24" aria-hidden="true"><g fill="currentColor">
-      <rect x="0" y="8.5" width="2.6" height="7" rx="1.3"/>
-      <rect x="4.2" y="6.5" width="2.6" height="11" rx="1.3"/>
-      <rect x="8.4" y="4" width="2.6" height="16" rx="1.3"/>
-      <rect x="12.6" y="1" width="2.6" height="22" rx="1.3"/>
-      <rect x="16.8" y="4.5" width="2.6" height="15" rx="1.3"/>
-      <rect x="21" y="6.5" width="2.6" height="11" rx="1.3"/>
-      <rect x="25.2" y="8.5" width="2.6" height="7" rx="1.3"/>
-    </g></svg>
+  <div class="mark-row ui">
+    <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="15" fill="#00BF63"/><g fill="#C1FF72"><rect x="16.7" y="27.3" width="2.8" height="9.4" rx="1.4"/><rect x="21.3" y="25.1" width="2.8" height="13.8" rx="1.4"/><rect x="26" y="21.5" width="2.8" height="21" rx="1.4"/><rect x="30.6" y="16" width="2.8" height="32" rx="1.4"/><rect x="35.2" y="21.7" width="2.8" height="20.6" rx="1.4"/><rect x="39.9" y="24.5" width="2.8" height="15" rx="1.4"/><rect x="44.5" y="27.3" width="2.8" height="9.4" rx="1.4"/></g></svg>
     <b>Slate</b>
   </div>
 
-  <h1>Dictation that <span class="hl">never leaves your Mac</span>.</h1>
+  <h1 class="ui">Smart dictation that<br>never leaves your Mac.</h1>
 
-  <div class="island">
-    <div class="wave"><i></i><i></i><i></i><i></i><i></i></div>
-    <div class="said">You said: “meet me at 5pm, no, 5:15pm”</div>
-    <p>Meet me at <span class="rev">5:15pm</span>.</p>
+  <div class="receipt">
+    <div class="said">
+      <span class="lbl ui">You say</span>
+      <p>&ldquo;Meet me at <s>5pm, no,</s> 5:15pm.&rdquo;</p>
+    </div>
+    <div class="got">
+      <span class="lbl ui">Slate types</span>
+      <p>Meet me at <span class="fix">5:15pm</span>.</p>
+    </div>
   </div>
 
-  <div class="seats" id="seats"></div>
+  <div class="seats ui">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="11" rx="1.6"/><path d="M2 19h20"/></svg>
+    <span>One Mac, yours for good</span>
+  </div>
   <p class="foot">Pay once. No subscription. No account.</p>
-
-<script>
-  const n = Number(new URLSearchParams(location.search).get('seats') || 1);
-  const label = n === 1 ? 'One Mac, yours for good' : n + ' Macs, yours for good';
-  let dots = '';
-  for (let i = 0; i < 3; i++) dots += '<i class="' + (i < n ? '' : 'off') + '"></i>';
-  document.getElementById('seats').innerHTML =
-    '<span class="dots">' + dots + '</span><span>' + label + '</span>';
-</script>
 
 </body>
 </html>

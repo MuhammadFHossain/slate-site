@@ -1,3 +1,11 @@
+# The two render pages, og-render.html and store-render.html, are tools for
+# making images, not pages to land on. They say so with
+# <meta name="robots" content="noindex"> and are left crawlable on purpose: a
+# crawler that is blocked from a page never reads its noindex, and can still
+# list the bare address if anything links to it.
+#
+# README.md is plain text and has no way to say noindex, so it is blocked here.
 User-agent: *
+Disallow: /README.md
 Allow: /
 Sitemap: https://slatedictation.com/sitemap.xml

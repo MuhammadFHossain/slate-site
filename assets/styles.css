@@ -143,6 +143,10 @@ h1, h2, h3 {
   margin: 0;
   letter-spacing: -0.02em;
 }
+/* Headlines split into lines of even length, so a phone never leaves one word
+   such as "Mac." or "once." alone on the last line. Browsers without it wrap
+   as before. */
+h1, h2 { text-wrap: balance; }
 h1 { font-size: clamp(38px, 6.2vw, 68px); line-height: 1.02; letter-spacing: -0.028em; }
 h2 { font-size: clamp(28px, 3.6vw, 42px); line-height: 1.08; }
 h3 { font-size: 18px; line-height: 1.3; letter-spacing: -0.01em; }
@@ -169,7 +173,9 @@ p:last-child { margin-bottom: 0; }
 section { padding: 96px 0; }
 .section-head { max-width: 640px; margin: 0 auto 44px; text-align: center; }
 .section-head h2 { margin-bottom: 12px; }
-.section-head p { color: var(--ink-soft); margin: 0; font-size: 17px; }
+/* the subtitle only: without the :not, this outranks .eyebrow and turns every
+   section's small emerald label into 17px grey body text */
+.section-head p:not(.eyebrow) { color: var(--ink-soft); margin: 0; font-size: 17px; }
 
 /* ---- the glass surface ---- */
 .glass {
@@ -253,6 +259,12 @@ section { padding: 96px 0; }
 .btn-big { font-size: 17px; padding: 16px 30px; }
 .btn .mark { width: 18px; height: 16px; color: currentColor; }
 
+/* the whole offer in one line, under each download button: trial, price,
+   seat, refund. Each part keeps its words together, so on a phone the line
+   only breaks between parts, never inside "30-day refund". */
+.offer { font-family: var(--ui); font-size: 14.5px; font-weight: 600; color: var(--ink-soft); margin: 0; }
+.offer span { white-space: nowrap; }
+
 .pill {
   display: inline-flex; align-items: center; gap: 7px;
   font-family: var(--ui); font-size: 12.5px; font-weight: 600;
@@ -318,6 +330,8 @@ kbd.key {
 .hero .lead { max-width: 36em; margin: 18px auto 0; }
 .hero .cta { margin-top: 30px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 .hero .req { margin-top: 14px; }
+.hero .offer { margin-top: 18px; }
+.hero .offer + .req { margin-top: 6px; }
 
 /* ---- the stage: a Mac screen, the notch, the island, and the note ---- */
 .stage { padding: clamp(28px, 5vh, 52px) var(--gutter) 0; }
@@ -616,10 +630,24 @@ kbd.key {
 .compare td.yes::before { content: ""; display: inline-block; width: 11px; height: 6px; margin: 0 10px 2px 0; border-left: 2px solid var(--emerald); border-bottom: 2px solid var(--emerald); transform: rotate(-45deg); }
 .compare td.no { color: var(--ink-faint); }
 
+/* ================= PRICING ================= */
+/* One card, one price. The list reuses the checks from the feature cards so
+   the page has a single way of saying "included". */
+.price-card { max-width: 560px; margin: 0 auto; padding: 38px 36px 30px; text-align: center; }
+.price-card .amount {
+  font-family: var(--ui); font-size: 64px; font-weight: 700; line-height: 1;
+  letter-spacing: -0.03em; color: var(--ink); margin: 0 0 26px;
+}
+.price-card .amount span { display: block; margin-top: 10px; font-size: 14.5px; font-weight: 600; letter-spacing: 0; color: var(--ink-faint); }
+.price-card .checks { text-align: left; margin-bottom: 26px; }
+.price-card .fine { margin-top: 14px; }
+.founders { text-align: center; margin-top: 18px; }
+
 /* ================= DOWNLOAD ================= */
 .get { padding: 52px 44px; text-align: center; }
 .get h2 { margin: 16px 0 12px; }
 .get .lead { max-width: 46ch; margin: 0 auto 28px; }
+.get .offer { margin-top: 18px; }
 .get .meta { margin-top: 16px; }
 .get .meta + .meta { margin-top: 8px; }
 .get .firstrun-lead { margin-top: 30px; }
@@ -670,7 +698,10 @@ kbd.key {
 .doc-page ul { padding-left: 20px; }
 .doc-page li { margin-bottom: 8px; }
 .doc-page a { word-break: break-word; }
-.doc-page code { background: var(--row-fill); border: 1px solid var(--row-edge); border-radius: 6px; padding: 1px 6px; font-size: 0.88em; color: var(--ink); }
+/* A long path or command has no spaces to break at, and on a phone it would
+   push the page sideways. The <wbr> hints in the pages pick the nicer breaks;
+   overflow-wrap catches everything else. */
+.doc-page code { background: var(--row-fill); border: 1px solid var(--row-edge); border-radius: 6px; padding: 1px 6px; font-size: 0.88em; color: var(--ink); overflow-wrap: anywhere; }
 .back { display: inline-flex; align-items: center; gap: 7px; font-family: var(--ui); font-size: 14.5px; font-weight: 500; color: var(--ink-soft); text-decoration: none; margin-bottom: 18px; }
 .back:hover { color: var(--emerald-text); }
 .callout { padding: 20px 24px; margin: 26px 0; }
@@ -715,6 +746,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2.5px so
   .island .live { font-size: 14.5px; }
   .btn-big { font-size: 16.5px; padding: 15px 26px; width: 100%; }
   .hero .cta .btn { width: 100%; }
+  .price-card { padding: 30px 20px 24px; }
+  .price-card .amount { font-size: 56px; }
   .proof { font-size: 12px; }
   .compare th, .compare td { padding: 12px 14px; }
   .apps .list span { padding: 0 7px; }

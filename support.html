@@ -5,12 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Support &middot; Slate</title>
 <link rel="canonical" href="https://slatedictation.com/support.html">
-<meta name="description" content="Help with Slate: first launch, the talk key, permissions, the dictionary, what is stored on your Mac, and how to uninstall.">
+<meta name="description" content="Help with Slate: first launch, the talk key, permissions, the dictionary, what it costs, the trial, license keys, moving to a new Mac, refunds, and how to uninstall.">
 <link rel="icon" type="image/png" href="assets/img/favicon-64.png">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F3F6F4">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0F1412">
-<link rel="stylesheet" href="assets/styles.css?v=20260904a">
+<meta property="og:title" content="Support &middot; Slate">
+<meta property="og:description" content="Help with Slate: setup, the talk key, permissions, the trial, license keys, moving to a new Mac, refunds, and uninstalling. A real person answers the email.">
+<meta property="og:image" content="https://slatedictation.com/assets/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://slatedictation.com/support.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Support &middot; Slate">
+<meta name="twitter:description" content="Help with Slate: setup, the talk key, permissions, the trial, license keys, moving to a new Mac, refunds, and uninstalling. A real person answers the email.">
+<meta name="twitter:image" content="https://slatedictation.com/assets/img/og.png">
+<link rel="stylesheet" href="assets/styles.css?v=20260924a">
 </head>
 <body>
 
@@ -22,6 +33,7 @@
     </a>
     <nav class="nav">
       <a href="/#how" class="hide-sm">How it works</a>
+      <a href="/#pricing" class="hide-sm">Pricing</a>
       <a href="privacy.html" class="hide-sm">Privacy</a>
       <a class="btn btn-accent btn-sm" href="/#download">Download</a>
     </nav>
@@ -35,20 +47,21 @@
   </a>
 
   <h1>Support</h1>
-  <p class="updated">Last updated 4 September 2026</p>
+  <p class="updated">Last updated 24 September 2026</p>
 
   <div class="callout glass">
     <p><strong>Email <a href="mailto:contact@bluetomatostudio.com">contact@bluetomatostudio.com</a>.</strong>
     Say what happened, which Mac you are on, and which version of Slate is in
-    Settings &rsaquo; About. A real person reads it.</p>
+    Settings &rsaquo; About. For anything about a purchase, write from the
+    address you bought with. A real person reads it.</p>
   </div>
 
   <h2>Setting Slate up</h2>
   <ul>
-    <li>Open the downloaded file and drag <strong>Slate</strong> into your Applications folder.</li>
+    <li>Open the downloaded file and drag <strong>Slate</strong> into your Applications folder. If you open Slate straight from the download instead, it offers to move itself there.</li>
     <li>Open Slate from Applications. It has no window. Look for the waveform in the menu bar at the top of the screen.</li>
     <li>Slate asks for the <strong>microphone</strong>, then for <strong>accessibility</strong>. It needs both. There is a short setup guide on the first run that walks you through them.</li>
-    <li>The speech model downloads once, about 600&nbsp;MB. Settings &rsaquo; General shows the progress.</li>
+    <li>The speech model downloads once, about 600&nbsp;MB. Settings &rsaquo; General shows the progress. If the download stops partway, because you quit, the Mac slept, or the Wi&#8209;Fi dropped, Slate carries on from where it stopped the next time it opens.</li>
     <li>Click into any text box, hold <strong>Right Option</strong>, and talk. Let go when you are done.</li>
   </ul>
   <p>You can bring the setup guide back at any time from the menu bar: <strong>Show setup guide</strong>.</p>
@@ -59,6 +72,16 @@
     <li>Check the menu bar. If the waveform is not there, Slate is not running.</li>
     <li>Try a different key in <strong>Settings &rsaquo; General &rsaquo; Talk key</strong>. Some keyboard tools take Right Option for themselves.</li>
     <li>If you prefer not to hold anything, set <strong>When pressed</strong> to tap once to start and tap again to stop.</li>
+    <li>If your 14 days are up, dictation stops until a key is entered. <strong>Settings &rsaquo; License</strong> shows where you stand. See <a href="#trial-ended">The trial ended</a>.</li>
+  </ul>
+
+  <h2>Slate can&rsquo;t hear me</h2>
+  <p>If the waveform in the menu bar has a line through it, Slate is missing a
+  permission. Click it and the menu says which one.</p>
+  <ul>
+    <li>If it says the microphone is off, choose <strong>Turn On Microphone&hellip;</strong> in that menu. Or open <strong>System Settings &rsaquo; Privacy &amp; Security &rsaquo; Microphone</strong> and switch Slate on.</li>
+    <li>If it says the microphone is blocked by this Mac&rsquo;s settings, it cannot be switched on from Slate. That usually means a work or school manages the Mac, and only they can allow it.</li>
+    <li><strong>Settings &rsaquo; General &rsaquo; Permissions</strong> shows both permissions and whether each one is on.</li>
   </ul>
 
   <h2>The menu bar icon is missing</h2>
@@ -102,21 +125,14 @@
   <h2>What is kept, and where</h2>
   <p>Everything Slate keeps is on your Mac:</p>
   <ul>
-    <li><code>~/Library/Application&nbsp;Support/Slate/</code> holds your history (text only), your dictionary, your license record, and a plain text log for support.</li>
-    <li><code>~/Library/Application&nbsp;Support/FluidAudio/Models/</code> holds the speech models.</li>
+    <li><code>~/<wbr>Library/<wbr>Application&nbsp;Support/<wbr>Slate/</code> holds your history (text only), your notes, your dictionary, your license record, and a plain text log for support.</li>
+    <li><code>~/<wbr>Library/<wbr>Preferences/<wbr>com.slate.dictation.plist</code> holds your settings and your totals, and a copy of your license key if you have one.</li>
+    <li><code>~/<wbr>Library/<wbr>Application&nbsp;Support/<wbr>FluidAudio/<wbr>Models/</code> holds the speech models.</li>
   </ul>
-  <p><strong>Settings &rsaquo; History</strong> lets you keep the history, keep it for
-  a day, or keep nothing at all, and there is a button to clear it now. Audio is
-  never written to disk. More detail is on the <a href="privacy.html">privacy page</a>.</p>
-
-  <h2>Uninstalling</h2>
-  <ul>
-    <li>Quit Slate from the menu bar.</li>
-    <li>Drag Slate from Applications to the Trash.</li>
-    <li>Delete <code>~/Library/Application&nbsp;Support/Slate</code>.</li>
-    <li>Delete <code>~/Library/Application&nbsp;Support/FluidAudio</code> to get the speech models back. That is about 1&nbsp;GB if you used both.</li>
-    <li>Remove Slate from <strong>System Settings &rsaquo; Privacy &amp; Security</strong>, under both Accessibility and Microphone.</li>
-  </ul>
+  <p><strong>Settings &rsaquo; History</strong> lets you keep the history, keep only
+  the last 24 hours, or switch it off. Switching it off, or pressing
+  <strong>Clear All</strong>, deletes the history file from your Mac straight
+  away. Audio is never written to disk. More detail is on the <a href="privacy.html">privacy page</a>.</p>
 
   <h2>What you need</h2>
   <p>An Apple silicon Mac, M1 or later, and macOS 14.4 or later. Speech runs on
@@ -127,18 +143,101 @@
   <p>Slate can update itself. <strong>Settings &rsaquo; About</strong> holds the
   switch and a <strong>Check now</strong> button, and the menu bar has
   <strong>Check for updates</strong> as well.</p>
-  <p>It is off until you say yes. Slate asks once and keeps whatever you answer.
+  <p>It is off until you say yes. Slate asks once, the first time you open it
+  after setup, and keeps whatever you answer.
   A check asks this site for one small file listing the newest version, and
   nothing about you or your Mac goes with it. A new version is installed only if
   it is signed with Slate's key.</p>
   <p>You can also just download the new version from this site and drop it into
   Applications yourself. Either way your settings, dictionary, and history stay
   where they are.</p>
+  <p>A license covers Slate 2 and every Slate 2 update. If there is ever a
+  Slate 3, it may be a paid upgrade, and the Slate 2 you have keeps working
+  either way.</p>
 
   <h2>What it costs</h2>
-  <p>Nothing. Slate is free to use, with no subscription and no account to make.
-  Nothing in the app is held back. If it saves you time and you want to say
-  thanks, a tip jar is on the way.</p>
+  <p>$27, once. No subscription and no account. That is a license for one
+  person on one Mac, and it includes Slate 2 and every Slate 2 update.</p>
+  <p>Try it first. Every feature is free for 14 days. No key, no card, no
+  account.</p>
+  <p>To buy, use <a href="LEMONSQUEEZY_CHECKOUT_URL">Buy Slate for $27</a> <!-- CHECKOUT-PIN -->
+  or press <strong>Buy Slate&hellip;</strong> in
+  <strong>Settings &rsaquo; License</strong>. The checkout is run by Lemon
+  Squeezy, which emails you a receipt and your license key. Paste the key into
+  <strong>Settings &rsaquo; License</strong> and press <strong>Activate</strong>.
+  That needs an internet connection, once.</p>
+  <p>On your bank statement the charge shows as <strong>LEMSQZY*</strong>
+  followed by a store number. That is Lemon Squeezy, the shop Slate is sold
+  through.</p>
+  <p><strong>Had Slate before it went on sale?</strong> Then it stays free. If
+  you opened Slate before the paid version was released, that is recorded on
+  your Mac and Slate is licensed already. There is no key to enter. Downloading
+  it without opening it does not count.</p>
+
+  <h2 id="trial-ended">The trial ended</h2>
+  <p>After 14 days, dictation stops until a license key is entered. Nothing is
+  deleted. Your history, notes, dictionary, and settings stay on your Mac, and
+  dictation works again as soon as a key is activated.</p>
+  <p>Buy Slate as described above, then paste the key from the purchase email
+  into <strong>Settings &rsaquo; License</strong> and press
+  <strong>Activate</strong>.</p>
+  <p>If you opened Slate before it went on sale and see this anyway, email
+  <a href="mailto:contact@bluetomatostudio.com">contact@bluetomatostudio.com</a>
+  and say roughly when you first opened it.</p>
+
+  <h2>A lost license key</h2>
+  <ul>
+    <li>It is in the email Lemon Squeezy sent when you bought Slate. Search your mail for &ldquo;Lemon Squeezy&rdquo; or &ldquo;Slate&rdquo;.</li>
+    <li>Or go to <a href="https://app.lemonsqueezy.com/my-orders">Lemon Squeezy&rsquo;s My Orders page</a> and enter the email you bought with. It sends you a sign-in link, and your order and its key are there.</li>
+    <li>Or email <a href="mailto:contact@bluetomatostudio.com">contact@bluetomatostudio.com</a> from the address you bought with, and the key is sent to you.</li>
+  </ul>
+
+  <h2>Moving to a new Mac</h2>
+  <p>A license is for one Mac at a time. To move it:</p>
+  <ul>
+    <li>On the old Mac, open <strong>Settings &rsaquo; License</strong> and press <strong>Deactivate This Mac&hellip;</strong>, which frees your key.</li>
+    <li>On the new Mac, install Slate, open <strong>Settings &rsaquo; License</strong>, paste the same key, and press <strong>Activate</strong>.</li>
+  </ul>
+  <p>If the old Mac is lost, broken, or already wiped, email
+  <a href="mailto:contact@bluetomatostudio.com">contact@bluetomatostudio.com</a>
+  from the address you bought with. The old Mac is taken off your key, and then
+  you can activate on the new one. The same goes if <strong>Activate</strong>
+  says the key is already active on another Mac.</p>
+  <p>If you had Slate before it went on sale, that is kept in Slate&rsquo;s own
+  files, so Migration Assistant moves it with everything else. Setting up the
+  new Mac from scratch instead? Email and it will be sorted out.</p>
+
+  <h2>Refunds</h2>
+  <p>If Slate is not for you, you get your money back. Ask within 30 days of
+  buying. No questions asked, and you do not need to give a reason.</p>
+  <p>Email <a href="mailto:contact@bluetomatostudio.com">contact@bluetomatostudio.com</a>
+  and say you would like a refund. Send it from the address you bought with, or
+  include the order number from your Lemon Squeezy receipt, so the order can be
+  found. The money goes back the way you paid, through Lemon Squeezy. Your bank
+  may take a few days to show it.</p>
+  <p>Please email before disputing the charge with your bank. A refund is
+  quicker, and it is the same money back.</p>
+
+  <h2>Uninstalling</h2>
+  <p><strong>Moving to another Mac, or selling or giving this one
+  away?</strong> First open <strong>Settings &rsaquo; License</strong> and press
+  <strong>Deactivate This Mac&hellip;</strong>, so your key is free for the next
+  Mac.</p>
+  <ul>
+    <li>Quit Slate from the menu bar.</li>
+    <li>Drag Slate from Applications to the Trash.</li>
+    <li>Delete <code>~/<wbr>Library/<wbr>Application&nbsp;Support/<wbr>Slate</code>. That holds your history, notes, dictionary, log, and license record.</li>
+    <li>Open Terminal and run <code>defaults delete com.slate.dictation</code> to remove Slate&rsquo;s settings.</li>
+    <li>Delete <code>~/<wbr>Library/<wbr>Application&nbsp;Support/<wbr>FluidAudio</code> to remove the speech models and get that space back. That is about 1&nbsp;GB if you used both.</li>
+    <li>Remove Slate from <strong>System Settings &rsaquo; Privacy &amp; Security</strong>, under both Accessibility and Microphone.</li>
+  </ul>
+  <p>The Slate folder and the settings both hold your license key, so after
+  these steps the key is gone from this Mac. To use Slate here again, paste the
+  key back into <strong>Settings &rsaquo; License</strong>. If you did not
+  deactivate first, <strong>Activate</strong> will say the key is already active
+  on another Mac. Email and the seat is freed.</p>
+  <p>If you had Slate before it went on sale, that record goes too. Leave the
+  folder and the settings in place if you might come back.</p>
 </main>
 
 <footer class="site-footer">
@@ -147,11 +246,12 @@
     <p class="foot-tag">Smart dictation that never leaves your Mac.</p>
     <nav class="foot-links" aria-label="Footer">
       <a href="/#download">Download</a>
+      <a href="/#pricing">Pricing</a>
       <a href="support.html">Support</a>
       <a href="privacy.html">Privacy</a>
       <a href="terms.html">Terms</a>
     </nav>
-    <p class="foot-meta">&copy; 2026 Slate. Made by Farhan Hossain.
+    <p class="foot-meta">&copy; 2026 Blue Tomato Studio LLC. Made by Farhan Hossain.
       <a href="mailto:contact@bluetomatostudio.com">contact@bluetomatostudio.com</a></p>
     <p class="foot-meta foot-credit">Speech by the Parakeet model, through
       <a href="https://github.com/FluidInference/FluidAudio">FluidAudio</a>.

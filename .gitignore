@@ -5,11 +5,18 @@ slate-update-key.txt
 *.private
 
 # The DMG is committed on purpose: GitHub Pages serves whatever is in the repo,
-# so the download button needs the file to be here. Only ever commit a build
-# that came out of `scripts/notarize.sh` and passes:
+# so the download button needs the file to be here. That is why there is no
+# Slate-*.dmg line below. One held the first build back until it was notarized
+# and came out when 1.1.0 shipped, so nothing here stops a bad DMG any more and
+# the check is yours to do by hand. Only ever commit a build that came out of
+# `scripts/notarize.sh` and passes:
 #
 #   xcrun stapler validate Slate-<version>.dmg
 #   spctl -a -t open --context context:primary-signature -vv Slate-<version>.dmg
 #
 # A development-signed build would be blocked by Gatekeeper on every Mac but
 # the one that made it, and git history keeps it forever.
+#
+# Every file in this folder is a live download at slatedictation.com/<name>.
+# Older DMGs are kept on purpose: builds from before the paid release never
+# ask for a key, and that is fine by the owner (decided 2026-09-24).

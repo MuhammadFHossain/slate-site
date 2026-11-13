@@ -5,12 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy &middot; Slate</title>
 <link rel="canonical" href="https://slatedictation.com/privacy.html">
-<meta name="description" content="Slate's privacy policy. What you say is never sent anywhere. The full list of the four times Slate uses the internet, and how to check every claim yourself.">
+<meta name="description" content="Slate's privacy policy. What you say is never sent anywhere. The four times Slate uses the internet, with every hostname, what buying it shares, and how to check every claim yourself.">
 <link rel="icon" type="image/png" href="assets/img/favicon-64.png">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F3F6F4">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0F1412">
-<link rel="stylesheet" href="assets/styles.css?v=20260904a">
+<meta property="og:title" content="Privacy &middot; Slate">
+<meta property="og:description" content="What you say is never sent anywhere. The four times Slate uses the internet, with every hostname, what buying it shares, and how to check every claim yourself.">
+<meta property="og:image" content="https://slatedictation.com/assets/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://slatedictation.com/privacy.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Privacy &middot; Slate">
+<meta name="twitter:description" content="What you say is never sent anywhere. The four times Slate uses the internet, with every hostname, what buying it shares, and how to check every claim yourself.">
+<meta name="twitter:image" content="https://slatedictation.com/assets/img/og.png">
+<link rel="stylesheet" href="assets/styles.css?v=20260924a">
 </head>
 <body>
 
@@ -22,6 +33,7 @@
     </a>
     <nav class="nav">
       <a href="/#how" class="hide-sm">How it works</a>
+      <a href="/#pricing" class="hide-sm">Pricing</a>
       <a href="support.html" class="hide-sm">Support</a>
       <a class="btn btn-accent btn-sm" href="/#download">Download</a>
     </nav>
@@ -35,14 +47,18 @@
   </a>
 
   <h1>Privacy</h1>
-  <p class="updated">Last updated 6 August 2026</p>
+  <p class="updated">Last updated 24 September 2026</p>
 
   <div class="callout glass">
     <p><strong>The short version. What you say is never sent anywhere. Not
     ever.</strong></p>
-    <p>There is no account and no sign in. There is nothing with your name on
-    it. Slate connects to the internet for four things, all listed below. What
-    you say is not sent in any of them.</p>
+    <p>There is no account and no sign in. Slate connects to the internet for
+    four things, all listed below. What you say is not sent in any of
+    them.</p>
+    <p>Buying Slate is the one time your name and email come into it. Lemon
+    Squeezy takes the payment, and Blue Tomato Studio LLC, which sells Slate,
+    gets the order details it needs to help you. Nothing about how you use
+    Slate goes with them.</p>
   </div>
 
   <h2>What you say</h2>
@@ -56,20 +72,20 @@
   by accident. Slate was not built with one.</p>
 
   <h2>What is saved, and where</h2>
-  <p>All of it is on your Mac, in
-  <code>~/Library/Application&nbsp;Support/Slate</code>, and nowhere else.</p>
+  <p>All of it is on your Mac, and nowhere else. Most of it is in
+  <code>~/<wbr>Library/<wbr>Application&nbsp;Support/<wbr>Slate</code>.</p>
   <ul>
-    <li><strong>Your history.</strong> The words you dictated, as text. You choose in Settings &rsaquo; History: keep it, keep one day of it, or keep none of it. There is a button to clear it now.</li>
+    <li><strong>Your history.</strong> The words you dictated, as text. You choose in Settings &rsaquo; History: keep it, keep only the last 24 hours, or switch it off. The 24 hours apply to the file on your Mac, not just to the list you see. Switching it off, or pressing Clear All, deletes the history file from your Mac straight away.</li>
     <li><strong>Your notes.</strong> The things you saved on purpose by holding Shift with the talk key. These stay until you delete them.</li>
     <li><strong>Your dictionary.</strong> The names and spellings you added yourself.</li>
-    <li><strong>Your settings and your totals.</strong> How many words, how long you spoke, how much time you saved.</li>
-    <li><strong>Your license record.</strong> The date you first ran Slate, and your license key if you have one.</li>
+    <li><strong>Your license record.</strong> The date you first ran Slate. If you activate a key: the key, when you activated it and on which version of Slate, the dates the store gives for the key (when it was made, and when it runs out, if it ever does), and the store&rsquo;s number for this Mac&rsquo;s activation. If you move the key to another Mac, the date you did that.</li>
     <li><strong>A log.</strong> A plain text file that helps with support questions. It stays on your Mac unless you choose to send it.</li>
+    <li><strong>Your settings and your totals.</strong> How many words, how long you spoke, how much time you saved. These are in Slate&rsquo;s preferences file, <code>~/<wbr>Library/<wbr>Preferences/<wbr>com.slate.dictation.plist</code>, where macOS keeps every app&rsquo;s settings. The trial date, your license key if you have one, and the random tag described below are kept there as well.</li>
   </ul>
   <p>The speech models are in
-  <code>~/Library/Application&nbsp;Support/FluidAudio/Models</code>. You can open
-  both folders and read every file in them. Delete them and Slate begins again
-  with nothing. The <a href="support.html">support page</a> explains how.</p>
+  <code>~/<wbr>Library/<wbr>Application&nbsp;Support/<wbr>FluidAudio/<wbr>Models</code>. You can open
+  all of these and read every file in them. Delete them and nothing Slate kept
+  is left. The <a href="support.html">support page</a> explains how.</p>
   <p>Passwords are a special case, and Slate handles them separately. See
   below.</p>
 
@@ -79,11 +95,18 @@
   key, and updating it.</p>
   <ul>
     <li><strong>1. The speech model, once.</strong> About 600&nbsp;MB, the first time you use Slate. It is downloaded from huggingface.co, which may redirect to their delivery network, so those are the names you would see in a network monitor. After it lands, dictation works with the Wi&#8209;Fi off. Try it on a plane. Switching to the multilingual model fetches that one the same way.</li>
-    <li><strong>2. Your license key, once.</strong> If you activate a key, Slate sends the key to the store to confirm it is real, along with a random tag. Your name, your email, and the name of your Mac are not sent. This happens on the day you activate and never again.</li>
-    <li><strong>3. A check for a new version, only if you switch it on.</strong> Slate downloads one small file from this website that says what the newest version is. Nothing about you, your Mac, or anything you dictated goes with it. The switch is in Settings &rsaquo; About.</li>
-    <li><strong>4. The new version itself, if you say yes.</strong> Nothing is installed without your agreement, and nothing is installed unless it is signed with Slate's own key.</li>
+    <li><strong>2. Your license key, only when you press Activate or Deactivate.</strong> Activate sends the key to Lemon Squeezy, the store Slate is sold through, at api.lemonsqueezy.com, to confirm it is real. A random tag for this Mac goes with it, such as &ldquo;Slate Mac 3F9A1C&rdquo;, so that each Mac has its own line in the store&rsquo;s list of activations. Your name, your email, and the name of your Mac are not sent. Deactivate This Mac&hellip; sends the key and the store&rsquo;s number for this activation, so the key can move to another Mac. Slate does not check the key at any other time. A founder license sends nothing at all.</li>
+    <li><strong>3. A check for a new version, only if you switch it on.</strong> Slate downloads one small file from slatedictation.com, this website, that says what the newest version is. Nothing about you, your Mac, or anything you dictated goes with it. The switch is in Settings &rsaquo; About.</li>
+    <li><strong>4. The new version itself, if you choose to install it.</strong> It comes from slatedictation.com too. Nothing is installed without your agreement, and nothing is installed unless it is signed with Slate's own key.</li>
   </ul>
   <p>That is four. There is no fifth.</p>
+  <p>Put in one sentence: Slate reaches the network for four things and
+  nothing else: downloading a speech model, from huggingface.co; checking or
+  releasing a license key with the store, at api.lemonsqueezy.com, only when
+  you press Activate or Deactivate; asking slatedictation.com whether there is
+  a new version, if you switch that on; and downloading that version if you
+  choose to install it. None of it happens while you dictate. Your words are
+  never sent anywhere.</p>
   <p>One extra detail, for people who like detail. Slate is also built so that
   a version check will not start while the microphone is open. That changes
   nothing about your privacy, because what you say is not sent in that check
@@ -111,7 +134,7 @@
   outside.</p>
 
   <h2>Check it yourself</h2>
-  <p>Please do. You should not have to take my word for it.</p>
+  <p>Please do. You should not have to take our word for it.</p>
   <p><strong>Turn off your Wi&#8209;Fi.</strong> Once the speech model has
   downloaded, keep dictating. Everything works.</p>
   <p><strong>Run <a href="https://obdev.at/products/littlesnitch/">Little
@@ -133,30 +156,69 @@
     <li>No crash reports sent anywhere.</li>
   </ul>
 
-  <h2>Payments</h2>
-  <p>Slate is free during early access, so there is nothing to pay and nothing
-  to collect. When purchasing opens, the checkout is handled by the store,
-  which is Lemon Squeezy. Your card details go to them, not to us, and their
-  privacy policy covers that transaction. Slate itself only ever sends a
-  license key to be checked.</p>
+  <h2>Buying Slate</h2>
+  <p>Slate is sold by Blue Tomato Studio LLC (&ldquo;we&rdquo;, &ldquo;us&rdquo;)
+  through Lemon Squeezy. Lemon Squeezy is the merchant of record: it runs the
+  checkout, takes the payment, charges any sales tax or VAT, and emails you the
+  receipt and the license key.</p>
+  <p><strong>What Lemon Squeezy collects.</strong> Your name, email address,
+  billing country, and payment details, plus whatever tax law requires it to
+  keep. <a href="https://www.lemonsqueezy.com/privacy">Lemon Squeezy&rsquo;s
+  privacy policy</a> covers all of it.</p>
+  <p><strong>What reaches us.</strong> The order: your name, email address,
+  and country, what you bought, when, and for how much, the order number, and
+  your license key. The store&rsquo;s dashboard also lists the Mac your key is
+  active on, by its random tag. Your card number never reaches us.</p>
+  <p><strong>What it is used for.</strong> Answering your emails, sending a
+  lost key, moving a key to a new Mac, giving refunds, and keeping the tax and
+  accounting records a business has to keep. Nothing else. It is not used for
+  advertising, and it is never sold.</p>
+  <p><strong>If you email us.</strong> Your message and your address stay in
+  that mailbox, and are used to answer you.</p>
+  <p>None of this touches the app. Buying Slate does not change what the app
+  sends. The list of four above is still the whole list.</p>
 
   <h2>This website</h2>
   <p>This site sets no cookies, runs no analytics, and loads nothing from
-  another company's servers. The one font file and every image are served from
-  here.</p>
+  another company's servers. There is no font file: the text uses the fonts
+  already on your device. Every image is served from here.</p>
+  <p>The Buy button is an ordinary link to Lemon Squeezy&rsquo;s checkout.
+  Nothing from Lemon Squeezy loads on this site. Their checkout page is theirs,
+  and their privacy policy covers it.</p>
   <p>The site is hosted on GitHub Pages. Like any web server, it records
   requests for pages and files, which includes your IP address and browser.
   That log belongs to GitHub and is covered by their privacy policy. We do not
   read it and cannot connect it to a person.</p>
 
   <h2>Children</h2>
-  <p>Slate is not aimed at children, and it collects nothing from anyone of
-  any age.</p>
+  <p>Slate is not aimed at children, and the app collects nothing from anyone
+  of any age.</p>
+
+  <h2>Who is responsible</h2>
+  <p>Blue Tomato Studio LLC is responsible for the order details it receives
+  and for email sent to it. In the words of data protection law, it is the
+  data controller for them. You can reach it at
+  <a href="mailto:contact@bluetomatostudio.com">contact@bluetomatostudio.com</a>.</p>
+  <p>Lemon Squeezy is responsible for what it collects at checkout, under its
+  own privacy policy. GitHub is responsible for its server logs.</p>
+  <p>Blue Tomato Studio is in the United States. If you live somewhere else,
+  the order details it receives are handled there. Where Lemon Squeezy handles
+  its part is set out in its own privacy policy.</p>
 
   <h2>Your rights</h2>
-  <p>There is no personal data of yours to request, correct, or delete,
-  because none of it reaches us. Everything Slate keeps is in a folder on your
-  Mac that you can open, read, and delete yourself.</p>
+  <p><strong>For what the app keeps.</strong> Everything Slate keeps is on
+  your Mac, where you can open, read, and delete it yourself. None of it
+  reaches us, so there is nothing of it for us to hand over or delete.</p>
+  <p><strong>For your order and your emails.</strong> You can ask what we hold
+  about you, ask for a copy, ask for anything wrong to be corrected, and ask
+  for it to be deleted. Email
+  <a href="mailto:contact@bluetomatostudio.com">contact@bluetomatostudio.com</a>
+  from the address you bought with, and you get an answer within 30 days.
+  Order records have to be kept for as long as tax law requires. Everything
+  else is deleted when you ask.</p>
+  <p>For what Lemon Squeezy holds, ask them, or ask us and we will pass the
+  request on. If you are not happy with an answer, you can complain to the data
+  protection authority where you live.</p>
 
   <h2>Changes</h2>
   <p>If this policy ever changes, the date at the top of this page changes
@@ -164,7 +226,7 @@
   you say stays on your Mac is not going to change.</p>
 
   <h2>Contact</h2>
-  <p>Questions about any of this go to
+  <p>Questions about any of this go to Blue Tomato Studio LLC at
   <a href="mailto:contact@bluetomatostudio.com">contact@bluetomatostudio.com</a>.
   A person reads it.</p>
 </main>
@@ -175,11 +237,12 @@
     <p class="foot-tag">Smart dictation that never leaves your Mac.</p>
     <nav class="foot-links" aria-label="Footer">
       <a href="/#download">Download</a>
+      <a href="/#pricing">Pricing</a>
       <a href="support.html">Support</a>
       <a href="privacy.html">Privacy</a>
       <a href="terms.html">Terms</a>
     </nav>
-    <p class="foot-meta">&copy; 2026 Slate. Made by Farhan Hossain.
+    <p class="foot-meta">&copy; 2026 Blue Tomato Studio LLC. Made by Farhan Hossain.
       <a href="mailto:contact@bluetomatostudio.com">contact@bluetomatostudio.com</a></p>
     <p class="foot-meta foot-credit">Speech by the Parakeet model, through
       <a href="https://github.com/FluidInference/FluidAudio">FluidAudio</a>.

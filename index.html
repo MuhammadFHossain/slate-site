@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Slate: Dictation that never leaves your Mac</title>
+<title>Slate: Smart dictation that never leaves your Mac</title>
 <link rel="canonical" href="https://slatedictation.com/">
-<meta name="description" content="Hold a key, speak, and watch your words appear in any app. The ums and false starts get cleaned up on the way. Speech becomes text on your own Mac, so nothing is uploaded. No account, no tracking, no subscription.">
+<meta name="description" content="Hold a key, speak, and watch your words appear in any app. The ums and false starts get cleaned up on the way. Speech becomes text on your own Mac, so nothing is uploaded. Free for 14 days, then $27 once. No account, no tracking, no subscription.">
 <link rel="icon" type="image/png" href="assets/img/favicon-64.png">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F3F6F4">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0F1412">
 <meta property="og:title" content="Slate: Smart dictation that never leaves your Mac">
-<meta property="og:description" content="Hold a key, speak, and watch your words appear in any app. The ums and false starts get cleaned up on the way. No internet needed.">
+<meta property="og:description" content="Hold a key, speak, and watch your words appear in any app. The ums and false starts get cleaned up on the way. No internet needed. Free for 14 days, then $27 once.">
 <meta property="og:image" content="https://slatedictation.com/assets/img/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -19,9 +19,9 @@
 <meta property="og:url" content="https://slatedictation.com/">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Slate: Smart dictation that never leaves your Mac">
-<meta name="twitter:description" content="Hold a key, speak, and watch your words appear in any app. The ums and false starts get cleaned up on the way. No internet needed.">
+<meta name="twitter:description" content="Hold a key, speak, and watch your words appear in any app. The ums and false starts get cleaned up on the way. No internet needed. Free for 14 days, then $27 once.">
 <meta name="twitter:image" content="https://slatedictation.com/assets/img/og.png">
-<link rel="stylesheet" href="assets/styles.css?v=20260904a">
+<link rel="stylesheet" href="assets/styles.css?v=20260924a">
 </head>
 <body>
 
@@ -35,6 +35,18 @@
     5  the SHA-256 inside the "Is the download safe?" answer:
          shasum -a 256 Slate-<version>.dmg
        A stale hash is worse than none: anyone who checks sees a mismatch.
+
+  The checkout link: until the store is live, every Buy button points at a
+  placeholder, with a checkout pin comment on the same line. README.md has the
+  one grep that finds them all, on every page, and the check to run after.
+  Link the Lemon Squeezy checkout directly. Do not add lemon.js or any other
+  script for it: this site loads nothing from another company's servers, and
+  privacy.html says so.
+
+  THE OFFER: 14-day free trial, $27 once, one Mac, 30-day refund. It is said
+  in the hero, the pricing section, the comparison table, the download
+  section, and the FAQ. If any part of it changes, change all of them, and
+  og-render.html, store-render.html, support.html, and terms.html with them.
 -->
 
 <header class="site-header">
@@ -57,6 +69,7 @@
     <nav class="nav">
       <a href="#how" class="hide-sm">How it works</a>
       <a href="#privacy" class="hide-sm">Privacy</a>
+      <a href="#pricing" class="hide-sm">Pricing</a>
       <a href="support.html" class="hide-sm">Support</a>
       <a class="btn btn-accent btn-sm" href="#download">Download</a>
     </nav>
@@ -86,11 +99,14 @@
             <rect x="21" y="6.5" width="2.6" height="11" rx="1.3"/>
             <rect x="25.2" y="8.5" width="2.6" height="7" rx="1.3"/>
           </g></svg>
-          <span class="say">Download for Mac</span>
+          <span class="say">Download the free trial</span>
         </a>
-        <a class="btn btn-quiet btn-big" href="#how">See how it works</a>
+        <a class="btn btn-quiet btn-big" href="LEMONSQUEEZY_CHECKOUT_URL">Buy for $27</a> <!-- CHECKOUT-PIN -->
       </div>
-      <p class="fine req">Free to use. No account, no subscription. Signed and notarized by Apple.</p>
+      <!-- The whole offer, said the same way every time. Each part keeps its
+           words together when the line wraps on a phone. -->
+      <p class="offer"><span>14-day free trial</span> &middot; <span>$27 once</span> &middot; <span>one Mac</span> &middot; <span>30-day refund</span></p>
+      <p class="fine req">No card and no account to try it. Signed and notarized by Apple.</p>
       <p class="fine req" id="notmac" hidden>You are on a phone. Slate installs on a Mac. Open slatedictation.com there and the button will be waiting.</p>
     </div>
 
@@ -310,7 +326,7 @@
           <div class="mock chips">
             <span class="chip on">English</span><span class="chip">Deutsch</span><span class="chip">Fran&ccedil;ais</span><span class="chip">Espa&ntilde;ol</span><span class="chip">Italiano</span><span class="chip">Portugu&ecirc;s</span><span class="chip">Nederlands</span><span class="chip">Polski</span><span class="chip">Svenska</span><span class="chip">+16 more</span>
           </div>
-          <h3>25 languages, all on this Mac</h3>
+          <h3>25 European languages, all on this Mac</h3>
           <p>The English model is the most accurate. The multilingual model covers 25 European languages and works out which one you are speaking.</p>
         </div>
 
@@ -334,11 +350,11 @@
         <div class="card glass c5 reveal d1">
           <ul class="mock checks">
             <li><svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="currentColor"/><path d="M4.6 8.3l2.2 2.2 4.6-4.8" stroke="#fff" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Your clipboard is put back, images included</li>
-            <li><svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="currentColor"/><path d="M4.6 8.3l2.2 2.2 4.6-4.8" stroke="#fff" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Music pauses while you talk, then resumes</li>
+            <li><svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="currentColor"/><path d="M4.6 8.3l2.2 2.2 4.6-4.8" stroke="#fff" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Locked password boxes are never typed into</li>
             <li><svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="currentColor"/><path d="M4.6 8.3l2.2 2.2 4.6-4.8" stroke="#fff" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> 0% CPU while it sits idle</li>
           </ul>
-          <h3>Leaves your clipboard and music alone</h3>
-          <p>Whatever you copied comes back. Music pauses while you talk and starts again after. Password fields are noticed and explained, never typed into.</p>
+          <h3>Leaves your clipboard alone</h3>
+          <p>Whatever you copied comes back. When a password box locks the keyboard, as real ones do, Slate notices, says so, and types nothing.</p>
         </div>
 
       </div>
@@ -352,7 +368,7 @@
         <div class="privacy-top">
           <div>
             <p class="eyebrow">The promise</p>
-            <h2>Nothing is sent anywhere.</h2>
+            <h2>Your words are never sent anywhere.</h2>
             <p class="lead" style="margin-top:14px;">Cloud dictation apps send a recording of your voice to a server, charge every month, and stop working on a plane. Slate does the whole job here.</p>
           </div>
           <div>
@@ -369,8 +385,8 @@
           <li><b>Speech becomes text on this Mac</b>, on the Neural Engine, using the Parakeet model. There is no server to send it to.</li>
           <li><b>No account, no sign-in, no tracking.</b> Slate does not collect anything.</li>
           <li><b>Zero network connections while dictating.</b> Measured with lsof during a live transcription: none.</li>
-          <li><b>Works with no internet</b> after the speech model downloads, about 600&nbsp;MB. Switching to the multilingual model fetches that one too.</li>
-          <li class="wide"><b>The rest of the list, in full.</b> A license key is checked with the store once, if you ever activate one. Update checks, if you switch them on, ask this site for one small file and download the new version if you install it. Nothing about you goes with any of it.</li>
+          <li><b>Works with no internet</b> after the speech model downloads from huggingface.co, about 600&nbsp;MB. Switching to the multilingual model fetches that one too.</li>
+          <li class="wide"><b>The rest of the list, in full.</b> A license key is checked or released with the store, api.lemonsqueezy.com, only when you press Activate or Deactivate. It goes with a random tag, never your name or your Mac&rsquo;s name. If you switch update checks on, Slate asks slatedictation.com whether there is a new version, and downloads it only if you choose to install it. That is all four, and none of it happens while you dictate.</li>
         </ul>
       </div>
     </div>
@@ -395,7 +411,7 @@
               <tr><th scope="row">On a plane</th><td class="yes">Works</td><td class="no">Does not work</td></tr>
               <tr><th scope="row">Your voice</th><td class="yes">Never leaves the Mac</td><td class="no">Uploaded</td></tr>
               <tr><th scope="row">Account</th><td class="yes">None</td><td class="no">Required</td></tr>
-              <tr><th scope="row">Price</th><td class="yes">Free</td><td class="no">$144 a year and up</td></tr>
+              <tr><th scope="row">Price</th><td class="yes">$27, once</td><td class="no">$144 a year and up</td></tr>
             </tbody>
           </table>
         </div>
@@ -403,18 +419,42 @@
     </div>
   </section>
 
+  <!-- ============ PRICING ============ -->
+  <section id="pricing" style="padding-top:0;">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Pricing</p>
+        <h2>Free for 14 days. Then $27, once.</h2>
+        <p>The trial is the whole app, with nothing held back. No card to start it, and no subscription after it.</p>
+      </div>
+      <div class="price-card glass reveal">
+        <p class="amount">$27 <span>once, in US dollars</span></p>
+        <ul class="checks">
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="currentColor"/><path d="M4.6 8.3l2.2 2.2 4.6-4.8" stroke="#fff" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Every feature, the same as the trial</li>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="currentColor"/><path d="M4.6 8.3l2.2 2.2 4.6-4.8" stroke="#fff" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Slate 2 and every Slate 2 update</li>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="currentColor"/><path d="M4.6 8.3l2.2 2.2 4.6-4.8" stroke="#fff" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> One person on one Mac. Moving to a new Mac is free.</li>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="currentColor"/><path d="M4.6 8.3l2.2 2.2 4.6-4.8" stroke="#fff" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Your money back within 30 days, no questions asked</li>
+        </ul>
+        <a class="btn btn-accent btn-big" href="LEMONSQUEEZY_CHECKOUT_URL">Buy Slate for $27</a> <!-- CHECKOUT-PIN -->
+        <p class="fine">Lemon Squeezy runs the checkout for Blue Tomato Studio LLC, and emails your receipt and license key.</p>
+      </div>
+      <p class="fine founders">Opened Slate before it cost money? <a href="#founders">It stays free for you</a>, with nothing to do.</p>
+    </div>
+  </section>
+
   <!-- ============ DOWNLOAD ============ -->
   <section id="download" style="padding-top:0;">
     <div class="wrap">
       <div class="get glass reveal">
-        <span class="pill done">Free to use</span>
+        <span class="pill done">Free for 14 days</span>
         <h2>Get Slate.</h2>
-        <p class="lead">No account to make, and nothing to sign up for.</p>
+        <p class="lead">The download is the whole app. Use it free for 14 days, with no card and no account. After that, a $27 license key keeps dictation working.</p>
 
         <!-- RELEASE-PIN 3 of 5: the download-section link -->
         <a class="btn btn-accent btn-big insert" href="Slate-2.2.0.dmg" download>
           <span class="say">Download Slate for Mac</span>
         </a>
+        <p class="offer"><span>14-day free trial</span> &middot; <span>$27 once</span> &middot; <span>one Mac</span> &middot; <span>30-day refund</span></p>
 
         <!-- RELEASE-PIN 4 of 5: version and size -->
         <p class="fine meta">Version 2.2.0 &middot; 9.3&nbsp;MB &middot; Apple silicon Mac (M1 or later) &middot; macOS 14.4 or later</p>
@@ -446,13 +486,68 @@
         <p class="eyebrow">FAQ</p>
         <h2>Questions people ask.</h2>
       </div>
+      <!-- The money questions come first, in the order people ask them. Each
+           one that support emails link to has an id, and the script at the
+           bottom opens it when the address ends in that #id. -->
       <div class="faq reveal">
+
+        <details id="cost">
+          <summary>What does it cost?</summary>
+          <div class="body"><div class="bodyin">
+            <p>$27, once, in US dollars. There is no subscription.</p>
+            <p>Before you pay anything, you get 14 days with every feature. No key, no card, and no account.</p>
+            <p>One license is for one person on one Mac. It covers Slate 2 and every Slate 2 update.</p>
+          </div></div>
+        </details>
+
+        <details id="trial">
+          <summary>What happens after 14 days?</summary>
+          <div class="body"><div class="bodyin">
+            <p>Dictation stops until you enter a license key. Nothing is deleted. Your history, notes, dictionary, and settings stay on your Mac, just as you left them.</p>
+            <p>The 14 days start the first time you open Slate. You can buy on any day, during the trial or after it ends.</p>
+          </div></div>
+        </details>
+
+        <details id="founders">
+          <summary>I used Slate before it cost money.</summary>
+          <div class="body"><div class="bodyin">
+            <p>If you opened Slate on your Mac before the paid version came out, it stays free on that Mac. That happens by itself. There is no key to enter and nothing to do.</p>
+            <p>Downloading it is not enough. Slate has to have been opened at least once before the paid version was released.</p>
+            <p>Migration Assistant carries it to a new Mac along with everything else. Setting one up from scratch? Email <a href="mailto:contact@bluetomatostudio.com">contact@bluetomatostudio.com</a> and it gets sorted out.</p>
+          </div></div>
+        </details>
+
+        <details id="refunds">
+          <summary>Can I get a refund?</summary>
+          <div class="body"><div class="bodyin">
+            <p>Yes. Within 30 days of buying, for any reason, with no questions asked.</p>
+            <p>Email <a href="mailto:contact@bluetomatostudio.com">contact@bluetomatostudio.com</a> from the address you bought with, or include the order number from your Lemon Squeezy receipt. The money goes back the way you paid.</p>
+          </div></div>
+        </details>
+
+        <details id="new-mac">
+          <summary>Can I move Slate to a new Mac?</summary>
+          <div class="body"><div class="bodyin">
+            <p>Yes, and it costs nothing. On the old Mac, press Deactivate This Mac&hellip; in Slate&rsquo;s Settings &rsaquo; License. Then paste the same key into Settings &rsaquo; License on the new Mac and press Activate.</p>
+            <p>Old Mac lost, broken, or already wiped? Email <a href="mailto:contact@bluetomatostudio.com">contact@bluetomatostudio.com</a> and the key is freed for you.</p>
+            <p>A key works on one Mac at a time. To use Slate on two Macs at once, each one needs its own license.</p>
+          </div></div>
+        </details>
+
+        <details id="buying">
+          <summary>How do I buy, and where is my key?</summary>
+          <div class="body"><div class="bodyin">
+            <p>Press Buy. Lemon Squeezy runs the checkout for Blue Tomato Studio LLC, the company that makes Slate. It takes the payment, handles sales tax or VAT, and emails you a receipt with your license key. You do not make an account.</p>
+            <p>In Slate, open Settings &rsaquo; License, paste the key, and press Activate.</p>
+            <p>Lost the key? It is in that purchase email. Lemon Squeezy&rsquo;s <a href="https://app.lemonsqueezy.com/my-orders">My Orders</a> page can send it again, or email <a href="mailto:contact@bluetomatostudio.com">contact@bluetomatostudio.com</a>.</p>
+          </div></div>
+        </details>
 
         <details>
           <summary>Is there a Windows or iPhone version?</summary>
           <div class="body"><div class="bodyin">
             <p>No. Slate needs an Apple silicon Mac, M1 or later, and macOS 14.4 or later. Speech runs on the Neural Engine, which Intel Macs do not have.</p>
-            <p>Not sure what your Mac has? Click the Apple menu at the top left, then About This Mac. If the Chip line says M1, M2, M3, or M4, Slate runs on it.</p>
+            <p>Not sure what your Mac has? Click the Apple menu at the top left, then About This Mac. If the Chip line starts with M, like M1 or M4, Slate runs on it.</p>
           </div></div>
         </details>
 
@@ -461,13 +556,6 @@
           <div class="body"><div class="bodyin">
             <p>Two jobs: noticing the talk key, and putting the text where your cursor is. macOS puts both behind the same permission.</p>
             <p>Every other keystroke passes through untouched. Nothing about what you type is read, stored, or sent.</p>
-          </div></div>
-        </details>
-
-        <details>
-          <summary>What does it cost?</summary>
-          <div class="body"><div class="bodyin">
-            <p>Nothing. Slate is free to use, with no subscription and no account to make. Nothing in the app is held back.</p>
           </div></div>
         </details>
 
@@ -509,15 +597,16 @@
           <summary>How can I check the privacy claims myself?</summary>
           <div class="body"><div class="bodyin">
             <p>Three ways. Turn off Wi-Fi after the model has downloaded, and keep dictating. Run Little Snitch, LuLu, or Wireshark and watch while you talk. Or open Terminal and run <code>lsof -i -a -p $(pgrep -x Slate)</code> mid-sentence.</p>
-            <p>Four things, and never while you dictate: the speech model download, a license check if you activate a key, and update checks and downloads if you switch them on.</p>
+            <p>Slate reaches the network for four things and nothing else: downloading a speech model, from huggingface.co; checking or releasing a license key with the store, at api.lemonsqueezy.com, only when you press Activate or Deactivate; asking slatedictation.com whether there is a new version, if you switch that on; and downloading that version if you choose to install it. None of it happens while you dictate.</p>
           </div></div>
         </details>
 
-        <details>
+        <details id="updates">
           <summary>How do updates work?</summary>
           <div class="body"><div class="bodyin">
             <p>Slate can update itself in place, but only once you say yes. A check asks this site for one small file, and nothing about you goes with it. A new version is installed only if it is signed with Slate's key.</p>
             <p>The switch and a Check now button are in Settings &rsaquo; About.</p>
+            <p>Your $27 covers Slate 2 and every Slate 2 update. If there is ever a Slate 3, it may be a paid upgrade. The version you bought keeps working either way.</p>
           </div></div>
         </details>
 
@@ -538,11 +627,12 @@
     <p class="foot-tag">Smart dictation that never leaves your Mac.</p>
     <nav class="foot-links" aria-label="Footer">
       <a href="#download">Download</a>
+      <a href="#pricing">Pricing</a>
       <a href="support.html">Support</a>
       <a href="privacy.html">Privacy</a>
       <a href="terms.html">Terms</a>
     </nav>
-    <p class="foot-meta">&copy; 2026 Slate. Made by Farhan Hossain.
+    <p class="foot-meta">&copy; 2026 Blue Tomato Studio LLC. Made by Farhan Hossain.
       <a href="mailto:contact@bluetomatostudio.com">contact@bluetomatostudio.com</a></p>
     <p class="foot-meta foot-credit">Speech by the Parakeet model, through
       <a href="https://github.com/FluidInference/FluidAudio">FluidAudio</a>.
@@ -953,6 +1043,22 @@
         setTimeout(function () { body.removeAttribute('style'); busy = false; }, OPEN + 40);
       }
     });
+  });
+
+  /* An address that ends in a question's #id opens that question, whether it
+     came from a support email or from a link on this page. Without this the
+     page scrolls to a closed box and the answer is one more click away. The
+     click listener covers a second click on the same link, which does not
+     change the address and so fires no hashchange. */
+  function openQuestion(id) {
+    var d = id && document.getElementById(id);
+    if (d && d.tagName === 'DETAILS' && d.closest('.faq')) d.open = true;
+  }
+  openQuestion(location.hash.slice(1));
+  window.addEventListener('hashchange', function () { openQuestion(location.hash.slice(1)); });
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href^="#"]');
+    if (a) openQuestion(a.getAttribute('href').slice(1));
   });
 })();
 </script>
