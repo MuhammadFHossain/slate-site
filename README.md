@@ -379,4 +379,13 @@ Taken from `docs/WEBSITE-HANDOFF.md` in the app repo, which is the real brief.
   Arabic downloads (`/models/arabic-lite/`) are counted. Both keep server logs,
   which `privacy.html` says plainly. Cloudflare's SSL mode is Full, not Strict,
   on purpose: GitHub's own certificate may not renew behind the proxy.
+- Cloudflare adds its own scripts to pages by default: a Web Analytics (RUM)
+  beacon from static.cloudflareinsights.com, and an email-decoding script that
+  rewrites every mailto link. Both break the "no tracking script, nothing from
+  another company's servers" promise. A Configuration Rule, "Add no scripts to
+  pages (no RUM, no email obfuscation)", turns both off for every request
+  (added 2026-11-14). Keep it, and after any Cloudflare change check a page the
+  way a browser fetches it: `curl -s -H 'Accept: text/html' -A 'Mozilla/5.0'
+  https://slatedictation.com/ | grep -c 'cloudflareinsights\|cdn-cgi'` must
+  print 0.
 - Light and dark, following the system, because the app does the same.
