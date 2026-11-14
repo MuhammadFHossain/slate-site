@@ -18,5 +18,8 @@ slate-update-key.txt
 # the one that made it, and git history keeps it forever.
 #
 # Every file in this folder is a live download at slatedictation.com/<name>.
-# Older DMGs are kept on purpose: builds from before the paid release never
-# ask for a key, and that is fine by the owner (decided 2026-09-24).
+# Only builds that ask for a key (2.3.0 and later) belong here. The free
+# builds before them (1.1.0 to 2.2.0) never ask for one, so anyone could use
+# them free for good; the owner had them taken down on 2026-11-14, replacing
+# the 2026-09-24 decision to keep them. They remain in git history. Never put
+# one back, and never list one in appcast.xml.

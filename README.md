@@ -33,9 +33,10 @@ privacy.html        privacy policy for the app and this site
 terms.html          terms of sale and use, including the refund promise
 404.html            what GitHub Pages serves for a bad address; its links are
                     root-absolute, since it is served from any depth
-Slate-<version>.dmg every build shipped so far. The newest is what the
-                    download buttons point at; the older ones stay on
-                    purpose, and .gitignore says why
+Slate-<version>.dmg every paid build, 2.3.0 and later. The newest is what
+                    the download buttons point at. The free builds before
+                    2.3.0 were taken down on 2026-11-14 because they never
+                    ask for a key; .gitignore says more
 appcast.xml         the update feed Sparkle in the app reads
 CNAME               slatedictation.com, used by GitHub Pages
 .nojekyll           stops GitHub rewriting the folder
