@@ -20,6 +20,26 @@
     <language>en</language>
 
     <item>
+      <title>Version 2.3.0</title>
+      <pubDate>Sat, 14 Nov 2026 17:33:21 +0000</pubDate>
+      <sparkle:version>39</sparkle:version>
+      <sparkle:shortVersionString>2.3.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.4</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+        <ul>
+          <li>Slate is now for sale: a 14-day free trial, then $27 once for one Mac, with a 30-day refund. Everyone who used Slate while it was free keeps it free, with nothing to do. Settings &rsaquo; License says &ldquo;Founder license&rdquo;.</li>
+          <li>Arabic dictation. Turn it on in Settings &rsaquo; General, then hold Right Command to dictate in Arabic, or press Right Option and L together to switch Right Option between English and Arabic. The island says which language it is listening in. The Arabic speech files are a one-time download of about 65&nbsp;MB from slatedictation.com, and they run on this Mac. Arabic needs macOS 15 or later, and is typed without punctuation for now.</li>
+          <li>Fixes. A note started while the last one was still saving could be typed into the app in front instead of kept as a note. Cleaning up a very long take no longer holds Slate up while it works. Slate&rsquo;s log no longer names the apps you dictate into.</li>
+        </ul>
+      ]]></description>
+      <enclosure url="https://slatedictation.com/Slate-2.3.0.dmg"
+                 sparkle:version="39"
+                 sparkle:shortVersionString="2.3.0"
+                 sparkle:edSignature="uuwXwsLQGS5nW3PYxhtmSDmAOaolntUVAamyAkhpa177j4Kc5b3GZOh3HlDzv9ILFTBppVEYzQ2i+ero50GKCA==" length="9505049"
+                 type="application/octet-stream" />
+    </item>
+
+    <item>
       <title>Version 2.2.0</title>
       <pubDate>Sun, 04 Oct 2026 22:53:56 +0000</pubDate>
       <sparkle:version>38</sparkle:version>
