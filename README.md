@@ -373,6 +373,10 @@ Taken from `docs/WEBSITE-HANDOFF.md` in the app repo, which is the real brief.
 
 - System faces only, like the app: SF Rounded for headlines and controls, SF
   Pro for running text. Nothing is downloaded.
-- The site sets no cookies and runs no analytics. GitHub Pages keeps its own
-  server logs, which `privacy.html` says plainly.
+- The site sets no cookies and runs no tracking script. It is hosted on GitHub
+  Pages and served through Cloudflare (free plan, since 2026-11-14), whose
+  request totals by path are how downloads, update checks (`appcast.xml`) and
+  Arabic downloads (`/models/arabic-lite/`) are counted. Both keep server logs,
+  which `privacy.html` says plainly. Cloudflare's SSL mode is Full, not Strict,
+  on purpose: GitHub's own certificate may not renew behind the proxy.
 - Light and dark, following the system, because the app does the same.
