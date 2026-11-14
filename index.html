@@ -385,7 +385,7 @@
           <li><b>Speech becomes text on this Mac</b>, on the Neural Engine, using the Parakeet model. There is no server to send it to.</li>
           <li><b>No account, no sign-in, no tracking.</b> Slate does not collect anything.</li>
           <li><b>Zero network connections while dictating.</b> Measured with lsof during a live transcription: none.</li>
-          <li><b>Works with no internet</b> after the speech model downloads from huggingface.co, about 600&nbsp;MB. Switching to the multilingual model fetches that one too.</li>
+          <li><b>Works with no internet</b> after the speech model downloads from huggingface.co, about 600&nbsp;MB. Switching to the multilingual model fetches that one too. Arabic, if you turn it on, comes from slatedictation.com, about 65&nbsp;MB.</li>
           <li class="wide"><b>The rest of the list, in full.</b> A license key is checked or released with the store, api.lemonsqueezy.com, only when you press Activate or Deactivate. It goes with a random tag, never your name or your Mac&rsquo;s name. If you switch update checks on, Slate asks slatedictation.com whether there is a new version, and downloads it only if you choose to install it. That is all four, and none of it happens while you dictate.</li>
         </ul>
       </div>
@@ -597,7 +597,7 @@
           <summary>How can I check the privacy claims myself?</summary>
           <div class="body"><div class="bodyin">
             <p>Three ways. Turn off Wi-Fi after the model has downloaded, and keep dictating. Run Little Snitch, LuLu, or Wireshark and watch while you talk. Or open Terminal and run <code>lsof -i -a -p $(pgrep -x Slate)</code> mid-sentence.</p>
-            <p>Slate reaches the network for four things and nothing else: downloading a speech model, from huggingface.co; checking or releasing a license key with the store, at api.lemonsqueezy.com, only when you press Activate or Deactivate; asking slatedictation.com whether there is a new version, if you switch that on; and downloading that version if you choose to install it. None of it happens while you dictate.</p>
+            <p>Slate reaches the network for four things and nothing else: downloading a speech model, from huggingface.co, or slatedictation.com for Arabic; checking or releasing a license key with the store, at api.lemonsqueezy.com, only when you press Activate or Deactivate; asking slatedictation.com whether there is a new version, if you switch that on; and downloading that version if you choose to install it. None of it happens while you dictate.</p>
           </div></div>
         </details>
 

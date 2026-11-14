@@ -1,0 +1,104 @@
+[
+  {
+    "metadataOutputVersion" : "3.0",
+    "storagePrecision" : "Mixed (Float16, Int32, Palettized (10 bits), Palettized (11 bits), Palettized (12 bits), Palettized (9 bits), UInt4)",
+    "outputSchema" : [
+      {
+        "hasShapeFlexibility" : "0",
+        "isOptional" : "0",
+        "dataType" : "Float32",
+        "formattedType" : "MultiArray (Float32 1 × 188 × 1025)",
+        "shortDescription" : "",
+        "shape" : "[1, 188, 1025]",
+        "name" : "ctc_head_raw_output",
+        "type" : "MultiArray"
+      },
+      {
+        "hasShapeFlexibility" : "0",
+        "isOptional" : "0",
+        "dataType" : "Int32",
+        "formattedType" : "MultiArray (Int32 1)",
+        "shortDescription" : "",
+        "shape" : "[1]",
+        "name" : "encoder_length",
+        "type" : "MultiArray"
+      }
+    ],
+    "modelParameters" : [
+
+    ],
+    "specificationVersion" : 9,
+    "mlProgramOperationTypeHistogram" : {
+      "Ios18.expandDims" : 17,
+      "Ios18.mul" : 61,
+      "Ios18.softmax" : 17,
+      "Ios18.floorDiv" : 3,
+      "Ios18.matmul" : 51,
+      "Ios18.logicalNot" : 2,
+      "Ios18.sigmoid" : 17,
+      "Split" : 17,
+      "Select" : 51,
+      "Tile" : 8,
+      "Ios18.add" : 128,
+      "Ios18.layerNorm" : 85,
+      "Ios18.reshape" : 103,
+      "Pad" : 34,
+      "Ios18.constexprLutToDense" : 193,
+      "Ios18.linear" : 137,
+      "Ios18.conv" : 57,
+      "Ios18.relu" : 3,
+      "Ios18.sub" : 3,
+      "Ios18.logicalAnd" : 2,
+      "Ios18.silu" : 51,
+      "Ios18.transpose" : 124,
+      "Ios18.cast" : 11,
+      "Ios18.less" : 5,
+      "Ios18.sliceByIndex" : 34
+    },
+    "computePrecision" : "Mixed (Float16, Float32, Int32)",
+    "isUpdatable" : "0",
+    "stateSchema" : [
+
+    ],
+    "availability" : {
+      "macOS" : "15.0",
+      "tvOS" : "18.0",
+      "visionOS" : "2.0",
+      "watchOS" : "11.0",
+      "iOS" : "18.0",
+      "macCatalyst" : "18.0"
+    },
+    "modelType" : {
+      "name" : "MLModelType_mlProgram"
+    },
+    "userDefinedMetadata" : {
+      "com.github.apple.coremltools.version" : "8.3.0",
+      "com.github.apple.coremltools.source_dialect" : "TorchScript",
+      "com.github.apple.coremltools.source" : "torch==2.7.1"
+    },
+    "inputSchema" : [
+      {
+        "hasShapeFlexibility" : "0",
+        "isOptional" : "0",
+        "dataType" : "Float32",
+        "formattedType" : "MultiArray (Float32 1 × 80 × 1501)",
+        "shortDescription" : "",
+        "shape" : "[1, 80, 1501]",
+        "name" : "melspectrogram_features",
+        "type" : "MultiArray"
+      },
+      {
+        "hasShapeFlexibility" : "0",
+        "isOptional" : "0",
+        "dataType" : "Int32",
+        "formattedType" : "MultiArray (Int32 1)",
+        "shortDescription" : "",
+        "shape" : "[1]",
+        "name" : "mel_length",
+        "type" : "MultiArray"
+      }
+    ],
+    "generatedClassName" : "AudioEncoder_pal4g8",
+    "method" : "predict"
+  }
+]
