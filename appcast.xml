@@ -20,6 +20,26 @@
     <language>en</language>
 
     <item>
+      <title>Version 2.4.0</title>
+      <pubDate>Sat, 14 Nov 2026 20:51:03 +0000</pubDate>
+      <sparkle:version>40</sparkle:version>
+      <sparkle:shortVersionString>2.4.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.4</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+        <ul>
+          <li>A second language on its own talk key. Turn it on in Settings &rsaquo; General and pick any of the languages Slate speaks: French, Spanish, German, Italian, Portuguese, Dutch, Polish and 17 more, or Arabic on macOS 15 and later. Hold Right Command to dictate in it, or press Right Option and L together to switch Right Option between your two languages. The island names the language as you speak. Only the language you pick is downloaded, once: about 480&nbsp;MB for the European languages, 65&nbsp;MB for Arabic. If you turned on Arabic in 2.3.0, it is already your second language.</li>
+          <li>Right Option can speak another language too. In Settings &rsaquo; General, &ldquo;Right Option speaks&rdquo; lists English and the other 24.</li>
+          <li>A shorter setup for new Macs, in five steps. It shows the speech download as it happens, explains each macOS permission before macOS asks for it, lets you try the talk key with each step ticking off as you go, and offers your Mac&rsquo;s own language at the end.</li>
+        </ul>
+      ]]></description>
+      <enclosure url="https://slatedictation.com/Slate-2.4.0.dmg"
+                 sparkle:version="40"
+                 sparkle:shortVersionString="2.4.0"
+                 sparkle:edSignature="OW/O9hl3W4QczSqpFdWT/A84ldP10po/JocW9qvPAte3HQp17G3XZiiIK01xLB3JKJNnUesCsnTNVyismkXuDQ==" length="9944175"
+                 type="application/octet-stream" />
+    </item>
+
+    <item>
       <title>Version 2.3.0</title>
       <pubDate>Sat, 14 Nov 2026 17:33:21 +0000</pubDate>
       <sparkle:version>39</sparkle:version>
