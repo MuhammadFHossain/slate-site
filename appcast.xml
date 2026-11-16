@@ -20,6 +20,25 @@
     <language>en</language>
 
     <item>
+      <title>Version 2.4.1</title>
+      <pubDate>Mon, 16 Nov 2026 15:40:00 +0000</pubDate>
+      <sparkle:version>41</sparkle:version>
+      <sparkle:shortVersionString>2.4.1</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.4</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+        <ul>
+          <li>Arabic is easier to find. In Settings &rsaquo; General, pick Arabic in &ldquo;Right Option speaks&rdquo; and Slate sets it up for you: Right Option dictates in Arabic, and Right Option and L together switch it back to English. Before, Arabic only appeared after turning on a second language, which was easy to miss.</li>
+          <li>On macOS 14, the language menus now show Arabic with what it needs, macOS 15 or later, instead of leaving it out, and picking it says where to update macOS.</li>
+        </ul>
+      ]]></description>
+      <enclosure url="https://slatedictation.com/Slate-2.4.1.dmg"
+                 sparkle:version="41"
+                 sparkle:shortVersionString="2.4.1"
+                 sparkle:edSignature="MLrEbDIgcOawTwyK6fgaXjdk6mNdjx2glPDo8XR3wRdakxfqPyzYd/n5XNE+74/Cm0ZiTQPrlDP/jnGOlsiEDQ==" length="9987860"
+                 type="application/octet-stream" />
+    </item>
+
+    <item>
       <title>Version 2.4.0</title>
       <pubDate>Sat, 14 Nov 2026 20:51:03 +0000</pubDate>
       <sparkle:version>40</sparkle:version>
