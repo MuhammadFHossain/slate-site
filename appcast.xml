@@ -20,6 +20,24 @@
     <language>en</language>
 
     <item>
+      <title>Version 2.4.2</title>
+      <pubDate>Tue, 17 Nov 2026 06:25:00 +0000</pubDate>
+      <sparkle:version>42</sparkle:version>
+      <sparkle:shortVersionString>2.4.2</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.4</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+        <ul>
+          <li>Right Option and Right Command together open the note picker again. With a second language on Right Command, that pair started a dictation instead. It now opens the picker whichever key goes down first, and holding Right Command on its own still dictates in your second language.</li>
+        </ul>
+      ]]></description>
+      <enclosure url="https://slatedictation.com/Slate-2.4.2.dmg"
+                 sparkle:version="42"
+                 sparkle:shortVersionString="2.4.2"
+                 sparkle:edSignature="d6ELMfBC5D/LTYMMp6zT2P+hXO5yCwIz/2AMdN8V69LnXZ0tZq2D6jhmsV5W716Ii+BoZ1aKW5wx897dhAGIDw==" length="9990411"
+                 type="application/octet-stream" />
+    </item>
+
+    <item>
       <title>Version 2.4.1</title>
       <pubDate>Mon, 16 Nov 2026 15:40:00 +0000</pubDate>
       <sparkle:version>41</sparkle:version>
